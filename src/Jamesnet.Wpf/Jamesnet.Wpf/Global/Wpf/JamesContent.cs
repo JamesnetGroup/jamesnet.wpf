@@ -8,13 +8,6 @@ namespace Jamesnet.Wpf.Controls
 {
     public class JamesContent : ContentControl, IViewable
     {
-        public static readonly DependencyProperty ContentNameProperty = DependencyProperty.Register("ContentName", typeof(string), typeof(SmartRegion), new PropertyMetadata());
-        public string ContentName
-        {
-            get => (string)GetValue(ContentNameProperty);
-            set => SetValue(ContentNameProperty, value);
-        }
-
         public FrameworkElement View { get; init; }
 
         public JamesContent()
@@ -28,16 +21,6 @@ namespace Jamesnet.Wpf.Controls
             {
 
             }
-
-            Loaded += SmartWindow_Loaded;
-        }
-
-        private void SmartWindow_Loaded(object sender, RoutedEventArgs e)
-        {
-            if (DataContext is IViewLoadable vm)
-            {
-                vm.OnLoaded(this as IViewable);
-            }
         }
 
         private void AutoWireViewModelChanged(object view, object dataContext)
@@ -46,6 +29,17 @@ namespace Jamesnet.Wpf.Controls
             if (dataContext is IViewInitializable vm)
             {
                 vm.OnViewWired(view as IViewable);
+            }
+
+            if (dataContext is IViewLoadable && view is FrameworkElement fe)
+            {
+                fe.Loaded += (s1, e1) =>
+                {
+                    if (s1 is FrameworkElement fe && fe.DataContext is IViewLoadable vm)
+                    {
+                        vm.OnLoaded(view as IViewable);
+                    }
+                };
             }
         }
     }
