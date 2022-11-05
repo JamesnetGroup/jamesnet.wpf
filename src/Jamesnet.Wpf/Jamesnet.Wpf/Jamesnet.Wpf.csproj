@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Prism.Unity" Version="8.1.97" />
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="copy &quot;$(TargetDir)Jamesnet.Wpf.dll&quot; &quot;C:\devncore\MMI_Studio\References&quot;;&#xD;&#xA;copy &quot;$(TargetDir)Jamesnet.Wpf.pdb&quot; &quot;C:\devncore\MMI_Studio\References&quot;;" />
+  </Target>
+
+</Project>
