@@ -1,6 +1,5 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
-
 using Prism.Regions;
 
 namespace Jamesnet.Wpf.Controls
@@ -23,6 +22,10 @@ namespace Jamesnet.Wpf.Controls
                 RegionManager.SetRegionName((SmartRegion)d, str);
                 RegionManager.SetRegionManager(d, rm);
             }
+        }
+        static SmartRegion()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(SmartRegion), new FrameworkPropertyMetadata(typeof(SmartRegion)));
         }
 
         public SmartRegion()
