@@ -33,13 +33,16 @@ namespace Jamesnet.Wpf.Controls
 
             if (dataContext is IViewLoadable && view is FrameworkElement fe)
             {
-                fe.Loaded += (s1, e1) =>
-                {
-                    if (s1 is FrameworkElement fe && fe.DataContext is IViewLoadable vm)
-                    {
-                        vm.OnLoaded(view as IViewable);
-                    }
-                };
+                fe.Loaded += Fe_Loaded;
+            }
+        }
+
+        private void Fe_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (sender is FrameworkElement fe && fe.DataContext is IViewLoadable vm)
+            {
+                fe.Loaded -= Fe_Loaded;
+                vm.OnLoaded(fe as IViewable);
             }
         }
     }
