@@ -1,1 +1,3 @@
 # jamesnetwpf
+
+- CommunityToolkit.Mvvm
