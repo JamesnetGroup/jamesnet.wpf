@@ -13,24 +13,17 @@ namespace Jamesnet.Wpf.Controls
         public JamesContent()
         {
             View = this;
-            try
-            {
-                ViewModelLocationProvider.AutoWireViewModelChanged(this, AutoWireViewModelChanged);
-            }
-            catch (Exception ex)
-            {
-
-            }
+            ViewModelLocationProvider.AutoWireViewModelChanged(this, AutoWireViewModelChanged);
         }
 
         private void AutoWireViewModelChanged(object view, object dataContext)
         {
             DataContext = dataContext;
+
             if (dataContext is IViewInitializable vm)
             {
                 vm.OnViewWired(view as IViewable);
             }
-
             if (dataContext is IViewLoadable && view is FrameworkElement fe)
             {
                 fe.Loaded += Fe_Loaded;

@@ -11,23 +11,29 @@ namespace Jamesnet.Wpf.Controls
         public JamesWindow()
         {
             View = this;
-            ViewModelLocationProvider.AutoWireViewModelChanged(this, Callback);
-            Loaded += SmartWindow_Loaded;
+            ViewModelLocationProvider.AutoWireViewModelChanged(this, AutoWireViewModelChanged);
         }
 
-        private void SmartWindow_Loaded(object sender, RoutedEventArgs e)
+        private void AutoWireViewModelChanged(object view, object dataContext)
         {
-            if (DataContext is IViewLoadable vm)
+            DataContext = dataContext;
+
+            if (dataContext is IViewInitializable vm)
             {
-                vm.OnLoaded(this as IViewable);
+                vm.OnViewWired(view as IViewable);
+            }
+            if (dataContext is IViewLoadable && view is FrameworkElement fe)
+            {
+                fe.Loaded += Fe_Loaded;
             }
         }
 
-        private void Callback(object view, object dataContext)
+        private void Fe_Loaded(object sender, RoutedEventArgs e)
         {
-            if (dataContext is IViewInitializable vm)
+            if (sender is FrameworkElement fe && fe.DataContext is IViewLoadable vm)
             {
-                vm.OnViewWired(this as IViewable);
+                fe.Loaded -= Fe_Loaded;
+                vm.OnLoaded(fe as IViewable);
             }
         }
     }
