@@ -1,3 +1,4 @@
 # jamesnetwpf
 
 - CommunityToolkit.Mvvm
+- SmartGrid
