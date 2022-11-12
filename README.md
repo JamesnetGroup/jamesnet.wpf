@@ -1,4 +1,4 @@
 # jamesnetwpf
 
 - CommunityToolkit.Mvvm
-- SmartGrid
+- SmartGrid [(WpfAutoGrid)](https://github.com/carbonrobot/wpf-autogrid)
