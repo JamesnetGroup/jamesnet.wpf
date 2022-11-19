@@ -11,6 +11,7 @@
     <PackageProjectUrl>https://github.com/jamesnet214</PackageProjectUrl>
     <RepositoryUrl>https://github.com/jamesnet214</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
+    <PackageTags>jamesnet,wpf</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
