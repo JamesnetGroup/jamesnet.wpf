@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="copy &quot;$(TargetDir)Jamesnet.Wpf.dll&quot; &quot;C:\devncore\MMI_Studio\References&quot;;&#xD;&#xA;copy &quot;$(TargetDir)Jamesnet.Wpf.pdb&quot; &quot;C:\devncore\MMI_Studio\References&quot;;" />
+    <Exec Command="copy &quot;$(TargetDir)Jamesnet.Wpf.dll&quot; &quot;C:\jamesworks\MMI_Studio\References&quot;;&#xD;&#xA;copy &quot;$(TargetDir)Jamesnet.Wpf.pdb&quot; &quot;C:\jamesworks\MMI_Studio\References&quot;;" />
   </Target>
 
 </Project>

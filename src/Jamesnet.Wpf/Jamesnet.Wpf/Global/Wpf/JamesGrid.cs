@@ -5,21 +5,21 @@ using System.Windows.Controls;
 
 namespace Jamesnet.Wpf.Global.Wpf
 {
-    public class AutoGrid : Grid
+    public class JamesGrid : Grid
     {
-        public static readonly DependencyProperty ChildHorizontalAlignmentProperty = DependencyProperty.Register("ChildHorizontalAlignment", typeof(HorizontalAlignment?), typeof(AutoGrid), new FrameworkPropertyMetadata((HorizontalAlignment?)null, FrameworkPropertyMetadataOptions.AffectsMeasure, new PropertyChangedCallback(OnChildHorizontalAlignmentChanged)));
-        public static readonly DependencyProperty ChildMarginProperty = DependencyProperty.Register("ChildMargin", typeof(Thickness?), typeof(AutoGrid), new FrameworkPropertyMetadata((Thickness?)null, FrameworkPropertyMetadataOptions.AffectsMeasure, new PropertyChangedCallback(OnChildMarginChanged)));
+        public static readonly DependencyProperty ChildHorizontalAlignmentProperty = DependencyProperty.Register("ChildHorizontalAlignment", typeof(HorizontalAlignment?), typeof(JamesGrid), new FrameworkPropertyMetadata((HorizontalAlignment?)null, FrameworkPropertyMetadataOptions.AffectsMeasure, new PropertyChangedCallback(OnChildHorizontalAlignmentChanged)));
+        public static readonly DependencyProperty ChildMarginProperty = DependencyProperty.Register("ChildMargin", typeof(Thickness?), typeof(JamesGrid), new FrameworkPropertyMetadata((Thickness?)null, FrameworkPropertyMetadataOptions.AffectsMeasure, new PropertyChangedCallback(OnChildMarginChanged)));
 
-        public static readonly DependencyProperty ChildVerticalAlignmentProperty = DependencyProperty.Register("ChildVerticalAlignment", typeof(VerticalAlignment?), typeof(AutoGrid), new FrameworkPropertyMetadata((VerticalAlignment?)null, FrameworkPropertyMetadataOptions.AffectsMeasure, new PropertyChangedCallback(OnChildVerticalAlignmentChanged)));
-        public static readonly DependencyProperty ColumnCountProperty = DependencyProperty.RegisterAttached("ColumnCount", typeof(int), typeof(AutoGrid), new FrameworkPropertyMetadata(1, FrameworkPropertyMetadataOptions.AffectsMeasure, new PropertyChangedCallback(ColumnCountChanged)));
+        public static readonly DependencyProperty ChildVerticalAlignmentProperty = DependencyProperty.Register("ChildVerticalAlignment", typeof(VerticalAlignment?), typeof(JamesGrid), new FrameworkPropertyMetadata((VerticalAlignment?)null, FrameworkPropertyMetadataOptions.AffectsMeasure, new PropertyChangedCallback(OnChildVerticalAlignmentChanged)));
+        public static readonly DependencyProperty ColumnCountProperty = DependencyProperty.RegisterAttached("ColumnCount", typeof(int), typeof(JamesGrid), new FrameworkPropertyMetadata(1, FrameworkPropertyMetadataOptions.AffectsMeasure, new PropertyChangedCallback(ColumnCountChanged)));
 
-        public static readonly DependencyProperty ColumnsProperty = DependencyProperty.RegisterAttached("Columns", typeof(string), typeof(AutoGrid), new FrameworkPropertyMetadata("", FrameworkPropertyMetadataOptions.AffectsMeasure, new PropertyChangedCallback(ColumnsChanged)));
-        public static readonly DependencyProperty ColumnWidthProperty = DependencyProperty.RegisterAttached("ColumnWidth", typeof(GridLength), typeof(AutoGrid), new FrameworkPropertyMetadata(GridLength.Auto, FrameworkPropertyMetadataOptions.AffectsMeasure, new PropertyChangedCallback(FixedColumnWidthChanged)));
-        public static readonly DependencyProperty IsAutoIndexingProperty = DependencyProperty.Register("IsAutoIndexing", typeof(bool), typeof(AutoGrid), new FrameworkPropertyMetadata(true, FrameworkPropertyMetadataOptions.AffectsMeasure));
-        public static readonly DependencyProperty OrientationProperty = DependencyProperty.Register("Orientation", typeof(Orientation), typeof(AutoGrid), new FrameworkPropertyMetadata(Orientation.Horizontal, FrameworkPropertyMetadataOptions.AffectsMeasure));
-        public static readonly DependencyProperty RowCountProperty = DependencyProperty.RegisterAttached("RowCount", typeof(int), typeof(AutoGrid), new FrameworkPropertyMetadata(1, FrameworkPropertyMetadataOptions.AffectsMeasure, new PropertyChangedCallback(RowCountChanged)));
-        public static readonly DependencyProperty RowHeightProperty = DependencyProperty.RegisterAttached("RowHeight", typeof(GridLength), typeof(AutoGrid), new FrameworkPropertyMetadata(GridLength.Auto, FrameworkPropertyMetadataOptions.AffectsMeasure, new PropertyChangedCallback(FixedRowHeightChanged)));
-        public static readonly DependencyProperty RowsProperty = DependencyProperty.RegisterAttached("Rows", typeof(string), typeof(AutoGrid), new FrameworkPropertyMetadata("", FrameworkPropertyMetadataOptions.AffectsMeasure, new PropertyChangedCallback(RowsChanged)));
+        public static readonly DependencyProperty ColumnsProperty = DependencyProperty.RegisterAttached("Columns", typeof(string), typeof(JamesGrid), new FrameworkPropertyMetadata("", FrameworkPropertyMetadataOptions.AffectsMeasure, new PropertyChangedCallback(ColumnsChanged)));
+        public static readonly DependencyProperty ColumnWidthProperty = DependencyProperty.RegisterAttached("ColumnWidth", typeof(GridLength), typeof(JamesGrid), new FrameworkPropertyMetadata(GridLength.Auto, FrameworkPropertyMetadataOptions.AffectsMeasure, new PropertyChangedCallback(FixedColumnWidthChanged)));
+        public static readonly DependencyProperty IsAutoIndexingProperty = DependencyProperty.Register("IsAutoIndexing", typeof(bool), typeof(JamesGrid), new FrameworkPropertyMetadata(true, FrameworkPropertyMetadataOptions.AffectsMeasure));
+        public static readonly DependencyProperty OrientationProperty = DependencyProperty.Register("Orientation", typeof(Orientation), typeof(JamesGrid), new FrameworkPropertyMetadata(Orientation.Horizontal, FrameworkPropertyMetadataOptions.AffectsMeasure));
+        public static readonly DependencyProperty RowCountProperty = DependencyProperty.RegisterAttached("RowCount", typeof(int), typeof(JamesGrid), new FrameworkPropertyMetadata(1, FrameworkPropertyMetadataOptions.AffectsMeasure, new PropertyChangedCallback(RowCountChanged)));
+        public static readonly DependencyProperty RowHeightProperty = DependencyProperty.RegisterAttached("RowHeight", typeof(GridLength), typeof(JamesGrid), new FrameworkPropertyMetadata(GridLength.Auto, FrameworkPropertyMetadataOptions.AffectsMeasure, new PropertyChangedCallback(FixedRowHeightChanged)));
+        public static readonly DependencyProperty RowsProperty = DependencyProperty.RegisterAttached("Rows", typeof(string), typeof(JamesGrid), new FrameworkPropertyMetadata("", FrameworkPropertyMetadataOptions.AffectsMeasure, new PropertyChangedCallback(RowsChanged)));
         
         [Category("Layout"), Description("Presets the horizontal alignment of all child controls")]
         public HorizontalAlignment? ChildHorizontalAlignment
@@ -103,7 +103,7 @@ namespace Jamesnet.Wpf.Global.Wpf
             if ((int)e.NewValue < 0)
                 return;
 
-            var grid = d as AutoGrid;
+            var grid = d as JamesGrid;
 
             // look for an existing column definition for the height
             var width = GridLength.Auto;
@@ -122,7 +122,7 @@ namespace Jamesnet.Wpf.Global.Wpf
             if ((string)e.NewValue == string.Empty)
                 return;
 
-            var grid = d as AutoGrid;
+            var grid = d as JamesGrid;
             grid.ColumnDefinitions.Clear();
 
             var defs = Parse((string)e.NewValue);
@@ -132,7 +132,7 @@ namespace Jamesnet.Wpf.Global.Wpf
 
         public static void FixedColumnWidthChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            var grid = d as AutoGrid;
+            var grid = d as JamesGrid;
 
             // add a default column if missing
             if (grid.ColumnDefinitions.Count == 0)
@@ -145,7 +145,7 @@ namespace Jamesnet.Wpf.Global.Wpf
 
         public static void FixedRowHeightChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            var grid = d as AutoGrid;
+            var grid = d as JamesGrid;
 
             // add a default row if missing
             if (grid.RowDefinitions.Count == 0)
@@ -193,7 +193,7 @@ namespace Jamesnet.Wpf.Global.Wpf
             if ((int)e.NewValue < 0)
                 return;
 
-            var grid = d as AutoGrid;
+            var grid = d as JamesGrid;
 
             // look for an existing row to get the height
             var height = GridLength.Auto;
@@ -212,7 +212,7 @@ namespace Jamesnet.Wpf.Global.Wpf
             if ((string)e.NewValue == string.Empty)
                 return;
 
-            var grid = d as AutoGrid;
+            var grid = d as JamesGrid;
             grid.RowDefinitions.Clear();
 
             var defs = Parse((string)e.NewValue);
@@ -222,7 +222,7 @@ namespace Jamesnet.Wpf.Global.Wpf
 
         private static void OnChildHorizontalAlignmentChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            var grid = d as AutoGrid;
+            var grid = d as JamesGrid;
             foreach (UIElement child in grid.Children)
             {
                 if (grid.ChildHorizontalAlignment.HasValue)
@@ -234,7 +234,7 @@ namespace Jamesnet.Wpf.Global.Wpf
 
         private static void OnChildMarginChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            var grid = d as AutoGrid;
+            var grid = d as JamesGrid;
             foreach (UIElement child in grid.Children)
             {
                 if (grid.ChildMargin.HasValue)
@@ -246,7 +246,7 @@ namespace Jamesnet.Wpf.Global.Wpf
 
         private static void OnChildVerticalAlignmentChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            var grid = d as AutoGrid;
+            var grid = d as JamesGrid;
             foreach (UIElement child in grid.Children)
             {
                 if (grid.ChildVerticalAlignment.HasValue)
