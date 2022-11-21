@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33015.44
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jamesnet.Wpf", "Jamesnet.Wpf\Jamesnet.Wpf.csproj", "{86299345-D618-4138-AC04-5E3DC083F97B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jamesnet.Wpf", "Jamesnet.Wpf\Jamesnet.Wpf.csproj", "{86299345-D618-4138-AC04-5E3DC083F97B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jamesnet.Design", "Jamesnet.Design\Jamesnet.Design.csproj", "{8A2F0C4B-DBA5-46BF-8557-F79800723AF8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jamesnet.Degisn.Tests", "Jamesnet.Degisn.Tests\Jamesnet.Degisn.Tests.csproj", "{D5C6657D-1F1B-4D99-B469-5726A6473048}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{86299345-D618-4138-AC04-5E3DC083F97B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{86299345-D618-4138-AC04-5E3DC083F97B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{86299345-D618-4138-AC04-5E3DC083F97B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A2F0C4B-DBA5-46BF-8557-F79800723AF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A2F0C4B-DBA5-46BF-8557-F79800723AF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A2F0C4B-DBA5-46BF-8557-F79800723AF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A2F0C4B-DBA5-46BF-8557-F79800723AF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5C6657D-1F1B-4D99-B469-5726A6473048}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5C6657D-1F1B-4D99-B469-5726A6473048}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5C6657D-1F1B-4D99-B469-5726A6473048}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5C6657D-1F1B-4D99-B469-5726A6473048}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

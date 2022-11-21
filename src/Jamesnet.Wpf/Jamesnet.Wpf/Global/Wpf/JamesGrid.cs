@@ -4,7 +4,7 @@ using System.Windows;
 using System.Windows.Controls;
 using WpfAutoGrid;
 
-namespace Jamesnet.Wpf.Global.Wpf
+namespace Jamesnet.Wpf.Controls
 {
     public class JamesGrid : AutoGrid
     {
