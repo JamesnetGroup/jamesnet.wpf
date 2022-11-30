@@ -2,7 +2,7 @@
 
 - CommunityToolkit.Mvvm
 - Prism
-- SmartGrid [(WpfAutoGrid)](https://github.com/carbonrobot/wpf-autogrid) : Grid
-- SmartContent : ContentControl
+- JamesGrid [(WpfAutoGrid)](https://github.com/carbonrobot/wpf-autogrid) : Grid
+- JamesContent : ContentControl
 - JamesWindow : Window
 - JamesApplication : Application
