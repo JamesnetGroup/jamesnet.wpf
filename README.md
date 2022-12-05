@@ -6,4 +6,3 @@
 - JamesContent : ContentControl
 - JamesWindow : Window
 - JamesApplication : Application
-
