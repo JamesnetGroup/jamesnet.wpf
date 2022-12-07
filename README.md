@@ -6,4 +6,4 @@
 - JamesContent : ContentControl
 - JamesWindow : Window
 - JamesApplication : Application
-- James...
+- JamesDatagrid : DataGrid
