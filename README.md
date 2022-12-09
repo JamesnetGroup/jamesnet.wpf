@@ -8,3 +8,6 @@
 - JamesApplication : Application
 - JamesDatagrid : DataGrid
 - TextField
+- ComboField
+- DateField
+- CheckField
