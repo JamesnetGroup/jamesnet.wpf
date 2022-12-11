@@ -11,3 +11,5 @@
 - ComboField
 - DateField
 - CheckField
+- CheckField
+- SmartField
