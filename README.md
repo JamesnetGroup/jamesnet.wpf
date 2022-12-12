@@ -7,9 +7,10 @@
 - JamesWindow : Window
 - JamesApplication : Application
 - JamesDatagrid : DataGrid
+- SmartField
 - TextField
 - ComboField
 - DateField
 - CheckField
 - CheckField
-- SmartField
+  
