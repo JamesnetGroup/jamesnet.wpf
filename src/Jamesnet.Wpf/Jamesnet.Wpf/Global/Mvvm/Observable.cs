@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Jamesnet.Wpf.Mvvm
 {
-    public class Observable : ObservableObject
+    public class ObservableBase : ObservableObject
     {
     }
 }
