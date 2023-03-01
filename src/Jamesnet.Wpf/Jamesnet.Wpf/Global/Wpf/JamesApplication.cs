@@ -6,22 +6,10 @@ using Prism.Modularity;
 using Prism.Unity;
 using System.Collections.Generic;
 using Unity;
+using System.Runtime.CompilerServices;
 
 namespace Jamesnet.Wpf.Controls
 {
-    public interface ISmartContainerFactory
-    {
-
-    }
-
-    public class SmartContainerFactory : ISmartContainerFactory
-    {
-        public SmartContainerFactory()
-        {
-
-        }
-    }
-
     public abstract class JamesApplication : PrismApplication
     {
         private List<IModule> _modules = new();
@@ -53,6 +41,14 @@ namespace Jamesnet.Wpf.Controls
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterInstance(typeof(IEventHub), EventAggregatorBuilder.Get(containerRegistry.GetContainer().Resolve<IEventAggregator>()));
+        }
+        public static T GetService<T>()
+        {
+            if (JamesApplication.Current is JamesApplication app)
+            {
+                return app.Container.Resolve<T>();
+            }
+            return default(T);
         }
     }
 }
