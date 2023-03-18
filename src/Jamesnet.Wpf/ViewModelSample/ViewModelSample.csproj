@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Jamesnet.Wpf\Jamesnet.Wpf.csproj" />
+    <ProjectReference Include="..\ViewModelSample.Forms\ViewModelSample.Forms.csproj" />
+  </ItemGroup>
+
+</Project>
