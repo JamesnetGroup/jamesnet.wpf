@@ -2,6 +2,6 @@
 {
     public interface IViewLoadable
     {
-        void OnLoaded(IViewable smartWindow);
+        void OnLoaded(IViewable view);
     }
 }
