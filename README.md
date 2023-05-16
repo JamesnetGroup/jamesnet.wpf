@@ -19,4 +19,12 @@
 - ComboField
 - DateField
 - CheckField
-- CheckField
+
+
+
+### Contributors
+Thanks go to these wonderful people (List made with [contrib.rocks](https://contrib.rocks)):
+
+<a href="https://github.com/jamesnet214/jamesnetwpf/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=jamesnet214/jamesnetwpf" />
+</a>
