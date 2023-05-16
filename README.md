@@ -10,6 +10,10 @@
 - JamesDataGrid : DataGrid
 - ViewModelLocationScenario
 - WireDataContext
+- ObservableBase
+- IViewable
+- IViewLoadable
+- IViewCreatable
 - SmartField
 - TextField
 - ComboField
