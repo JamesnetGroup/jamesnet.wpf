@@ -7,7 +7,9 @@
 - JamesContent : ContentControl
 - JamesWindow : Window
 - JamesApplication : Application
-- JamesDatagrid : DataGrid
+- JamesDataGrid : DataGrid
+- ViewModelLocationScenario
+- WireDataContext
 - SmartField
 - TextField
 - ComboField
