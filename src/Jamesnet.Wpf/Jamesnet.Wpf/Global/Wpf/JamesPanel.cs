@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 
-namespace Jamesnet.Wpf.Global.Wpf
+namespace Jamesnet.Wpf.Controls
 {
 		public class JamesPanel :StackPanel
 		{
