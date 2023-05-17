@@ -30,7 +30,7 @@ namespace Jamesnet.Wpf.Global.Wpf
 
 						Thickness thick = Orientation == Orientation.Horizontal ? new Thickness (0, 0, Spacing, 0) : new Thickness (0, 0, 0, Spacing);
 
-						int lastIdx = base.Children.Count;
+						int lastIdx = base.Children.Count - 1;
 						int idx = 0;
 						foreach (UIElement child in base.Children)
 						{
