@@ -5,17 +5,15 @@
 - [Reflector](https://github.com/jamesnet214/reflector)
 
 ## Content
-- CommunityToolkit.Mvvm
-- Prism
-- JamesGrid [(WpfAutoGrid)](https://github.com/carbonrobot/wpf-autogrid) : Grid
 - JamesPanel
+- JamesGrid : AutoGrid
 - JamesContent : ContentControl
 - JamesWindow : Window
-- JamesApplication : Application
+- JamesApplication : PrismApplication
 - JamesDataGrid : DataGrid
 - ViewModelLocationScenario
 - WireDataContext
-- ObservableBase
+- ObservableBase : ObservableObject
 - IViewable
 - IViewLoadable
 - IViewCreatable
@@ -24,6 +22,11 @@
 - ComboField
 - DateField
 - CheckField
+
+## Dependency
+- Prism.Unity
+- CommunityToolkit.Mvvm
+- WpfAutoGrid.Core
 
 ## Todo
 - [ ] Namespace 정리
