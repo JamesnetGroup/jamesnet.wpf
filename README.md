@@ -1,8 +1,8 @@
 # jamesnetwpf
 
 ## Using
-- WPF: League of legends
-- Reflector
+- [WPF: League of legends](https://github.com/jamesnet214/leagueoflegends)
+- [Reflector](https://github.com/jamesnet214/reflector)
 
 ## Content
 - CommunityToolkit.Mvvm
