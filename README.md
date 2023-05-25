@@ -1,5 +1,10 @@
 # jamesnetwpf
 
+## Using
+- WPF: League of legends
+- Reflector
+
+## Content
 - CommunityToolkit.Mvvm
 - Prism
 - JamesGrid [(WpfAutoGrid)](https://github.com/carbonrobot/wpf-autogrid) : Grid
@@ -20,8 +25,8 @@
 - DateField
 - CheckField
 
-# Todo
-- Namespace 정리
+## Todo
+- [ ] Namespace 정리
 
 ### Contributors
 Thanks go to these wonderful people (List made with [contrib.rocks](https://contrib.rocks)):
@@ -29,3 +34,5 @@ Thanks go to these wonderful people (List made with [contrib.rocks](https://cont
 <a href="https://github.com/jamesnet214/jamesnetwpf/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=jamesnet214/jamesnetwpf" />
 </a>
+
+
