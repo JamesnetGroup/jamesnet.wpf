@@ -3,7 +3,6 @@
 ## Using
 - WPF: League of legends
 - Reflector
-- ColorPicker
 
 ## Content
 - CommunityToolkit.Mvvm
