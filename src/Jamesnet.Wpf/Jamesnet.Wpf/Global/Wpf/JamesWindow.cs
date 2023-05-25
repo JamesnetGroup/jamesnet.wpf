@@ -1,5 +1,5 @@
 ﻿using System.Windows;
-
+using Jamesnet.Wpf.Mvvm;
 using Prism.Mvvm;
 
 namespace Jamesnet.Wpf.Controls
@@ -7,6 +7,7 @@ namespace Jamesnet.Wpf.Controls
     public class JamesWindow : Window, IViewable
     {
         public FrameworkElement View { get; init; }
+        public ObservableBase ViewModel => View.DataContext is ObservableBase vm ? vm : null;
 
         public JamesWindow()
         {
@@ -18,21 +19,22 @@ namespace Jamesnet.Wpf.Controls
         {
             DataContext = dataContext;
 
-            if (dataContext is IViewInitializable vm)
+            if (dataContext is IViewInitializable viewModel)
             {
-                vm.OnViewWired(view as IViewable);
+                viewModel.OnViewWired(view as IViewable);
             }
-            if (dataContext is IViewLoadable && view is FrameworkElement fe)
+
+            if (dataContext is IViewLoadable && view is FrameworkElement frameworkElement)
             {
-                fe.Loaded += Fe_Loaded;
+                frameworkElement.Loaded += JamesWindow_Loaded;
             }
         }
 
-        private void Fe_Loaded(object sender, RoutedEventArgs e)
+        private void JamesWindow_Loaded(object sender, RoutedEventArgs e)
         {
             if (sender is FrameworkElement fe && fe.DataContext is IViewLoadable vm)
             {
-                fe.Loaded -= Fe_Loaded;
+                fe.Loaded -= JamesWindow_Loaded;
                 vm.OnLoaded(fe as IViewable);
             }
         }
