@@ -1,16 +1,20 @@
 # jamesnetwpf
 
-- CommunityToolkit.Mvvm
-- Prism
-- JamesGrid [(WpfAutoGrid)](https://github.com/carbonrobot/wpf-autogrid) : Grid
+## Using
+- [WPF: League of legends](https://github.com/jamesnet214/leagueoflegends)
+- [Reflector](https://github.com/jamesnet214/reflector)
+- [Objective](https://github.com/jamesnet214/objective)
+
+## Content
 - JamesPanel
+- JamesGrid : AutoGrid
 - JamesContent : ContentControl
 - JamesWindow : Window
-- JamesApplication : Application
+- JamesApplication : PrismApplication
 - JamesDataGrid : DataGrid
 - ViewModelLocationScenario
 - WireDataContext
-- ObservableBase
+- ObservableBase : ObservableObject
 - IViewable
 - IViewLoadable
 - IViewCreatable
@@ -20,7 +24,13 @@
 - DateField
 - CheckField
 
+## Dependency
+- Prism.Unity
+- CommunityToolkit.Mvvm
+- WpfAutoGrid.Core
 
+## Todo
+- [ ] Namespace 정리
 
 ### Contributors
 Thanks go to these wonderful people (List made with [contrib.rocks](https://contrib.rocks)):
@@ -28,3 +38,5 @@ Thanks go to these wonderful people (List made with [contrib.rocks](https://cont
 <a href="https://github.com/jamesnet214/jamesnetwpf/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=jamesnet214/jamesnetwpf" />
 </a>
+
+
