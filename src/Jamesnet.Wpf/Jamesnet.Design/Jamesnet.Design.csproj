@@ -1,18 +1,25 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>disable</Nullable>
-    <Version>1.0.0.1</Version>
+    <Version>1.0.0.2</Version>
+    <Authors>jamesnet</Authors>
+    <Product>jamesnet</Product>
+    <Copyright>jamesnet</Copyright>
+    <PackageProjectUrl>https://github.com/jamesnet214</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/jamesnet214</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>jamesnet,wpf</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Properties\Resources\SingleGeometry.yaml" />
+    <None Remove="Properties\Resources\StreamGeometry.yaml" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Properties\Resources\SingleGeometry.yaml" />
+    <EmbeddedResource Include="Properties\Resources\StreamGeometry.yaml" />
   </ItemGroup>
 
   <ItemGroup>

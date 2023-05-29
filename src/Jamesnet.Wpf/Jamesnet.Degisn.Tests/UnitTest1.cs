@@ -1,5 +1,4 @@
-using Jamesnet.Design.Global.Converters;
-using Jamesnet.Design.Global.Providers;
+using Jamesnet.Design.Geometry;
 
 namespace Jamesnet.Degisn.Tests
 {
@@ -8,8 +7,6 @@ namespace Jamesnet.Degisn.Tests
         [Fact]
         public void Test1()
         {
-            var data = IconData.AlphaBBox;
-            Assert.NotEmpty(data);
         }
     }
 }

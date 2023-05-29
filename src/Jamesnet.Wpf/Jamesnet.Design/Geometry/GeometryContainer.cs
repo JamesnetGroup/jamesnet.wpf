@@ -1,20 +1,15 @@
-﻿using Jamesnet.Design.Global.Models;
-using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Newtonsoft.Json;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using YamlDotNet.Serialization;
 
-namespace Jamesnet.Design.Global.Providers
+namespace Jamesnet.Design.Geometry
 {
-    public class SingleGeometryProvider
+    public class GeometryContainer
     {
-        internal static SingleGeometryRoot data;
+        internal static GeometryRoot _data;
+        internal static Dictionary<string, GeometryItem> _items;
 
-        static SingleGeometryProvider()
+        static GeometryContainer()
         {
             Build();
         }
@@ -22,7 +17,7 @@ namespace Jamesnet.Design.Global.Providers
         private static void Build()
         {
             Assembly assembly = Assembly.GetExecutingAssembly();
-            var resourceName = "Jamesnet.Design.Properties.Resources.SingleGeometry.yaml";
+            var resourceName = "Jamesnet.Design.Properties.Resources.StreamGeometry.yaml";
 
             using Stream stream = assembly.GetManifestResourceStream(resourceName);
             using StreamReader reader = new(stream);
@@ -34,7 +29,13 @@ namespace Jamesnet.Design.Global.Providers
             StringWriter w = new();
             js.Serialize(w, yamlObject);
             string jsonText = w.ToString();
-            data = JsonConvert.DeserializeObject<SingleGeometryRoot>(jsonText);
+            _data = JsonConvert.DeserializeObject<GeometryRoot>(jsonText);
+            _items = new();
+
+            foreach (var item in _data.Items)
+            {
+                _items.Add(item.Name, item);
+            }
         }
     }
 }

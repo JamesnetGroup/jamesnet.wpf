@@ -6,7 +6,6 @@ using Prism.Modularity;
 using Prism.Unity;
 using System.Collections.Generic;
 using Unity;
-using System.Runtime.CompilerServices;
 
 namespace Jamesnet.Wpf.Controls
 {
