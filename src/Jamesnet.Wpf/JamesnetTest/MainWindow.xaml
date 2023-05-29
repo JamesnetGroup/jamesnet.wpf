@@ -4,9 +4,11 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:james="clr-namespace:Jamesnet.Wpf.Controls;assembly=Jamesnet.Wpf"
+        xmlns:data="clr-namespace:Jamesnet.Design.Geometry;assembly=Jamesnet.Design"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <james:JamesIcon Icon="Email" Width="24" Height="24"/>
+        <!--<james:JamesIcon Icon="Email" Width="24" Height="24"/>-->
+        <james:JamesIcon Data="{x:Static data:GeometryData.Email}" Width="24" Height="24" Fill="Blue"/>
     </Grid>
 </Window>

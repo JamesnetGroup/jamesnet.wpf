@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Jamesnet.Design.Geometry;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,8 @@ namespace JamesnetTest
         public MainWindow()
         {
             InitializeComponent();
+
+            string str = GeometryData.Email;
         }
     }
 }

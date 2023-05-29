@@ -8,7 +8,11 @@ namespace Jamesnet.Design.Geometry
 {
     public class GeometryData
     {
+        public static string BellOutline => GeometryConverter.GetData();
+
         public static string CheckDecagram => GeometryConverter.GetData();
+
+        public static string DotsHorizontal => GeometryConverter.GetData();
 
         public static string Email => GeometryConverter.GetData();
         public static string EmailOutLine => GeometryConverter.GetData();

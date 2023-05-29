@@ -10,7 +10,11 @@ namespace Jamesnet.Wpf.Controls
     { 
         None,
 
+        BellOutline,
+
         CheckDecagram,
+
+        DotsHorizontal,
 
         Email,
         EmailOutLine,
@@ -49,10 +53,12 @@ namespace Jamesnet.Wpf.Controls
 
             switch (jamesIcon.Icon)
             {
-                case IconType.Twitter: geometryData = GeometryData.Twitter; break;
+                case IconType.BellOutline: geometryData = GeometryData.BellOutline; break;
                 case IconType.CheckDecagram: geometryData = GeometryData.CheckDecagram; break;
+                case IconType.DotsHorizontal: geometryData = GeometryData.DotsHorizontal; break;
                 case IconType.Email: geometryData = GeometryData.Email; break;
                 case IconType.EmailOutLine: geometryData = GeometryData.EmailOutLine; break;
+                case IconType.Twitter: geometryData = GeometryData.Twitter; break;
             }
 
             jamesIcon.Data = Geometry.Parse(geometryData);
