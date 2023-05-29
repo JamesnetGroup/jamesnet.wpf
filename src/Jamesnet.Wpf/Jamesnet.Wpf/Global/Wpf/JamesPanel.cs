@@ -3,7 +3,7 @@ using System.Windows.Controls;
 
 namespace Jamesnet.Wpf.Controls
 {
-		public class JamesPanel :StackPanel
+		public class JamesPanel : StackPanel
 		{
 				public double Spacing
 				{
