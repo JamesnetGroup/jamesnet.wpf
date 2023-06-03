@@ -19,18 +19,34 @@
     </Style>
     
     <Style TargetType="{x:Type ctrls:JamesIcon}">
+        <Setter Property="Width" Value="24"/>
+        <Setter Property="Height" Value="24"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ctrls:JamesIcon}">
-                    <Border Background="{TemplateBinding Background}"
-                            BorderBrush="{TemplateBinding BorderBrush}"
-                            BorderThickness="{TemplateBinding BorderThickness}">
-                        <Viewbox>
+                    <Grid Background="{TemplateBinding Background}">
+                        <Viewbox x:Name="viewbox"
+                                 Visibility="Collapsed">
                             <Path Width="24" Height="24" 
                                   Data="{TemplateBinding Data}"
                                   Fill="{TemplateBinding Fill}"/>
                         </Viewbox>
-                    </Border>
+                        <Image x:Name="image" 
+                               Width="24"
+                               Height="24"
+                               Source="{TemplateBinding Source}"
+                               Visibility="Collapsed"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Mode" Value="Icon">
+                            <Setter Property="Visibility" TargetName="viewbox" Value="Visible"/>
+                            <Setter Property="Visibility" TargetName="image" Value="Collapsed"/>
+                        </Trigger>
+                        <Trigger Property="Mode" Value="Image">
+                            <Setter Property="Visibility" TargetName="image" Value="Visible"/>
+                            <Setter Property="Visibility" TargetName="viewbox" Value="Collapsed"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

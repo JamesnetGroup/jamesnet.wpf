@@ -2,7 +2,7 @@
 using System.Reflection;
 using YamlDotNet.Serialization;
 
-namespace Jamesnet.Design.Geometry
+namespace Jamesnet.Design.Geometries
 {
     public class GeometryContainer
     {
@@ -17,7 +17,7 @@ namespace Jamesnet.Design.Geometry
         private static void Build()
         {
             Assembly assembly = Assembly.GetExecutingAssembly();
-            var resourceName = "Jamesnet.Design.Properties.Resources.StreamGeometry.yaml";
+            var resourceName = "Jamesnet.Design.Properties.Resources.geometries.yaml";
 
             using Stream stream = assembly.GetManifestResourceStream(resourceName);
             using StreamReader reader = new(stream);

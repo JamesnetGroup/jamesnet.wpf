@@ -1,58 +1,159 @@
-﻿using Jamesnet.Design.Geometry;
-using System;
-using System.DirectoryServices.ActiveDirectory;
+﻿using System;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
-using YamlDotNet.Core;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
 
 namespace Jamesnet.Wpf.Controls
 {
-    public enum IconType
+    public enum ImageType
     { 
-        None, 
-        AccountMultipleOutline,
-        Apple,
-        BellOutline,
-        CardMultiple,
-        CardMultipleOutline,
+        None,
+        AppStore,
+        Arsenal,
+        Benz,
+        Bmw,
+        Chelsea,
+        CrystalPalace,
+        Disney,
+        DisneyPlus,
+        Everton,
+        Honda,
+        Hyundai,
+        LeicesterCity,
+        ManchesterCity,
+        ManchesterUnited,
+        NewCastle,
+        Porsche,
+        Prime,
+        QQ,        
+        SouthHampton,
+        Spotify,
+        Sunderland,
+        SwanseaCity,
+        Tesla,
+        Tinder,
+        Tottenham,
+        WestBromwitchAlbion,
+    }
+
+    public enum IconType
+    {
+        None,
+        Twitter,
         CheckDecagram,
-        Comment,
-        CommentOutline,
-        Domain,
-        DotsHorizontal,
         Email,
-        EmailOutLine,
-        Facebook,
-        Google,
-        Heart,
-        HeartOutline,
-        Image,
+        EmailOutline,
+        BellOutline,
+        DotsHorizontal,
         Instagram,
+        Facebook,
+        Linkedin,
+        Youtube,
         Link,
         LinkBox,
-        Linkedin,
         LinkVariant,
+        Domain,
         MapMaker,
         MapMarkerOutline,
         Microsoft,
+        Apple,
+        Google,
         Netflix,
-        Pin,
         Star,
-        Twitter,
-        Youtube,
+        AccountMultipleOutline,
+        Image,
+        Heart,
+        HeartOutline,
+        Pin,
+        CardMultiple,
+        CardMultipleOutline,
+        Comment,
+        CommentOutline,
+        Close,
+        CheckCircle,
+        Check,
+        Crop,
+        MicrosoftVisualStudio,
+        MoveOpenPlay,
+        Menu,
+        GoogleTranslate,
+        EyedropperVariant,
+        CogRefreshOutline,
+        MonitorShimmer,
+        ChevronRight,
+        ChevronDown,
+        CursorPointer,
+        CalendarMonth,
+        WindowMinimize,
+        Web,
+        Palette,
+        Contentpaste,
+        Checkbold,
+        FolderOpenOutline,
+        FolderOpen,
+        FolderRable,
+        Maximize,
+        Resize,
+        SelectAll,
+        ArrowLeftBold,
+        ArrowRightBold,
+        ArrowUpBold,
+        ConsoleLine,
+        Plus,
+        ArrowAll,
+        MicrosoftWindows,
+        ArrowDownBox,
+        TextBox,
+        Folder,
+        FolderOutline,
+        DesktopClassic,
+        Harddisk,
+        File,
+        FileWord,
+        FileCheck,
+        FileZip,
+        FilePdf,
+        FileImage,
+        DotsHorizontalCircle,
+    }
+
+    public enum IconMode
+    {
+        None,
+        Icon,
+        Image,
     }
 
     public class JamesIcon : Label
     {
+        private Viewbox _viewbox;
+        private Image _image;
+
+        public static DependencyProperty ModeProperty = DependencyProperty.Register("Mode", typeof(IconMode), typeof(JamesIcon), new PropertyMetadata(IconMode.None));
         public static DependencyProperty IconProperty = DependencyProperty.Register("Icon", typeof(IconType), typeof(JamesIcon), new PropertyMetadata(IconType.None, IconPropertyChanged));
+        public static DependencyProperty ImageProperty = DependencyProperty.Register("Iamge", typeof(ImageType), typeof(JamesIcon), new PropertyMetadata(ImageType.None, ImagePropertyChanged));
         public static DependencyProperty FillProperty = DependencyProperty.Register("Fill", typeof(SolidColorBrush), typeof(JamesIcon), new PropertyMetadata(Brushes.Silver));
         public static DependencyProperty DataProperty = DependencyProperty.Register("Data", typeof(Geometry), typeof(JamesIcon), new PropertyMetadata(null));
+        public static DependencyProperty SourceProperty = DependencyProperty.Register("Source", typeof(ImageSource), typeof(JamesIcon), new PropertyMetadata(null));
+
+        public IconMode Mode
+        {
+            get => (IconMode)GetValue(ModeProperty);
+            set => SetValue(ModeProperty, value);
+        }
 
         public IconType Icon
         {
             get => (IconType)GetValue(IconProperty);
             set => SetValue(IconProperty, value);
+        }
+
+        public ImageType Image
+        {
+            get => (ImageType)GetValue(ImageProperty);
+            set => SetValue(ImageProperty, value);
         }
 
         public SolidColorBrush Fill
@@ -67,46 +168,33 @@ namespace Jamesnet.Wpf.Controls
             set => SetValue(DataProperty, value);
         }
 
+        public ImageSource Source
+        {
+            get => (ImageSource)GetValue(SourceProperty);
+            set => SetValue(SourceProperty, value);
+        }
+
         private static void IconPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             JamesIcon jamesIcon = (JamesIcon)d;
-            string geometryData = "";
-
-            switch (jamesIcon.Icon)
-            {
-                case IconType.Apple: geometryData = GeometryData.Apple; break;
-                case IconType.AccountMultipleOutline: geometryData = GeometryData.AccountMultipleOutline; break;
-                case IconType.BellOutline: geometryData = GeometryData.BellOutline; break;
-                case IconType.CardMultiple: geometryData = GeometryData.CardMultiple; break;
-                case IconType.CardMultipleOutline: geometryData = GeometryData.CardMultipleOutline; break;
-                case IconType.CheckDecagram: geometryData = GeometryData.CheckDecagram; break;
-                case IconType.Comment: geometryData = GeometryData.Comment; break;
-                case IconType.CommentOutline: geometryData = GeometryData.CommentOutline; break;
-                case IconType.Domain: geometryData = GeometryData.Domain; break;
-                case IconType.DotsHorizontal: geometryData = GeometryData.DotsHorizontal; break;
-                case IconType.Email: geometryData = GeometryData.Email; break;
-                case IconType.EmailOutLine: geometryData = GeometryData.EmailOutLine; break;
-                case IconType.Facebook: geometryData = GeometryData.Facebook; break;
-                case IconType.Google: geometryData = GeometryData.Google; break;
-                case IconType.Heart: geometryData = GeometryData.Heart; break;
-                case IconType.HeartOutline: geometryData = GeometryData.HeartOutline; break;
-                case IconType.Image: geometryData = GeometryData.Image; break;
-                case IconType.Instagram: geometryData = GeometryData.Instagram; break;
-                case IconType.Link: geometryData = GeometryData.Link; break;
-                case IconType.LinkBox: geometryData = GeometryData.LinkBox; break;
-                case IconType.Linkedin: geometryData = GeometryData.Linkedin; break;
-                case IconType.LinkVariant: geometryData = GeometryData.LinkVariant; break;
-                case IconType.MapMaker: geometryData = GeometryData.MapMaker; break;
-                case IconType.MapMarkerOutline: geometryData = GeometryData.MapMarkerOutline; break;
-                case IconType.Microsoft: geometryData = GeometryData.Microsoft; break;
-                case IconType.Netflix: geometryData = GeometryData.Netflix; break;
-                case IconType.Pin: geometryData = GeometryData.Pin; break;
-                case IconType.Star: geometryData = GeometryData.Star; break;
-                case IconType.Twitter: geometryData = GeometryData.Twitter; break;
-                case IconType.Youtube: geometryData = GeometryData.Youtube; break;
-            }
+            string geometryData = Design.Geometries.GeometryConverter.GetData(jamesIcon.Icon.ToString());
 
             jamesIcon.Data = Geometry.Parse(geometryData);
+            jamesIcon.Mode = IconMode.Icon;
+        }
+
+        private static void ImagePropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            JamesIcon jamesIcon = (JamesIcon)d;
+            string imageUrl = Design.Images.ImageConverter.GetData(jamesIcon.Image.ToString());
+
+            jamesIcon.Source = new BitmapImage(new Uri(imageUrl, UriKind.RelativeOrAbsolute));
+            jamesIcon.Mode = IconMode.Image;
+        }
+
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
         }
 
         static JamesIcon()

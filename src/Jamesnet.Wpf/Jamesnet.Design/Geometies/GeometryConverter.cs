@@ -1,7 +1,6 @@
-﻿using Jamesnet.Design.Geometry;
-using System.Runtime.CompilerServices;
+﻿using System.Runtime.CompilerServices;
 
-namespace Jamesnet.Design.Geometry
+namespace Jamesnet.Design.Geometries
 {
     public static class GeometryConverter
     {

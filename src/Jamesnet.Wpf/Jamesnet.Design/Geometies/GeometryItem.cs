@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace Jamesnet.Design.Geometry
+namespace Jamesnet.Design.Geometries
 {
     internal class GeometryItem
     {

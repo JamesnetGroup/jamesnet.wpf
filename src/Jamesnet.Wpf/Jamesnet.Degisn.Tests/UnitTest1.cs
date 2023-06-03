@@ -1,4 +1,3 @@
-using Jamesnet.Design.Geometry;
 
 namespace Jamesnet.Degisn.Tests
 {
