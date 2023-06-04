@@ -32,8 +32,9 @@
                                   Fill="{TemplateBinding Fill}"/>
                         </Viewbox>
                         <Image x:Name="image" 
-                               Width="24"
-                               Height="24"
+                               SnapsToDevicePixels="True"
+                               UseLayoutRounding="True"
+                               RenderOptions.BitmapScalingMode="HighQuality"
                                Source="{TemplateBinding Source}"
                                Visibility="Collapsed"/>
                     </Grid>

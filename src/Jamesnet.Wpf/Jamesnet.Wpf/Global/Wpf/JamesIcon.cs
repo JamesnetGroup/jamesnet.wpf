@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -186,9 +187,16 @@ namespace Jamesnet.Wpf.Controls
         private static void ImagePropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             JamesIcon jamesIcon = (JamesIcon)d;
-            string imageUrl = Design.Images.ImageConverter.GetData(jamesIcon.Image.ToString());
+            string base64 = Design.Images.ImageConverter.GetData(jamesIcon.Image.ToString());
+            
+            byte[] binaryData = Convert.FromBase64String(base64);
 
-            jamesIcon.Source = new BitmapImage(new Uri(imageUrl, UriKind.RelativeOrAbsolute));
+            BitmapImage bi = new BitmapImage();
+            bi.BeginInit();
+            bi.StreamSource = new MemoryStream(binaryData);
+            bi.EndInit();
+
+            jamesIcon.Source = bi;
             jamesIcon.Mode = IconMode.Image;
         }
 

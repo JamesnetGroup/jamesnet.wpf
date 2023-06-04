@@ -6,7 +6,7 @@ namespace Jamesnet.Design.Images
     {
         [JsonProperty("name")]
         public string Name { get; set; }
-        [JsonProperty("type")]
-        public string Type { get; set; }
+        [JsonProperty("data")]
+        public string Data { get; set; }
     }
 }

@@ -8,8 +8,13 @@
         Title="MainWindow" Height="450" Width="800">
     <StackPanel>
         <!--<james:JamesIcon Icon="Email" Width="24" Height="24"/>-->
-        <james:JamesIcon Icon="Netflix" Width="24" Height="24" Fill="Blue"/>
-        <james:JamesIcon Image="Spotify"/>
-        <Image Source="/Jamesnet.Design;component/Properties/Images/arsenal.png" Width="50" Height="50"/>
+        <!--<james:JamesIcon Icon="Netflix" Width="24" Height="24" Fill="Blue"/>-->
+        <james:JamesIcon Image="Bmw" Width="24" Height="24"/>
+        <james:JamesIcon Image="Porsche" Width="24" Height="24"/>
+        <james:JamesIcon Image="Disney" Width="24" Height="24"/>
+        <james:JamesIcon Image="DisneyPlus" Width="24" Height="24"/>
+        <james:JamesIcon Image="Tesla" Width="24" Height="24"/>
+        <james:JamesIcon Image="Benz" Width="24" Height="24"/>
+        <james:JamesIcon Image="ManchesterCity" Width="24" Height="24"/>
     </StackPanel>
 </Window>

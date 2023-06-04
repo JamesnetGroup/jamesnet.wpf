@@ -1,4 +1,5 @@
-﻿using System.Runtime.CompilerServices;
+﻿using Jamesnet.Design.Geometries;
+using System.Runtime.CompilerServices;
 
 namespace Jamesnet.Design.Images
 {
@@ -6,7 +7,7 @@ namespace Jamesnet.Design.Images
     {
         public static string GetData([CallerMemberName] string name = null)
         {
-            return $"/Jamesnet.Design;component/Properties/Images/{name.ToLower()}.png";
+            return ImageContainer._items[name].Data;
         }
     }
 }

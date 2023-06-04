@@ -2,84 +2,29 @@
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>disable</Nullable>
-    <Version>1.0.0.18</Version>
+    <Version>1.0.0.19</Version>
     <Authors>jamesnet</Authors>
     <Product>jamesnet</Product>
     <Copyright>jamesnet</Copyright>
     <PackageProjectUrl>https://github.com/jamesnet214</PackageProjectUrl>
     <RepositoryUrl>https://github.com/jamesnet214</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageTags>jamesnet,wpf</PackageTags>
+    <PackageTags>jamesnet,design</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Properties\Images\appstore.png" />
-    <None Remove="Properties\Images\arsenal.png" />
-    <None Remove="Properties\Images\benz.png" />
-    <None Remove="Properties\Images\bmw.png" />
-    <None Remove="Properties\Images\chelsea.png" />
-    <None Remove="Properties\Images\crystalpalace.png" />
-    <None Remove="Properties\Images\disney.png" />
-    <None Remove="Properties\Images\disneyplus.png" />
-    <None Remove="Properties\Images\everton.png" />
-    <None Remove="Properties\Images\honda.png" />
-    <None Remove="Properties\Images\hyundai.png" />
-    <None Remove="Properties\Images\leicestercity.png" />
-    <None Remove="Properties\Images\manchestercity.png" />
-    <None Remove="Properties\Images\manchesterunited.png" />
-    <None Remove="Properties\Images\newcastle.png" />
-    <None Remove="Properties\Images\porsche.png" />
-    <None Remove="Properties\Images\prime.png" />
-    <None Remove="Properties\Images\qq.png" />
-    <None Remove="Properties\Images\southhampton.png" />
-    <None Remove="Properties\Images\spotify.png" />
-    <None Remove="Properties\Images\sunderland.png" />
-    <None Remove="Properties\Images\swanseacity.png" />
-    <None Remove="Properties\Images\tesla.png" />
-    <None Remove="Properties\Images\tinder.png" />
-    <None Remove="Properties\Images\tottenham.png" />
-    <None Remove="Properties\Images\westbromwichalbion.png" />
-    <None Remove="Properties\Resources\Geometries.yaml" />
+    <None Remove="Properties\Resources\images.yaml" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources\images.yaml" />
     <EmbeddedResource Include="Properties\Resources\geometries.yaml" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="YamlDotNet.NetCore" Version="1.0.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Resource Include="Properties\Images\appstore.png" />
-    <Resource Include="Properties\Images\arsenal.png" />
-    <Resource Include="Properties\Images\benz.png" />
-    <Resource Include="Properties\Images\bmw.png" />
-    <Resource Include="Properties\Images\chelsea.png" />
-    <Resource Include="Properties\Images\crystalpalace.png" />
-    <Resource Include="Properties\Images\disney.png" />
-    <Resource Include="Properties\Images\disneyplus.png" />
-    <Resource Include="Properties\Images\everton.png" />
-    <Resource Include="Properties\Images\honda.png" />
-    <Resource Include="Properties\Images\hyundai.png" />
-    <Resource Include="Properties\Images\leicestercity.png" />
-    <Resource Include="Properties\Images\manchestercity.png" />
-    <Resource Include="Properties\Images\manchesterunited.png" />
-    <Resource Include="Properties\Images\newcastle.png" />
-    <Resource Include="Properties\Images\porsche.png" />
-    <Resource Include="Properties\Images\prime.png" />
-    <Resource Include="Properties\Images\qq.png" />
-    <Resource Include="Properties\Images\southhampton.png" />
-    <Resource Include="Properties\Images\spotify.png" />
-    <Resource Include="Properties\Images\sunderland.png" />
-    <Resource Include="Properties\Images\swanseacity.png" />
-    <Resource Include="Properties\Images\tesla.png" />
-    <Resource Include="Properties\Images\tinder.png" />
-    <Resource Include="Properties\Images\tottenham.png" />
-    <Resource Include="Properties\Images\westbromwichalbion.png" />
   </ItemGroup>
 
 </Project>
