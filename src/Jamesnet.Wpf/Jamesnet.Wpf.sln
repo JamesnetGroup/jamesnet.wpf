@@ -7,9 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jamesnet.Wpf", "Jamesnet.Wp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jamesnet.Design", "Jamesnet.Design\Jamesnet.Design.csproj", "{8A2F0C4B-DBA5-46BF-8557-F79800723AF8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jamesnet.Degisn.Tests", "Jamesnet.Degisn.Tests\Jamesnet.Degisn.Tests.csproj", "{D5C6657D-1F1B-4D99-B469-5726A6473048}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JamesnetTest", "JamesnetTest\JamesnetTest.csproj", "{D14137F1-4DB7-456F-B9AA-F2C3CC86A87A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JamesnetTest", "JamesnetTest\JamesnetTest.csproj", "{D14137F1-4DB7-456F-B9AA-F2C3CC86A87A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,10 +23,6 @@ Global
 		{8A2F0C4B-DBA5-46BF-8557-F79800723AF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8A2F0C4B-DBA5-46BF-8557-F79800723AF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8A2F0C4B-DBA5-46BF-8557-F79800723AF8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D5C6657D-1F1B-4D99-B469-5726A6473048}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D5C6657D-1F1B-4D99-B469-5726A6473048}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D5C6657D-1F1B-4D99-B469-5726A6473048}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D5C6657D-1F1B-4D99-B469-5726A6473048}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D14137F1-4DB7-456F-B9AA-F2C3CC86A87A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D14137F1-4DB7-456F-B9AA-F2C3CC86A87A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D14137F1-4DB7-456F-B9AA-F2C3CC86A87A}.Release|Any CPU.ActiveCfg = Release|Any CPU

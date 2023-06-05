@@ -78,5 +78,12 @@
         public static string FilePdf => GeometryConverter.GetData();
         public static string FileImage => GeometryConverter.GetData();
         public static string DotsHorizontalCircle => GeometryConverter.GetData();
+        public static string Home => GeometryConverter.GetData();
+        public static string HomeOutline => GeometryConverter.GetData();
+        public static string PlusBox => GeometryConverter.GetData();
+        public static string Database => GeometryConverter.GetData();
+        public static string DatabasePlus => GeometryConverter.GetData();
+        public static string Delete => GeometryConverter.GetData();
+        public static string Grid => GeometryConverter.GetData();
     }
 }
