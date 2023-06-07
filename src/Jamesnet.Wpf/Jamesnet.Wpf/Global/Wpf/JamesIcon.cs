@@ -118,6 +118,13 @@ namespace Jamesnet.Wpf.Controls
         FilePdf,
         FileImage,
         DotsHorizontalCircle,
+        Home,
+        HomeOutline,
+        PlusBox,
+        Database,
+        DatabasePlus,
+        Delete,
+        Grid,
     }
 
     public enum IconMode
