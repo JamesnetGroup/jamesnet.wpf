@@ -27,7 +27,7 @@
 
   <ItemGroup>
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.0" />
-    <PackageReference Include="Jamesnet.Design" Version="1.0.0.20" />
+    <PackageReference Include="Jamesnet.Design" Version="1.0.0.21" />
     <PackageReference Include="Prism.Unity" Version="8.1.97" />
     <PackageReference Include="WpfAutoGrid.Core" Version="1.5.1" />
   </ItemGroup>
