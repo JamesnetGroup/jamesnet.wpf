@@ -9,6 +9,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jamesnet.Design", "Jamesnet
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JamesnetTest", "JamesnetTest\JamesnetTest.csproj", "{D14137F1-4DB7-456F-B9AA-F2C3CC86A87A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IconSamples", "Sample\IconSamples.csproj", "{14A88890-5320-4E1C-869E-45F957B24D03}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{6CBA80F7-FDE2-4CA9-9429-3C60A6258736}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,9 +31,16 @@ Global
 		{D14137F1-4DB7-456F-B9AA-F2C3CC86A87A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D14137F1-4DB7-456F-B9AA-F2C3CC86A87A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D14137F1-4DB7-456F-B9AA-F2C3CC86A87A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14A88890-5320-4E1C-869E-45F957B24D03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14A88890-5320-4E1C-869E-45F957B24D03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14A88890-5320-4E1C-869E-45F957B24D03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14A88890-5320-4E1C-869E-45F957B24D03}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{14A88890-5320-4E1C-869E-45F957B24D03} = {6CBA80F7-FDE2-4CA9-9429-3C60A6258736}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {75B2C820-CED4-4AF0-AC77-978ED865A717}
