@@ -3,8 +3,8 @@
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
     <Nullable>disable</Nullable>
-    <Version>1.0.0.20</Version>
-    <Authors>jamesnet</Authors>
+    <Version>1.0.0.21</Version>
+    <Authors>jamesnet,lukewire</Authors>
     <Product>jamesnet</Product>
     <Copyright>jamesnet</Copyright>
     <PackageProjectUrl>https://github.com/jamesnet214</PackageProjectUrl>

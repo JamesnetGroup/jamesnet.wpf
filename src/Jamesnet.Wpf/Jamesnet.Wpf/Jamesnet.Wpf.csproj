@@ -4,8 +4,8 @@
     <TargetFramework>net7.0-windows</TargetFramework>
     <Nullable>disable</Nullable>
     <UseWPF>true</UseWPF>
-    <Version>1.0.0.26</Version>
-    <Authors>jamesnet</Authors>
+    <Version>1.0.0.27</Version>
+    <Authors>jamesnet,lukewire</Authors>
     <Product>jamesnet</Product>
     <Copyright>jamesnet</Copyright>
     <PackageProjectUrl>https://github.com/jamesnet214</PackageProjectUrl>
