@@ -125,6 +125,7 @@ namespace Jamesnet.Wpf.Controls
         DatabasePlus,
         Delete,
         Grid,
+        AccountGroup
     }
 
     public enum IconMode
