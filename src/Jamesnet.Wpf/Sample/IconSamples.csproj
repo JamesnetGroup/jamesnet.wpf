@@ -8,8 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Jamesnet.Design" Version="1.0.0.20" />
-    <PackageReference Include="Jamesnet.Wpf" Version="1.0.0.26" />
+    <ProjectReference Include="..\Jamesnet.Design\Jamesnet.Design.csproj" />
+    <ProjectReference Include="..\Jamesnet.Wpf\Jamesnet.Wpf.csproj" />
   </ItemGroup>
 
 </Project>

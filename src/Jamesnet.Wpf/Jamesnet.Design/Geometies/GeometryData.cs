@@ -85,7 +85,6 @@
 			 public static string DatabasePlus => GeometryConverter.GetData ();
 			 public static string Delete => GeometryConverter.GetData ();
 			 public static string Grid => GeometryConverter.GetData ();
-
 			 public static string AccountGroup => GeometryConverter.GetData ();
 	  }
 }

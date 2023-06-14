@@ -10,6 +10,6 @@
     Height="450"
     mc:Ignorable="d">
     <Grid>
-        <controls:JamesIcon Icon="FileCheck" />
+        <controls:JamesIcon Icon="AccountGroup" />
     </Grid>
 </Window>
