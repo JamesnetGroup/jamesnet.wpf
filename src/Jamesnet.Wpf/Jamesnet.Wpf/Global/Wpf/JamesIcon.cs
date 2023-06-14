@@ -125,7 +125,17 @@ namespace Jamesnet.Wpf.Controls
         DatabasePlus,
         Delete,
         Grid,
-        AccountGroup
+        AccountGroup,
+        PokerChip,
+        Creditcardchip,
+        CreditcardchipOutline,
+        Memory,
+        Account,
+        HomeCircle,
+        HomeCircleOutline,
+        Cash,
+        Cash100,
+        CashMulti
     }
 
     public enum IconMode

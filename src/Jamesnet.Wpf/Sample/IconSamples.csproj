@@ -8,7 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Jamesnet.Design\Jamesnet.Design.csproj" />
     <ProjectReference Include="..\Jamesnet.Wpf\Jamesnet.Wpf.csproj" />
   </ItemGroup>
 

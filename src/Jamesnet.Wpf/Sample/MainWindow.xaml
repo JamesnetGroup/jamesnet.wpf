@@ -10,6 +10,18 @@
     Height="450"
     mc:Ignorable="d">
     <Grid>
-        <controls:JamesIcon Icon="AccountGroup" />
+        <controls:JamesPanel HorizontalAlignment="Left" Spacing="10">
+            <controls:JamesIcon Icon="AccountGroup" />
+            <controls:JamesIcon Icon="PokerChip" />
+            <controls:JamesIcon Icon="Creditcardchip" />
+            <controls:JamesIcon Icon="CreditcardchipOutline" />
+            <controls:JamesIcon Icon="Memory" />
+            <controls:JamesIcon Icon="Account" />
+            <controls:JamesIcon Icon="HomeCircle" />
+            <controls:JamesIcon Icon="HomeCircleOutline" />
+            <controls:JamesIcon Icon="Cash" />
+            <controls:JamesIcon Icon="Cash100" />
+            <controls:JamesIcon Icon="CashMulti" />
+        </controls:JamesPanel>
     </Grid>
 </Window>
