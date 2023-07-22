@@ -87,7 +87,7 @@ namespace Jamesnet.Wpf.Controls
         ChevronDown,
         CursorPointer,
         CalendarMonth,
-        WindowMinimize,
+        Minimize,
         Web,
         Palette,
         Contentpaste,
@@ -135,7 +135,8 @@ namespace Jamesnet.Wpf.Controls
         HomeCircleOutline,
         Cash,
         Cash100,
-        CashMulti
+        CashMulti,
+        History
     }
 
     public enum IconMode

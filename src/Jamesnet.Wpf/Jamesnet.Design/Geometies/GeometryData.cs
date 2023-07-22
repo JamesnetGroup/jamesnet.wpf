@@ -47,7 +47,7 @@
         public static string ChevronDown => GeometryConverter.GetData ();
         public static string CursorPointer => GeometryConverter.GetData ();
         public static string CalendarMonth => GeometryConverter.GetData ();
-        public static string WindowMinimize => GeometryConverter.GetData ();
+        public static string Minimize => GeometryConverter.GetData ();
         public static string Web => GeometryConverter.GetData ();
         public static string Palette => GeometryConverter.GetData ();
         public static string Contentpaste => GeometryConverter.GetData ();
@@ -96,5 +96,6 @@
         public static string Cash => GeometryConverter.GetData ();
         public static string Cash100 => GeometryConverter.GetData ();
         public static string CashMulti => GeometryConverter.GetData ();
+        public static string History => GeometryConverter.GetData ();
     }
 }
