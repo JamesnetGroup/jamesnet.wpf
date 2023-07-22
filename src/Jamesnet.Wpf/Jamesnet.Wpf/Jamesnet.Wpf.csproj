@@ -4,7 +4,7 @@
     <TargetFramework>net7.0-windows</TargetFramework>
     <Nullable>disable</Nullable>
     <UseWPF>true</UseWPF>
-    <Version>1.0.0.27</Version>
+    <Version>1.0.0.28</Version>
     <Authors>jamesnet,lukewire</Authors>
     <Product>jamesnet</Product>
     <Copyright>jamesnet</Copyright>
@@ -12,7 +12,7 @@
     <RepositoryUrl>https://github.com/jamesnet214</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>jamesnet,wpf</PackageTags>
-    <Description>1</Description>
+    <Description>Wpf Support</Description>
   </PropertyGroup>
 
   <ItemGroup>
