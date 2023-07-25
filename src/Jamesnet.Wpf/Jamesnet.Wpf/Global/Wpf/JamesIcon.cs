@@ -146,7 +146,7 @@ namespace Jamesnet.Wpf.Controls
         Image,
     }
 
-    public class JamesIcon : Label
+    public class JamesIcon : ContentControl
     {
         private Viewbox _viewbox;
         private Image _image;
