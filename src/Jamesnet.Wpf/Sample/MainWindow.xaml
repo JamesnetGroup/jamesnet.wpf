@@ -12,7 +12,7 @@
     mc:Ignorable="d">
     <controls:JamesPanel
         Background="Beige"
-        Justify="SpaceEvenly"
+        Justify="SpaceAround"
         Orientation="Horizontal">
         <controls:JamesPanel.Resources>
             <Style TargetType="{x:Type controls:JamesIcon}">

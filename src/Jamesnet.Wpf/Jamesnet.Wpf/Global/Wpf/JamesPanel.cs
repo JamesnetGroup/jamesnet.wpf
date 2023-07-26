@@ -89,7 +89,7 @@ namespace Jamesnet.Wpf.Controls
             if(Height == 0 && Orientation == Orientation.Vertical) 
                 return;
 
-            var parent = VisualTreeHelper.GetParent (this) as ContentPresenter;
+            var parent = VisualTreeHelper.GetParent (this) as FrameworkElement;
             var parentSize = (Orientation == Orientation.Horizontal ? (double)parent.ActualWidth : (double)parent.ActualHeight);
             if (Justify == JustifyEnum.SpaceAround)
             {
