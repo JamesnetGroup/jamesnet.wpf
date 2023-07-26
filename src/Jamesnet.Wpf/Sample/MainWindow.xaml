@@ -5,11 +5,22 @@
     xmlns:controls="clr-namespace:Jamesnet.Wpf.Controls;assembly=Jamesnet.Wpf"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    x:Name="parent"
     Title="MainWindow"
     Width="800"
     Height="450"
     mc:Ignorable="d">
-    <controls:JamesPanel HorizontalAlignment="Left" Spacing="10">
+    <controls:JamesPanel
+        Width="{Binding ElementName=parent, Path=ActualWidth}"
+        Height="{Binding ElementName=parent, Path=ActualHeight}"
+        Background="Beige"
+        Orientation="Horizontal"
+        Spacing="50">
+        <controls:JamesPanel.Resources>
+            <Style TargetType="{x:Type controls:JamesIcon}">
+                <Setter Property="Background" Value="Blue" />
+            </Style>
+        </controls:JamesPanel.Resources>
         <controls:JamesIcon Icon="AccountGroup" />
         <controls:JamesIcon Icon="PokerChip" />
         <controls:JamesIcon Icon="Creditcardchip" />
