@@ -74,7 +74,19 @@ namespace Jamesnet.Wpf.Controls
             if(double.IsNaN (value)) return true;
 
             return false;
+        } 
+        public JamesPanel()
+        {
+            this.Loaded += JamesPanel_Loaded;
         }
+
+        private void JamesPanel_Loaded(object sender, RoutedEventArgs e)
+        {
+            var parent = VisualTreeHelper.GetParent (this) as FrameworkElement;
+            this.Width = parent.ActualWidth;
+            this.Height = parent.ActualHeight;
+        }
+
         private void justifyLayout()
         {
             double allChildSize = 0;
