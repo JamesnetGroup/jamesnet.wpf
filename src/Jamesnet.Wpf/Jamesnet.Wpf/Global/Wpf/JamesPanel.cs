@@ -61,7 +61,7 @@ namespace Jamesnet.Wpf.Controls
         }
         private bool IsJustifyUseOption()
         {
-            if (IsNan(this.Width) || IsNan (this.Height))
+            if (IsNan(this.ActualWidth) || IsNan (this.ActualHeight))
                 return false;
             if (Justify == JustifyEnum.None)
                 return false;

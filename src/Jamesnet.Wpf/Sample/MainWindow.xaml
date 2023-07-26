@@ -11,11 +11,9 @@
     Height="450"
     mc:Ignorable="d">
     <controls:JamesPanel
-        Width="{Binding ElementName=parent, Path=ActualWidth}"
-        Height="{Binding ElementName=parent, Path=ActualHeight}"
         Background="Beige"
-        Orientation="Horizontal"
-        Spacing="50">
+        Justify="SpaceEvenly"
+        Orientation="Horizontal">
         <controls:JamesPanel.Resources>
             <Style TargetType="{x:Type controls:JamesIcon}">
                 <Setter Property="Background" Value="Blue" />
