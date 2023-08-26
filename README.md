@@ -1,4 +1,4 @@
-# jamesnetwpf
+# jamesnet.wpf
 
 ## Using
 - [WPF: League of legends](https://github.com/jamesnet214/leagueoflegends)
