@@ -56,6 +56,7 @@
         public static string FolderOpen => GeometryConverter.GetData ();
         public static string FolderRable => GeometryConverter.GetData ();
         public static string Maximize => GeometryConverter.GetData ();
+        public static string Restore => GeometryConverter.GetData ();
         public static string Resize => GeometryConverter.GetData ();
         public static string SelectAll => GeometryConverter.GetData ();
         public static string ArrowLeftBold => GeometryConverter.GetData ();
@@ -97,5 +98,6 @@
         public static string Cash100 => GeometryConverter.GetData ();
         public static string CashMulti => GeometryConverter.GetData ();
         public static string History => GeometryConverter.GetData ();
+        public static string Cloud => GeometryConverter.GetData();
     }
 }
