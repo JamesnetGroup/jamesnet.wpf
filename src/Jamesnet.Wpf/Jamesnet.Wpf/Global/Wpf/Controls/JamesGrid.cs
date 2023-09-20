@@ -4,6 +4,10 @@ namespace Jamesnet.Wpf.Controls
 {
     public class JamesGrid : AutoGrid
     {
-
+        public JamesGrid()
+        {
+            this.Rows = "*";
+            this.Columns = "*";
+        }
     }
 }

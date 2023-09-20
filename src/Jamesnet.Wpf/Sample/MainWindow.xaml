@@ -2,33 +2,33 @@
     x:Class="IconSamples.MainWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:controls="clr-namespace:Jamesnet.Wpf.Controls;assembly=Jamesnet.Wpf"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:james="https://jamesnet.dev"
     x:Name="parent"
     Title="MainWindow"
     Width="800"
     Height="450"
     mc:Ignorable="d">
-    <controls:JamesPanel
+    <james:JamesPanel
         Background="Beige"
         Justify="SpaceEvenly"
         Orientation="Horizontal">
-        <controls:JamesPanel.Resources>
-            <Style TargetType="{x:Type controls:JamesIcon}">
+        <james:JamesPanel.Resources>
+            <Style TargetType="{x:Type james:JamesIcon}">
                 <Setter Property="Background" Value="Blue" />
             </Style>
-        </controls:JamesPanel.Resources>
-        <controls:JamesIcon Icon="AccountGroup" />
-        <controls:JamesIcon Icon="PokerChip" />
-        <controls:JamesIcon Icon="Creditcardchip" />
-        <controls:JamesIcon Icon="CreditcardchipOutline" />
-        <controls:JamesIcon Icon="Memory" />
-        <controls:JamesIcon Icon="Account" />
-        <controls:JamesIcon Icon="HomeCircle" />
-        <controls:JamesIcon Icon="HomeCircleOutline" />
-        <controls:JamesIcon Icon="Cash" />
-        <controls:JamesIcon Icon="Cash100" />
-        <controls:JamesIcon Icon="CashMulti" />
-    </controls:JamesPanel>
+        </james:JamesPanel.Resources>
+        <james:JamesIcon Icon="AccountGroup" />
+        <james:JamesIcon Icon="PokerChip" />
+        <james:JamesIcon Icon="Creditcardchip" />
+        <james:JamesIcon Icon="CreditcardchipOutline" />
+        <james:JamesIcon Icon="Memory" />
+        <james:JamesIcon Icon="Account" />
+        <james:JamesIcon Icon="HomeCircle" />
+        <james:JamesIcon Icon="HomeCircleOutline" />
+        <james:JamesIcon Icon="Cash" />
+        <james:JamesIcon Icon="Cash100" />
+        <james:JamesIcon Icon="CashMulti" />
+    </james:JamesPanel>
 </Window>
