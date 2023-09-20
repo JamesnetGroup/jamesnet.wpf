@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
     <Nullable>disable</Nullable>
-    <Version>1.0.0.24</Version>
+    <Version>1.0.0.25</Version>
     <Authors>jamesnet,lukewire</Authors>
     <Product>jamesnet</Product>
     <Copyright>jamesnet</Copyright>
