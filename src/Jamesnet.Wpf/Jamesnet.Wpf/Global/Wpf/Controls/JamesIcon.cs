@@ -96,6 +96,7 @@ namespace Jamesnet.Wpf.Controls
         FolderOpen,
         FolderRable,
         Maximize,
+        Restore,
         Resize,
         SelectAll,
         ArrowLeftBold,
@@ -136,7 +137,8 @@ namespace Jamesnet.Wpf.Controls
         Cash,
         Cash100,
         CashMulti,
-        History
+        History,
+        Cloud
     }
 
     public enum IconMode

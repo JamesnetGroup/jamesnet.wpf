@@ -1,0 +1,31 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:james="https://jamesnet.dev"
+    xmlns:views="clr-namespace:DarkWindowTest2.Forms.UI.Views">
+
+    <!--  절대 <Setter Property="Template"> 사용하면 안됨!  -->
+    <Style BasedOn="{StaticResource {x:Type james:DarkWindow}}" TargetType="{x:Type views:MainWindow}">
+        <Setter Property="Title">
+            <Setter.Value>
+                <StackPanel Orientation="Horizontal">
+                    <james:JamesIcon
+                        Width="30"
+                        Height="30"
+                        Image="Tottenham" />
+                    <TextBlock
+                        FontSize="20"
+                        Foreground="White"
+                        Text="Tottenham Manager" />
+                </StackPanel>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Content">
+            <Setter.Value>
+                <Grid>
+                    <james:JamesRegion RegionName="MainRegion" />
+                </Grid>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

@@ -6,8 +6,6 @@ namespace Jamesnet.Wpf.Controls
     {
         public JamesGrid()
         {
-            this.Rows = "*";
-            this.Columns = "*";
         }
     }
 }

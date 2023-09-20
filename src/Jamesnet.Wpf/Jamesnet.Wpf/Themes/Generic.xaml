@@ -1,8 +1,10 @@
-<ResourceDictionary
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="/Jamesnet.Wpf;Component/Themes/Controls/JamesRegion.xaml" />
         <ResourceDictionary Source="/Jamesnet.Wpf;Component/Themes/Controls/JamesIcon.xaml" />
+        <ResourceDictionary Source="/Jamesnet.Wpf;Component/Themes/Controls/CloseButton.xaml" />
+        <ResourceDictionary Source="/Jamesnet.Wpf;Component/Themes/Controls/MaximizeButton.xaml" />
+        <ResourceDictionary Source="/Jamesnet.Wpf;Component/Themes/Controls/MinimizeButton.xaml" />
+        <ResourceDictionary Source="/Jamesnet.Wpf;Component/Themes/Controls/DarkWindow.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>
