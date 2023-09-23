@@ -1,11 +1,11 @@
 ﻿<ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:james="https://jamesnet.dev"
+    xmlns:james="https://jamesnet.dev/xaml/presentation"
     xmlns:views="clr-namespace:DarkWindowTest2.Forms.UI.Views">
 
     <!--  절대 <Setter Property="Template"> 사용하면 안됨!  -->
-    <Style BasedOn="{StaticResource {x:Type james:DarkWindow}}" TargetType="{x:Type views:MainWindow}">
+    <Style BasedOn="{StaticResource {x:Type james:DarkThemeWindow}}" TargetType="{x:Type views:MainWindow}">
         <Setter Property="Title">
             <Setter.Value>
                 <StackPanel Orientation="Horizontal">

@@ -157,6 +157,11 @@ namespace Jamesnet.Wpf.Controls
         AccountCircle,
         FilterVariant,
         Ruler,
+        ArrowLeft,
+        ArrowRight,
+        ArrowLeftThin,
+        ArrowRightThin,
+        KeyboardBackspace
     }
 
     public enum IconMode

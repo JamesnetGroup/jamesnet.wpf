@@ -6,7 +6,7 @@
         <Setter Property="Grid.ColumnSpan" Value="4" />
         <Setter Property="Background" Value="Transparent" />
     </Style>
-    <Style TargetType="{x:Type ctrls:DarkWindow}">
+    <Style TargetType="{x:Type ctrls:DarkThemeWindow}">
         <Setter Property="Background" Value="#252525" />
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="BorderBrush" Value="#141414" />
@@ -27,7 +27,7 @@
         </Setter>
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type ctrls:DarkWindow}">
+                <ControlTemplate TargetType="{x:Type ctrls:DarkThemeWindow}">
                     <Border
                         Padding="0"
                         Background="{TemplateBinding Background}"

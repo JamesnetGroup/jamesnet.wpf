@@ -5,6 +5,6 @@
         <ResourceDictionary Source="/Jamesnet.Wpf;Component/Themes/Controls/CloseButton.xaml" />
         <ResourceDictionary Source="/Jamesnet.Wpf;Component/Themes/Controls/MaximizeButton.xaml" />
         <ResourceDictionary Source="/Jamesnet.Wpf;Component/Themes/Controls/MinimizeButton.xaml" />
-        <ResourceDictionary Source="/Jamesnet.Wpf;Component/Themes/Controls/DarkWindow.xaml" />
+        <ResourceDictionary Source="/Jamesnet.Wpf;Component/Themes/Controls/DarkThemeWindow.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

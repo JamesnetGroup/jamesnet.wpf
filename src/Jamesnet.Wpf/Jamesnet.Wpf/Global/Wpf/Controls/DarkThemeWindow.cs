@@ -4,13 +4,13 @@ using System.Windows.Input;
 
 namespace Jamesnet.Wpf.Controls;
 
-public class DarkWindow : JamesWindow
+public class DarkThemeWindow : JamesWindow
 {
     public static readonly DependencyProperty CloseCommandProperty =
-        DependencyProperty.Register("CloseCommand", typeof(ICommand), typeof(DarkWindow), new PropertyMetadata(null));
+        DependencyProperty.Register("CloseCommand", typeof(ICommand), typeof(DarkThemeWindow), new PropertyMetadata(null));
 
     public static readonly new DependencyProperty TitleProperty =
-        DependencyProperty.Register("Title", typeof(object), typeof(DarkWindow), new UIPropertyMetadata(null));
+        DependencyProperty.Register("Title", typeof(object), typeof(DarkThemeWindow), new UIPropertyMetadata(null));
 
     public new object Title
     {
@@ -25,12 +25,12 @@ public class DarkWindow : JamesWindow
     }
 
     private MaximizeButton maximBtn;
-    static DarkWindow()
+    static DarkThemeWindow()
     {
-        DefaultStyleKeyProperty.OverrideMetadata(typeof(DarkWindow), new FrameworkPropertyMetadata(typeof(DarkWindow)));
+        DefaultStyleKeyProperty.OverrideMetadata(typeof(DarkThemeWindow), new FrameworkPropertyMetadata(typeof(DarkThemeWindow)));
     }
 
-    public DarkWindow()
+    public DarkThemeWindow()
     {
 
     }

@@ -16,5 +16,5 @@ using System.Windows.Markup;
 // 이 프로젝트가 COM에 노출되는 경우 다음 GUID는 typelib의 ID를 나타냅니다.
 
 [assembly: Guid("4705033e-74b1-4f1e-8b6c-1e5f48c657a2")]
-[assembly: XmlnsDefinition("https://jamesnet.dev", "Jamesnet.Wpf.Controls")]
-[assembly: XmlnsPrefix("https://jamesnet.dev", "james")]
+[assembly: XmlnsDefinition("https://jamesnet.dev/xaml/presentation", "Jamesnet.Wpf.Controls")]
+[assembly: XmlnsPrefix("https://jamesnet.dev/xaml/presentation", "james")]

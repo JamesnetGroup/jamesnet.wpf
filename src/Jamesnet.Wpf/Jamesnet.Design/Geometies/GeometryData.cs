@@ -116,5 +116,10 @@
         public static string InformationOutline => GeometryConverter.GetData();
         public static string AccountCircle => GeometryConverter.GetData();
         public static string Ruler => GeometryConverter.GetData();
+        public static string ArrowLeft => GeometryConverter.GetData();
+        public static string ArrowRight => GeometryConverter.GetData();
+        public static string ArrowLeftThin => GeometryConverter.GetData();
+        public static string ArrowRightThin => GeometryConverter.GetData();
+        public static string KeyboardBackspace => GeometryConverter.GetData();
     }
 }

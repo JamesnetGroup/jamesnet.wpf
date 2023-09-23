@@ -29,18 +29,16 @@ namespace Jamesnet.Wpf.Controls
             return this;
         }
 
-        protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
-        {
-            foreach (IModule module in _modules)
-            {
-                moduleCatalog.AddModule(module.GetType());
-            }
-        }
-
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterInstance(typeof(IEventHub), EventAggregatorBuilder.Get(containerRegistry.GetContainer().Resolve<IEventAggregator>()));
+
+            foreach (IModule module in _modules)
+            {
+                module.RegisterTypes(containerRegistry);
+            }
         }
+
         public static T GetService<T>()
         {
             if (JamesApplication.Current is JamesApplication app)
