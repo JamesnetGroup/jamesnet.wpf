@@ -7,10 +7,10 @@ namespace Jamesnet.Wpf.Controls;
 public class DarkThemeWindow : JamesWindow
 {
     public static readonly DependencyProperty CloseCommandProperty =
-        DependencyProperty.Register("CloseCommand", typeof(ICommand), typeof(DarkThemeWindow), new PropertyMetadata(null));
+        DependencyProperty.Register(nameof(CloseCommand), typeof(ICommand), typeof(DarkThemeWindow), new PropertyMetadata(null));
 
     public static readonly new DependencyProperty TitleProperty =
-        DependencyProperty.Register("Title", typeof(object), typeof(DarkThemeWindow), new UIPropertyMetadata(null));
+        DependencyProperty.Register(nameof(Title), typeof(object), typeof(DarkThemeWindow), new UIPropertyMetadata(null));
 
     public new object Title
     {

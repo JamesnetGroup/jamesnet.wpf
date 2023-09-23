@@ -1,5 +1,4 @@
-﻿using Jamesnet.Design.Geometries;
-using System.Runtime.CompilerServices;
+﻿using System.Runtime.CompilerServices;
 
 namespace Jamesnet.Design.Images
 {

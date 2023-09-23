@@ -1,6 +1,5 @@
 ﻿using Jamesnet.Wpf.Global.Location;
 using Jamesnet.Wpf.Global.Evemt;
-using Prism.Events;
 using Prism.Ioc;
 using Prism.Modularity;
 using Prism.Unity;
