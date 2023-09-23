@@ -1,5 +1,4 @@
-﻿using Jamesnet.Wpf.Mvvm;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Windows;
 
 namespace Jamesnet.Wpf.Controls

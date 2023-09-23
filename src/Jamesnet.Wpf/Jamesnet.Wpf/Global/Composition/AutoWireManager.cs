@@ -1,12 +1,6 @@
 ﻿using Jamesnet.Wpf.Controls;
-using Jamesnet.Wpf.Mvvm;
 using Prism.Mvvm;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace Jamesnet.Wpf.Global.Composition

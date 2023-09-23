@@ -1,10 +1,7 @@
-﻿using System.Collections.Specialized;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
 using Jamesnet.Wpf.Global.Composition;
-using Jamesnet.Wpf.Mvvm;
-using Prism.Mvvm;
 
 namespace Jamesnet.Wpf.Controls
 {
