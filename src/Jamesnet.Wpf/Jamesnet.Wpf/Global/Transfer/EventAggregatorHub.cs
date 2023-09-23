@@ -5,11 +5,11 @@ using Prism.Events;
 
 namespace Jamesnet.Wpf.Global.Evemt
 {
-    public class EventAggregatorHub : IEventHub
+    internal class EventAggregatorHub : IEventHub
     {
         private IEventAggregator _ea;
 
-        public EventAggregatorHub(IEventAggregator ea)
+        internal EventAggregatorHub(IEventAggregator ea)
         {
             Debug.WriteLine("new ea");
             _ea = ea;

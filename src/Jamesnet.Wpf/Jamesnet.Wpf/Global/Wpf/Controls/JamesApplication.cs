@@ -31,7 +31,7 @@ namespace Jamesnet.Wpf.Controls
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            containerRegistry.RegisterInstance(typeof(IEventHub), EventAggregatorBuilder.Get(containerRegistry.GetContainer().Resolve<IEventAggregator>()));
+            containerRegistry.RegisterSingleton<IEventHub, EventAggregatorHub>();
 
             foreach (IModule module in _modules)
             {
