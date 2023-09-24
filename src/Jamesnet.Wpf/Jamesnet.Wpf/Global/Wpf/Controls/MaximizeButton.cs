@@ -13,7 +13,7 @@ namespace Jamesnet.Wpf.Controls
 
         // Using a DependencyProperty as the backing store for IsMaximize.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty IsMaximizeProperty =
-            DependencyProperty.Register ("IsMaximize", typeof (bool), typeof (MaximizeButton), new PropertyMetadata (false, MaximizePropertyChanged));
+            DependencyProperty.Register (nameof(IsMaximize), typeof(bool), typeof(MaximizeButton), new PropertyMetadata (false, MaximizePropertyChanged));
 
         private static void MaximizePropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {

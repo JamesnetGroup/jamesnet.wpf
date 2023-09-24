@@ -6,7 +6,7 @@ namespace Jamesnet.Wpf.Controls
 {
     public class JamesRegion : ContentControl
     {
-        public static readonly DependencyProperty RegionNameProperty = DependencyProperty.Register("RegionName", typeof(string), typeof(JamesRegion), new PropertyMetadata(ContentNamePropertyChanged));
+        public static readonly DependencyProperty RegionNameProperty = DependencyProperty.Register(nameof(RegionName), typeof(string), typeof(JamesRegion), new PropertyMetadata(ContentNamePropertyChanged));
 
         public string RegionName
         {

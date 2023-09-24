@@ -6,13 +6,6 @@ using System.Windows.Media;
 
 namespace Jamesnet.Wpf.Controls
 {
-    public enum JustifyEnum
-    {
-        None,
-        SpaceAround,
-        SpaceBetween,
-        SpaceEvenly
-    }
     public class JamesPanel : StackPanel
     {
         public double Spacing
@@ -22,7 +15,7 @@ namespace Jamesnet.Wpf.Controls
         }
 
         public static readonly DependencyProperty SpacingProperty =
-            DependencyProperty.Register ("Spacing", typeof (double), typeof (JamesPanel), new PropertyMetadata (0.0));
+            DependencyProperty.Register(nameof(Spacing), typeof(double), typeof(JamesPanel), new PropertyMetadata(0.0));
 
         public JustifyEnum Justify
         {
@@ -30,9 +23,8 @@ namespace Jamesnet.Wpf.Controls
             set { SetValue (JustifyProperty, value); }
         }
 
-        // Using a DependencyProperty as the backing store for Justify.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty JustifyProperty =
-            DependencyProperty.Register ("Justify", typeof (JustifyEnum), typeof (JamesPanel), new PropertyMetadata (JustifyEnum.None));
+            DependencyProperty.Register(nameof(Justify), typeof(JustifyEnum), typeof(JamesPanel), new PropertyMetadata(JustifyEnum.None));
 
         protected override Size MeasureOverride(Size constraint)
         {
@@ -156,16 +148,16 @@ namespace Jamesnet.Wpf.Controls
             if (base.Children.Count <= 1)
                 return;
 
-            Thickness thick = Orientation == Orientation.Horizontal ? new Thickness (0, 0, Spacing, 0) : new Thickness (0, 0, 0, Spacing);
+            Thickness thick = Orientation == Orientation.Horizontal ? new Thickness(0, 0, Spacing, 0) : new Thickness(0, 0, 0, Spacing);
 
             int lastIdx = base.Children.Count - 1;
             int idx = 0;
             foreach (UIElement child in base.Children)
             {
-                child.SetValue (MarginProperty, new Thickness (0, 0, 0, 0));
+                child.SetValue(MarginProperty, new Thickness(0, 0, 0, 0));
                 if (lastIdx == idx)
                     break;
-                child.SetValue (MarginProperty, thick);
+                child.SetValue(MarginProperty, thick);
                 idx++;
             }
         }

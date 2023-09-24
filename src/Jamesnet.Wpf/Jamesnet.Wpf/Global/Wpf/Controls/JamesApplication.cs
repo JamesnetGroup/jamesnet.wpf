@@ -44,7 +44,7 @@ namespace Jamesnet.Wpf.Controls
             {
                 return app.Container.Resolve<T>();
             }
-            return default(T);
+            return default;
         }
     }
 }
