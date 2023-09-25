@@ -4,7 +4,7 @@ using Jamesnet.Wpf.Global.Composition;
 
 namespace Jamesnet.Wpf.Controls
 {
-    public class JamesWindow : Window, IViewable
+    public abstract class JamesWindow : Window, IViewable
     {
         private readonly AutoWireManager _autoWireManager;
 

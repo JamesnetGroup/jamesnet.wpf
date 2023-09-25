@@ -4,5 +4,9 @@ namespace Jamesnet.Wpf.Mvvm
 {
     public class ObservableBase : ObservableObject
     {
+        public ObservableBase() 
+        {
+            
+        }
     }
 }
