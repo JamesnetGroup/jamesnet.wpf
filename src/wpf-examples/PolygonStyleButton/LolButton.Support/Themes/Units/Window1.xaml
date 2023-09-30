@@ -1,0 +1,13 @@
+﻿<Window x:Class="LolButton.Support.Themes.Units.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LolButton.Support.Themes.Units"
+        mc:Ignorable="d" Background="Blue"
+        Title="Window1" Height="100" Width="500">
+    <Grid Width="180" Height="48" Background="White">
+        <Polygon Points="0,0 158,0 180,24 158,48 0,48" Fill="Red"/>
+        <Ellipse Width="80" Height="80" HorizontalAlignment="Left" Fill="Green" Margin="-75,-16,0,-16"/>
+    </Grid>
+</Window>

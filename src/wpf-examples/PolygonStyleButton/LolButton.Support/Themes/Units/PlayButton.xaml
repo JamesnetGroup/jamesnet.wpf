@@ -1,0 +1,113 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:units="clr-namespace:LolButton.Support.UI.Units">
+    
+    <Geometry x:Key="ArrowGeometry">
+        M1,1 L155.86254,1 177.86254,23.999998 155.86254,46.999998 1,46.999998 1.069199,46.879649 C4.7638744,40.078371 6.8625396,32.28427 6.8625406,23.999998 6.8625396,15.715727 4.7638744,7.9216255 1.069199,1.1203489 z
+    </Geometry>
+    
+    <BitmapImage x:Key="LeagueOfLegends">
+        /LolButton.Support;component/Resources/logo.png
+    </BitmapImage>
+
+    <SolidColorBrush x:Key="GeometryFill" Color="#1E2328"/>
+
+    <LinearGradientBrush x:Key="GeometryFillOver" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FF1D3B4A" Offset="0"/>
+        <GradientStop Color="#FF082734" Offset="1"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="GeometryStroke" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#CC3FE7FF" Offset="0"/>
+        <GradientStop Color="#CC006D7D" Offset="0.5"/>
+        <GradientStop Color="#CC0493A7" Offset="1"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="GeometryStrokeOver" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FFAFF5FF" Offset="0"/>
+        <GradientStop Color="#FF46E6FF" Offset="0.5"/>
+        <GradientStop Color="#FF00ADD4" Offset="1"/>
+    </LinearGradientBrush>
+
+    <Style TargetType="{x:Type Border}" x:Key="GoldLine">
+        <Setter Property="Background" Value="#00070E"/>
+        <Setter Property="BorderBrush" Value="#34291E"/>
+        <Setter Property="BorderThickness" Value="1 1 1 1"/>
+        <Setter Property="Margin" Value="10 0 0 0"/>
+    </Style>
+    
+    <Style TargetType="{x:Type Border}" x:Key="GreenLine">
+        <Setter Property="Background" Value="#1E2328"/>
+        <Setter Property="BorderBrush" Value="#09343D"/>
+        <Setter Property="BorderThickness" Value="2 2 2 2"/>
+        <Setter Property="Margin" Value="50 4 4 4"/>
+    </Style>
+    
+    <Style TargetType="{x:Type Image}" x:Key="Emblem">
+        <Setter Property="Source" Value="{StaticResource LeagueOfLegends}"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="RenderOptions.BitmapScalingMode" Value="Fant"/>
+        <Setter Property="Height" Value="38"/>
+    </Style>
+    
+    <Style TargetType="{x:Type TextBlock}" x:Key="PlayText">
+        <Setter Property="Text" Value="PLAY"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Margin" Value="30 0 0 0"/>
+        <Setter Property="FontSize" Value="15"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+    </Style>
+    
+    <Style TargetType="{x:Type Path}" x:Key="Arrow">
+        <Setter Property="Width" Value="120"/>
+        <Setter Property="Height" Value="32"/>
+        <Setter Property="Stretch" Value="Fill"/>
+        <Setter Property="Fill" Value="{StaticResource GeometryFill}"/>
+        <Setter Property="Stroke" Value="{StaticResource GeometryStroke}"/>
+        <Setter Property="Data" Value="{StaticResource ArrowGeometry}"/>
+        <Setter Property="StrokeThickness" Value="2"/>
+        <Setter Property="Margin" Value="40 4 5 4"/>
+        <Setter Property="Effect">
+            <Setter.Value>
+                <DropShadowEffect BlurRadius="5" Opacity="1" ShadowDepth="2"/>  
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type units:PlayButton}">
+        <Setter Property="MinWidth" Value="120"/>
+        <Setter Property="MinHeight" Value="32"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Foreground" Value="#AAFCF1DC"/>
+        <Setter Property="Margin" Value="27 0 0 0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type units:PlayButton}">
+                    <Grid Background="{TemplateBinding Background}">
+                        <Border Style="{StaticResource GoldLine}"/>
+                        <Image Style="{StaticResource Emblem}"/>
+                        <Border Style="{StaticResource GreenLine}"/>
+                        <Path x:Name="path" Style="{StaticResource Arrow}"/>
+                        <TextBlock Style="{StaticResource PlayText}"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="path" Property="Fill" Value="{StaticResource GeometryFillOver}"/>
+                            <Setter TargetName="path" Property="Stroke" Value="{StaticResource GeometryStrokeOver}"/>
+                            <Setter Property="Foreground" Value="#FFFCF1DC"/>
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="path" Property="Fill" Value="#1E2328"/>
+                            <Setter TargetName="path" Property="Stroke" Value="#5C5B57"/>
+                            <Setter Property="Foreground" Value="#3C3C41"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

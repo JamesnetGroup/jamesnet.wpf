@@ -4,7 +4,6 @@
     xmlns:ctrls="clr-namespace:Jamesnet.Wpf.Controls">
     <Style TargetType="{x:Type ctrls:CloseButton}">
         <Setter Property="Background" Value="Transparent" />
-        <Setter Property="Foreground" Value="#FFFFFF" />
         <Setter Property="Width" Value="35" />
         <Setter Property="Height" Value="35" />
         <Setter Property="Margin" Value="0" />
@@ -21,9 +20,11 @@
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
                             <Setter Property="Background" Value="#E04343" />
+                            <Setter Property="Foreground" Value="#FFFFFF" />
                         </Trigger>
                         <Trigger Property="IsPressed" Value="True">
                             <Setter Property="Background" Value="#B43838" />
+                            <Setter Property="Foreground" Value="#FFFFFF" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
