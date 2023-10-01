@@ -2,6 +2,11 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/LolButton.Support;component/Themes/Units/PropertyPanel.xaml"/>
+        <ResourceDictionary Source="/LolButton.Support;component/Themes/Units/DetailListItem.xaml"/>
+        <ResourceDictionary Source="/LolButton.Support;component/Themes/Units/DetailList.xaml"/>
+        <ResourceDictionary Source="/LolButton.Support;component/Themes/Units/ControlTreeItem.xaml"/>
+        <ResourceDictionary Source="/LolButton.Support;component/Themes/Units/ControlTreeView.xaml"/>
         <ResourceDictionary Source="/LolButton.Support;component/Themes/Units/PlayButton.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>
