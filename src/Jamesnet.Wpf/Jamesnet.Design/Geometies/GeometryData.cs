@@ -121,5 +121,6 @@
         public static string ArrowLeftThin => GeometryConverter.GetData();
         public static string ArrowRightThin => GeometryConverter.GetData();
         public static string KeyboardBackspace => GeometryConverter.GetData();
+        public static string ButtonCursor => GeometryConverter.GetData();
     }
 }

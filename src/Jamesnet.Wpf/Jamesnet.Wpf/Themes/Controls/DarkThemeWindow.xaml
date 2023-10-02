@@ -44,7 +44,10 @@
                                                     Grid.Column="0"
                                                     Style="{StaticResource BAR.DRAGGABLE}" />
                                 <Label Grid.Column="0"
+                                       Margin="10 0 0 0"
+                                       VerticalAlignment="Center"
                                        Content="{TemplateBinding Title}"
+                                       Foreground="{TemplateBinding Foreground}"
                                        IsHitTestVisible="False"/>
                                 <ctrls:MinimizeButton x:Name="PART_MinButton" Grid.Column="1" />
                                 <ctrls:MaximizeButton x:Name="PART_MaxButton" Grid.Column="2" />

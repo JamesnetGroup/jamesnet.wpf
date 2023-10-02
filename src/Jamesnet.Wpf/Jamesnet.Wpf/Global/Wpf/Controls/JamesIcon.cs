@@ -160,7 +160,8 @@ namespace Jamesnet.Wpf.Controls
         ArrowRight,
         ArrowLeftThin,
         ArrowRightThin,
-        KeyboardBackspace
+        KeyboardBackspace,
+        ButtonCursor
     }
 
     public enum IconMode

@@ -9,11 +9,17 @@
 
     <Style TargetType="{x:Type ctrls:AnatomyAnalyzer}"
            BasedOn="{StaticResource {x:Type ctrls:DarkThemeWindow}}">
+        <Setter Property="Foreground" Value="#FFFFFF"/>
+        <Setter Property="Title" Value="WPF Anatomy Analyzer"/>
         <Setter Property="Content">
             <Setter.Value>
-                <ctrls:JamesGrid>
-                    <units:ControlTreeView ItemsSource="{Binding Controls}"/>
-                    <ContentControl Content="{Binding Instance}"/>
+                <ctrls:JamesGrid Rows="*" Columns="Auto, *">
+                    <units:ControlTreeView ItemsSource="{Binding Controls}"
+                                           SelectionCommand="{Binding TreeItemSelectedCommand}"/>
+                    <ctrls:JamesRegion RegionName="AnatomyObjectRegion"
+                                       VerticalContentAlignment="Top" HorizontalContentAlignment="Left"
+                                       HorizontalAlignment="Left" VerticalAlignment="Top"
+                                       MinWidth="200" MinHeight="100"/>
                 </ctrls:JamesGrid>
             </Setter.Value>
         </Setter>
