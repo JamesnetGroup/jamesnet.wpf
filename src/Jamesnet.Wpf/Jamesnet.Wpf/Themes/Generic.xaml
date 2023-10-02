@@ -1,10 +1,14 @@
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Jamesnet.Wpf;Component/Themes/Units/ControlTreeItem.xaml" />
+        <ResourceDictionary Source="/Jamesnet.Wpf;Component/Themes/Units/ControlTreeView.xaml" />
+        <ResourceDictionary Source="/Jamesnet.Wpf;Component/Themes/Controls/AnatomyAnalyzer.xaml" />
         <ResourceDictionary Source="/Jamesnet.Wpf;Component/Themes/Controls/JamesRegion.xaml" />
         <ResourceDictionary Source="/Jamesnet.Wpf;Component/Themes/Controls/JamesIcon.xaml" />
         <ResourceDictionary Source="/Jamesnet.Wpf;Component/Themes/Controls/CloseButton.xaml" />
         <ResourceDictionary Source="/Jamesnet.Wpf;Component/Themes/Controls/MaximizeButton.xaml" />
         <ResourceDictionary Source="/Jamesnet.Wpf;Component/Themes/Controls/MinimizeButton.xaml" />
         <ResourceDictionary Source="/Jamesnet.Wpf;Component/Themes/Controls/DarkThemeWindow.xaml" />
+        <ResourceDictionary Source="/Jamesnet.Wpf;Component/Themes/Controls/AnatomyAnalyzer.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>
