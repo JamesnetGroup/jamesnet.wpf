@@ -11,6 +11,7 @@ using Jamesnet.Wpf.Local.Helpers;
 using Prism.Mvvm;
 using Jamesnet.Wpf.Local.ViewModels;
 using Jamesnet.Wpf.Local.Models;
+using Jamesnet.Wpf.UI.Units;
 
 namespace Jamesnet.Wpf.Controls
 {
@@ -44,6 +45,7 @@ namespace Jamesnet.Wpf.Controls
 
             containerRegistry.RegisterSingleton<AnatomyService>();
             ViewModelLocationProvider.Register<AnatomyAnalyzer, AnatomyAnalyzerViewModel>();
+            ViewModelLocationProvider.Register<AnatomyPreview, AnatomyContentViewModel>();
         }
 
         protected virtual void RegisterControls(AnatomyCollection items)

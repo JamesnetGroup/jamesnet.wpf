@@ -17,8 +17,6 @@
                     <units:ControlTreeView ItemsSource="{Binding Controls}"
                                            SelectionCommand="{Binding TreeItemSelectedCommand}"/>
                     <ctrls:JamesRegion RegionName="AnatomyObjectRegion"
-                                       VerticalContentAlignment="Top" HorizontalContentAlignment="Left"
-                                       HorizontalAlignment="Left" VerticalAlignment="Top"
                                        MinWidth="200" MinHeight="100"/>
                 </ctrls:JamesGrid>
             </Setter.Value>

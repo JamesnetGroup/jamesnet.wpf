@@ -9,7 +9,10 @@ using Prism.Regions;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
+using System.Windows.Shapes;
 
 namespace Jamesnet.Wpf.Local.ViewModels
 {
@@ -52,15 +55,56 @@ namespace Jamesnet.Wpf.Local.ViewModels
                     anatomyItem.Name = item.Name;
                     anatomyItem.Type = item;
                     anatomyItem.IconType = IconType.ButtonCursor;
+                    anatomyItem.Items = new();
                     Controls.Add(anatomyItem);
                 }
             }
         }
 
         [RelayCommand]
-        private void TreeItemSelected(AnatomyItem item)
+        private void TreeItemSelected(AnatomyItem anatomyItem)
         {
-            ImportContent("AnatomyObjectRegion", item);
+            ImportContent("AnatomyObjectRegion", anatomyItem);
+
+            List<DependencyObject> allChildren = new List<DependencyObject>();
+            if (anatomyItem.Instance is DependencyObject instance)
+            {
+                allChildren.Add(instance); // 여기서 인스턴스 자기 자신을 추가합니다.
+            }
+            allChildren.AddRange(GetAllChildren(anatomyItem.Instance));
+
+            //DetailList detailList = new DetailList();
+            //uniform.Columns = 3;
+            //uniform.Background = Brushes.Black;
+
+            anatomyItem.Items.Clear();
+
+            foreach (var child in allChildren)
+            {
+                if (child is FrameworkElement element)
+                {
+                    VisualBrush brush = new VisualBrush(element);
+                    brush.Stretch = Stretch.None;
+
+                    Rectangle rect = new Rectangle();
+                    rect.Width = element.ActualWidth;
+                    rect.Height = element.ActualHeight;
+                    rect.Fill = brush;
+
+                    var detailInfo = new DetailInfo();
+                    detailInfo.Content = rect;
+                    detailInfo.Name = element.GetType().Name;
+                    detailInfo.Instance = element;
+                    anatomyItem.Items.Add(detailInfo);
+                }
+            }
+
+
+
+            //detailList.ItemsSource = source1;
+            //detailList.SelectionChanged += DetailList_SelectionChanged;
+            //Grid.SetColumn(detailList, 2);
+            //grid.Children.Add(detailList);
         }
 
         private void ImportContent(string regionName, AnatomyItem item)
@@ -86,6 +130,61 @@ namespace Jamesnet.Wpf.Local.ViewModels
                 Instances.Add(item.Type, preview);
             }
             return Instances[item.Type];
+        }
+
+        private List<DependencyObject> GetAllChildren(DependencyObject parent)
+        {
+            var allChildren = new List<DependencyObject>();
+
+            int childrenCount = VisualTreeHelper.GetChildrenCount(parent);
+            for (int i = 0; i < childrenCount; i++)
+            {
+                var child = VisualTreeHelper.GetChild(parent, i);
+                allChildren.Add(child);
+
+                allChildren.AddRange(GetAllChildren(child));
+            }
+
+            return allChildren;
+        }
+
+
+        List<AnatomyItem> source = new List<AnatomyItem>();
+
+        void AddControl(object obj)
+        {
+            if (obj is DependencyObject dependencyObject)
+            {
+                AnatomyItem controlInfo = new AnatomyItem
+                {
+                    Name = obj.GetType().Name,
+                    ControlType = obj.GetType(),
+                    Instance = dependencyObject
+                };
+
+                AddChildControls(controlInfo, dependencyObject); // 자식 컨트롤들을 추가합니다.
+
+                source.Add(controlInfo); // 루트 컨트롤만 source 리스트에 추가합니다.
+            }
+        }
+
+        void AddChildControls(AnatomyItem parentControlInfo, DependencyObject parentDependencyObject)
+        {
+            int childrenCount = VisualTreeHelper.GetChildrenCount(parentDependencyObject);
+            for (int i = 0; i < childrenCount; i++)
+            {
+                var child = VisualTreeHelper.GetChild(parentDependencyObject, i);
+                AnatomyItem childControlInfo = new AnatomyItem
+                {
+                    Name = child.GetType().Name,
+                    ControlType = child.GetType(),
+                    Instance = child
+                };
+                parentControlInfo.Children.Add(childControlInfo); // 자식 ControlInfo를 Children 리스트에 추가합니다.
+
+                if (child is DependencyObject childDependencyObject)
+                    AddChildControls(childControlInfo, childDependencyObject); // 재귀적으로 하위 컨트롤들을 추가합니다.
+            }
         }
     }
 }
