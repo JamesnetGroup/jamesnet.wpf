@@ -2,6 +2,8 @@
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="/Jamesnet.Wpf;Component/Themes/Units/ExpandButton.xaml"/>
         <ResourceDictionary Source="/Jamesnet.Wpf;Component/Themes/Units/AnatomyPreview.xaml"/>
+        <ResourceDictionary Source="/Jamesnet.Wpf;Component/Themes/Units/DetailListItem.xaml"/>
+        <ResourceDictionary Source="/Jamesnet.Wpf;Component/Themes/Units/DetailList.xaml"/>
         <ResourceDictionary Source="/Jamesnet.Wpf;Component/Themes/Units/ControlTreeItem.xaml"/>
         <ResourceDictionary Source="/Jamesnet.Wpf;Component/Themes/Units/ControlTreeView.xaml"/>
         <ResourceDictionary Source="/Jamesnet.Wpf;Component/Themes/Controls/AnatomyAnalyzer.xaml"/>

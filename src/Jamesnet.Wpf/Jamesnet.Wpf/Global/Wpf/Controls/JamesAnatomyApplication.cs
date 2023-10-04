@@ -45,7 +45,6 @@ namespace Jamesnet.Wpf.Controls
 
             containerRegistry.RegisterSingleton<AnatomyService>();
             ViewModelLocationProvider.Register<AnatomyAnalyzer, AnatomyAnalyzerViewModel>();
-            ViewModelLocationProvider.Register<AnatomyPreview, AnatomyContentViewModel>();
         }
 
         protected virtual void RegisterControls(AnatomyCollection items)

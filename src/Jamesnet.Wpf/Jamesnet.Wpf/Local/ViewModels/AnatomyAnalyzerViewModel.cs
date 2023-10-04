@@ -1,4 +1,5 @@
-﻿using CommunityToolkit.Mvvm.Input;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using Jamesnet.Wpf.Controls;
 using Jamesnet.Wpf.Local.Helpers;
 using Jamesnet.Wpf.Local.Models;
@@ -11,6 +12,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Media;
 using System.Windows.Shapes;
 
@@ -23,7 +25,7 @@ namespace Jamesnet.Wpf.Local.ViewModels
         private readonly IContainerProvider _containerProvider;
         private readonly IRegionManager _regionManager;
 
-        public Dictionary<Type, object> Instances { get; set; }
+        public Dictionary<Type, DependencyObject> Instances { get; set; }
 
         public ObservableCollection<AnatomyItem> Controls { get; set; }
 
@@ -39,7 +41,6 @@ namespace Jamesnet.Wpf.Local.ViewModels
 
         public void OnLoaded(IViewable view)
         {
-
         }
 
         private void _anatomyService_AnatomyControlChanged(object sender, AnatomyControlChangedEventArgs e)
@@ -65,52 +66,18 @@ namespace Jamesnet.Wpf.Local.ViewModels
         private void TreeItemSelected(AnatomyItem anatomyItem)
         {
             ImportContent("AnatomyObjectRegion", anatomyItem);
-
-            List<DependencyObject> allChildren = new List<DependencyObject>();
-            if (anatomyItem.Instance is DependencyObject instance)
-            {
-                allChildren.Add(instance); // 여기서 인스턴스 자기 자신을 추가합니다.
-            }
-            allChildren.AddRange(GetAllChildren(anatomyItem.Instance));
-
-            //DetailList detailList = new DetailList();
-            //uniform.Columns = 3;
-            //uniform.Background = Brushes.Black;
-
-            anatomyItem.Items.Clear();
-
-            foreach (var child in allChildren)
-            {
-                if (child is FrameworkElement element)
-                {
-                    VisualBrush brush = new VisualBrush(element);
-                    brush.Stretch = Stretch.None;
-
-                    Rectangle rect = new Rectangle();
-                    rect.Width = element.ActualWidth;
-                    rect.Height = element.ActualHeight;
-                    rect.Fill = brush;
-
-                    var detailInfo = new DetailInfo();
-                    detailInfo.Content = rect;
-                    detailInfo.Name = element.GetType().Name;
-                    detailInfo.Instance = element;
-                    anatomyItem.Items.Add(detailInfo);
-                }
-            }
-
-
-
-            //detailList.ItemsSource = source1;
-            //detailList.SelectionChanged += DetailList_SelectionChanged;
-            //Grid.SetColumn(detailList, 2);
-            //grid.Children.Add(detailList);
         }
 
         private void ImportContent(string regionName, AnatomyItem item)
         {
             IRegion region = _regionManager.Regions[regionName];
-            object content = GetControl(item);
+            DependencyObject content = GetControl(item);
+
+            if (content is ContentControl contentControl)
+            {
+                item.Instance = contentControl.Content as DependencyObject;
+
+            }
 
             if (!region.Views.Contains(content))
             {
@@ -119,17 +86,53 @@ namespace Jamesnet.Wpf.Local.ViewModels
             region.Activate(content);
         }
 
-        private object GetControl(AnatomyItem item)
+        private DependencyObject GetControl(AnatomyItem item)
         {
             if (!Instances.ContainsKey(item.Type))
             {
                 Control control = (Control)Activator.CreateInstance(item.Type);
                 AnatomyPreview preview = new();
+                preview.Loaded += Preview_Loaded;
                 preview.Content = control;
                 preview.DataContext = item;
                 Instances.Add(item.Type, preview);
             }
             return Instances[item.Type];
+        }
+
+        private void Preview_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (sender is FrameworkElement fe && fe.DataContext is AnatomyItem anatomyItem)
+            {
+                List<DependencyObject> allChildren = new List<DependencyObject>();
+                if (anatomyItem.Instance is DependencyObject instance)
+                {
+                    allChildren.Add(instance); // 여기서 인스턴스 자기 자신을 추가합니다.
+                }
+                allChildren.AddRange(GetAllChildren(anatomyItem.Instance));
+
+                anatomyItem.Items.Clear();
+
+                foreach (var child in allChildren)
+                {
+                    if (child is FrameworkElement element)
+                    {
+                        VisualBrush brush = new VisualBrush(element);
+                        brush.Stretch = Stretch.None;
+
+                        Rectangle rect = new Rectangle();
+                        rect.Width = element.ActualWidth;
+                        rect.Height = element.ActualHeight;
+                        rect.Fill = brush;
+
+                        var item = new DetailInfo();
+                        item.Content = rect;
+                        item.Name = element.GetType().Name;
+                        item.Instance = element;
+                        anatomyItem.Items.Add(item);
+                    }
+                }
+            }
         }
 
         private List<DependencyObject> GetAllChildren(DependencyObject parent)

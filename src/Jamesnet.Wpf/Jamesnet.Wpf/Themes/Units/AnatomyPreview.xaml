@@ -9,12 +9,13 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type units:AnatomyPreview}">
+                    <james:JamesGrid Rows="Auto, *" Columns="*">
                         <Border x:Name="item"
                                 BorderThickness="2"
                                 BorderBrush="Gold"
                                 Background="{TemplateBinding Background}">
                             <james:JamesGrid Rows="Auto,*" Columns="*">
-                                    <Label x:Name="text"
+                                <Label x:Name="text"
                                            Background="Gold"
                                            Foreground="#000000"
                                                FontWeight="Bold"
@@ -27,9 +28,11 @@
                                                   MinHeight="20"
                                                   VerticalAlignment="Center"
                                                   HorizontalAlignment="Center"/>
-                            <units:DetailList ItemsSource="{Binding Items}"/>
-                        </james:JamesGrid>
+                            </james:JamesGrid>
                         </Border>
+
+                        <units:DetailList ItemsSource="{Binding Items}"/>
+                    </james:JamesGrid>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
