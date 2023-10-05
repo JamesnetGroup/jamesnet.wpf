@@ -152,7 +152,7 @@ namespace Jamesnet.Wpf.Composition
         {
             _app.Resources.MergedDictionaries.Remove(LanguageResources[_currentLanguage]);
             _app.Resources.MergedDictionaries.Add(LanguageResources[value]);
-            _currentTheme = value;
+            _currentLanguage = value;
         }
     }
 }
