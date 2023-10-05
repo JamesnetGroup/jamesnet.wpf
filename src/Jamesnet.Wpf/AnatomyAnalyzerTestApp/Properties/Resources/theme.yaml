@@ -7,3 +7,8 @@
     colors:
       black: "#666666"
       light: "#999999"
+fonts:
+  - key: Basic.Font
+    fonts:
+      black: "Roboto"
+      light: "Roboto"    

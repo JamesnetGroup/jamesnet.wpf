@@ -52,18 +52,18 @@ namespace Jamesnet.Wpf.Controls
 
             if (theme != null)
             {
-                containerRegistry.RegisterInstance(theme as ThemeInitializer);
-                containerRegistry.RegisterSingleton<ThemeManager>();
+                containerRegistry.RegisterInstance(theme as ResourceInitializer);
+                containerRegistry.RegisterSingleton<ResourceManager>();
+                ResourceManager themeManager = GetService<ResourceManager>();
             }
 
             foreach (IModule module in _modules)
             {
                 module.RegisterTypes(containerRegistry);
             }
-            ThemeManager themeManager = GetService<ThemeManager>();
         }
 
-        public JamesApplication InitializeTheme<T>() where T : ThemeInitializer, new()
+        public JamesApplication InitializeTheme<T>() where T : ResourceInitializer, new()
         {
             theme = new T();
             return this;

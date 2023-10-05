@@ -4,8 +4,8 @@
     <TargetFramework>net7.0-windows</TargetFramework>
     <Nullable>disable</Nullable>
     <UseWPF>true</UseWPF>
-    <Version>1.0.0.50</Version>
-    <Authors>jamesnet,lukewire</Authors>
+    <Version>1.0.0.57</Version>
+    <Authors>jamesnet, lukewire, vickyqu</Authors>
     <Product>jamesnet</Product>
     <Copyright>jamesnet</Copyright>
     <PackageProjectUrl>https://github.com/jamesnet214</PackageProjectUrl>
@@ -13,6 +13,7 @@
     <RepositoryType>git</RepositoryType>
     <PackageTags>jamesnet,wpf</PackageTags>
     <Description>Wpf Support</Description>
+    <PackageIcon>logo.png</PackageIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -30,5 +31,9 @@
     <PackageReference Include="Jamesnet.Design" Version="1.0.0.30" />
     <PackageReference Include="Prism.Unity" Version="8.1.97" />
     <PackageReference Include="WpfAutoGrid.Core" Version="1.5.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Resources\logo.png" Pack="true" PackagePath="" />
   </ItemGroup>
 </Project>

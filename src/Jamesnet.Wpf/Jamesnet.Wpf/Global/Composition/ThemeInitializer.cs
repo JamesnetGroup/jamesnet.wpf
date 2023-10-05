@@ -6,18 +6,25 @@ using System.Threading.Tasks;
 
 namespace Jamesnet.Wpf.Global.Composition
 {
-    public abstract class ThemeInitializer
+    public abstract class ResourceInitializer
     {
-        public string Resource { get; }
+        public string ThemeResource { get; }
+        public string DefaultLanguage { get; }
         public string DefaultTheme { get; }
+        public string LanguageResource { get; }
 
-        protected abstract string InitializeResource();
-        protected abstract string InitializeDefaultTheme();
+        protected abstract string GetThemeResource();
+        protected abstract string GetDefaultTheme();
 
-        public ThemeInitializer()
+        protected abstract string GetLanguageResource();
+        protected abstract string GetDefaultLanguage();
+
+        public ResourceInitializer()
         {
-            Resource = InitializeResource();
-            DefaultTheme = InitializeDefaultTheme();
+            ThemeResource = GetThemeResource();
+            DefaultTheme = GetDefaultTheme();
+            LanguageResource = GetLanguageResource();
+            DefaultLanguage = GetDefaultLanguage();
         }
     }
 }

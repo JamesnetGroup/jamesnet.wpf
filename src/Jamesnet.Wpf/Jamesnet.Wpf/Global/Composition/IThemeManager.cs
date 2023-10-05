@@ -9,7 +9,7 @@ namespace Jamesnet.Wpf.Composition
         {
             List<ThemeModel> ToList();
             ThemeModel ToCode();
-            void Switch(ThemeMode value);
+            void Switch(string value);
         }
     }
 }

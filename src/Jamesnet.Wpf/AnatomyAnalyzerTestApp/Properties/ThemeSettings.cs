@@ -7,16 +7,26 @@ using System.Threading.Tasks;
 
 namespace AnatomyAnalyzerTestApp.Properties
 {
-    public class ThemeSettings : ThemeInitializer
+    public class ThemeSettings : ResourceInitializer
     {
-        protected override string InitializeDefaultTheme()
+        protected override string GetDefaultTheme()
         {
             return "Black";
         }
 
-        protected override string InitializeResource()
+        protected override string GetThemeResource()
         {
             return "AnatomyAnalyzerTestApp.Properties.Resources.theme.yaml";
+        }
+
+        protected override string GetDefaultLanguage()
+        {
+            return "KOR";
+        }
+
+        protected override string GetLanguageResource()
+        {
+            return "AnatomyAnalyzerTestApp.Properties.Resources.language.yaml";
         }
     }
 }

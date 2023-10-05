@@ -9,10 +9,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Properties\Resources\language.yaml" />
     <None Remove="Properties\theme.yml" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources\language.yaml" />
     <EmbeddedResource Include="Properties\Resources\theme.yaml" />
   </ItemGroup>
 

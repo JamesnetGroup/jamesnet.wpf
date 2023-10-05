@@ -1,0 +1,299 @@
+﻿languages:
+  - key: All
+    items:
+      usa: All
+      kor: 전체
+      chn: 所有
+      jpn: すべて
+      vnm: Tất cả
+      esp: Todo
+  - key: Center
+    items:
+      usa: Center
+      kor: 센터
+      chn: 主页
+      jpn: 中心
+      vnm: Ở giữa
+      esp: en el centro
+  - key: Chinese
+    items:
+      usa: Chinese
+      kor: 중국어
+      chn: 中文
+      jpn: 中国語
+      vnm: người trung quốc
+      esp: Chino
+  - key: Close
+    items:
+      usa: Close
+      kor: 닫기
+      chn: 关闭
+      jpn: 締まる
+      vnm: chặt chẽ
+      esp: cerrado
+  - key: CurrentBranch
+    items:
+      usa: Current branch
+      kor: 선택된 브랜치
+      chn: 分支选项
+      jpn: 現在のブランチ
+      vnm: Chi nhánh hiện tại
+      esp: Cabezas corrientes
+  - key: CurrentRepository
+    items:
+      usa: Current repository
+      kor: 선택된 레포지터리
+      chn: 当前存储库
+      jpn: 現在のリポジトリ
+      vnm: Kho lưu trữ hiện thời
+      esp: Repositorios actuales
+  - key: Docs
+    items:
+      usa: Docs
+      kor: 독스
+      chn: 文档
+      jpn: 文書
+      vnm: tài liệu
+      esp: escritura
+  - key: Dotnet
+    items:
+      usa: Dotnet
+      kor: 닷넷
+      chn: .NET框架
+      jpn: .NETフレームワーク
+      vnm: Khuôn khổ .NET
+      esp: .NET
+  - key: IconBrowser
+    items:
+      usa: IconBrowser
+      kor: 아이콘탐색기
+      chn: 文档
+      jpn: 文書
+      vnm: tài liệu
+      esp: escritura
+
+  - key: YamlEditor
+    items:
+      usa: YamlEditor
+      kor: Yaml편집기
+      chn: 文档
+      jpn: 文書
+      vnm: tài liệu
+      esp: escritura
+
+  - key: English
+    items:
+      usa: English
+      kor: 영어
+      chn: 英语
+      jpn: 英語
+      vnm: Tiếng Anh (Mỹ)
+      esp: Inglés
+  - key: Event
+    items:
+      usa: Event
+      kor: 이벤트
+      chn: 活动
+      jpn: イベント
+      vnm: Sự kiện
+      esp: evento
+  - key: Explorer
+    items:
+      usa: Explorer
+      kor: 탐색기
+      chn: 浏览器
+      jpn: 探索機
+      vnm: sự tìm kiếm
+  - key: Field
+    items:
+      usa: Field
+      kor: 필드
+      chn: 字段
+      jpn: フィールド
+      vnm: ruộng nương
+      esp: Campo de aplicación
+  - key: Framework
+    items:
+      usa: Framework
+      kor: 프레임워크
+      chn: 框架
+      jpn: フレームワーク
+      vnm: Khuôn khổ
+      esp: El marco
+  - key: Interim
+    items:
+      usa: Interim
+      kor: 인터림
+      chn: 间距
+      jpn: インターリム
+      vnm: sự liên lạc
+      esp: Intercepción
+  - key: James
+    items:
+      usa: James
+      kor: 제임스
+      chn: 詹姆斯
+      jpn: ジェームズ
+      vnm: James (cầu thủ bóng đá)
+  - key: Japanese
+    items:
+      usa: Japanese
+      kor: 일본어
+      chn: 日语
+      jpn: 日本語
+      vnm: tiếng Nhật
+      esp: Japonés
+  - key: Korean
+    items:
+      usa: Korean
+      kor: 한국어
+      chn: 韩语
+      jpn: 韓国語
+      vnm: Hàn QuốcName
+      esp: Coréano
+  - key: Languages
+    items:
+      usa: Languages
+      kor: 다국어
+      chn: 语言
+      jpn: 言語
+      vnm: Đa ngôn ngữ
+      esp: Idiomas
+  - key: LanguageSelection
+    items:
+      usa: Language selection.
+      kor: 언어를 선택해주세요.
+      chn: 请选择系统语言。
+      jpn: 言語を選択してください。
+      vnm: Chọn ngôn ngữ.
+      esp: Selección de idiomas.
+  - key: Method
+    items:
+      usa: Method
+      kor: 메서드
+      chn: 方法
+      jpn: 方法
+      vnm: Phương pháp
+      esp: Metodologia
+  - key: NotSupported
+    items:
+      usa: Not supported
+      kor: 지원안함
+      chn: 不支持
+      jpn: サポートされない
+      vnm: không được hỗ trợ
+      esp: No está apoyado
+  - key: Open
+    items:
+      usa: Open
+      kor: 열기
+      chn: 打开
+      jpn: オープン
+      vnm: không úp mở ra
+      esp: Abran
+  - key: PageNotFound
+    items:
+      usa: Page not found
+      kor: 페이지를 찾을 수 없습니다.
+      chn: 找不到网页
+      jpn: ページが見つかりません
+      vnm: không tìm thấy trang
+      esp: No encontré la página
+  - key: Palette
+    items:
+      usa: Palette
+      kor: 팔레트
+      chn: 调色板
+      jpn: パレット
+      vnm: Bảng màu
+      esp: Paleta
+  - key: PleaseSearch
+    items:
+      usa: Please search.
+      kor: 검색어를 입력해주세요.
+      chn: 请搜索
+      jpn: 検索してください
+      vnm: Bảng màu
+      esp: por favor busquen
+  - key: Property
+    items:
+      usa: Property
+      kor: 프로퍼티
+      chn: 属性
+      jpn: 属性
+      vnm: tài sản
+      esp: Propiedad
+  - key: References
+    items:
+      usa: References
+      kor: 레퍼런스
+      chn: 引用
+      jpn: 引用
+      vnm: Tham khảo
+      esp: Referencias
+  - key: Reflector
+    items:
+      usa: Reflector
+      kor: 리플렉터
+      chn: Reflector
+      jpn: Reflector
+      vnm: Reflector
+      esp: Reflector
+  - key: SPI
+    items:
+      usa: SPI
+      kor: SPI
+      chn: SPI
+      jpn: SPI
+      vnm: SPI
+      esp: SPI
+  - key: Storage
+    items:
+      usa: Storage
+      kor: 스토리지
+      chn: 存储
+      jpn: ストレージ
+      vnm: Lưu trữ
+      esp: El almacenamiento
+  - key: Theme
+    items:
+      usa: Theme
+      kor: 테마
+      chn: 主题
+      jpn: テーマ
+      vnm: Sắc thái
+      esp: Tema
+  - key: ThemeSelection
+    items:
+      usa: Theme selection.
+      kor: 테마를 선택해주세요.
+      chn: 主题选择。
+      jpn: テーマの選択。
+      vnm: Chọn sắc thái
+      esp: Selección de temas.
+  - key: UpdateOrigin
+    items:
+      usa: Update origin
+      kor: 업데이트 오리진
+      chn: 更新远程仓库
+      jpn: 発信元の更新
+      vnm: Cập nhật xuất xứ
+      esp: Actualiza el origen
+  - key: Web
+    items:
+      usa: Web
+      kor: 웹
+      chn: 网页
+      jpn: ウェブ
+      vnm: trang web
+      esp: Web
+  - key: MMI
+    items:
+      usa: MMI
+      kor: MMI
+      chn: MMI
+      jpn: MMI
+      vnm: MMI
+      esp: MMI
+
+

@@ -8,5 +8,9 @@ namespace Jamesnet.Wpf.Models
     {
         [YamlMember(Alias = "themes")]
         public List<ThemePack> Themes { get; set; }
+        [YamlMember(Alias = "fonts")]
+        public List<FontPack> Fonts { get; set; }
+        [YamlMember(Alias = "languages")]
+        public List<LanguagePack> Languages { get; set; }
     }
 }
