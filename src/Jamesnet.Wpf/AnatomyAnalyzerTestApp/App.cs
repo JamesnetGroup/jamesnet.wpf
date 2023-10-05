@@ -1,5 +1,6 @@
 ﻿using Jamesnet.Wpf.Controls;
 using Jamesnet.Wpf.Local.Models;
+using Jamesnet.Wpf.Models;
 using System.Windows;
 using System.Windows.Controls;
 

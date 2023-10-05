@@ -1,0 +1,9 @@
+﻿themes:
+  - key: Basic.Foreground
+    colors:
+      black: "#FFFFFF"
+      light: "#000000"
+  - key: Basic.Foreground.Subtitles
+    colors:
+      black: "#666666"
+      light: "#999999"

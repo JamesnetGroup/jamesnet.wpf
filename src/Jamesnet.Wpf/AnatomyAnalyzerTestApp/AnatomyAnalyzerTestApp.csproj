@@ -9,6 +9,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Properties\theme.yml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources\theme.yaml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Jamesnet.Wpf\Jamesnet.Wpf.csproj" />
   </ItemGroup>
 

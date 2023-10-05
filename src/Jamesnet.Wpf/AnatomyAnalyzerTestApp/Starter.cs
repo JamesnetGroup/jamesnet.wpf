@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AnatomyAnalyzerTestApp.Properties;
+using Jamesnet.Wpf.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +14,7 @@ namespace AnatomyAnalyzerTestApp
         private static void Main(string[] args)
         {
             _ = new App()
+                .InitializeTheme<ThemeSettings>()
                 .Run();
         }
     }
