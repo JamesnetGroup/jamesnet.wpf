@@ -3,18 +3,23 @@
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
     <Nullable>disable</Nullable>
-    <Version>1.0.0.30</Version>
-    <Authors>jamesnet,lukewire</Authors>
+    <Version>1.0.0.31</Version>
+    <Authors>jamesnet, lukewire, vickyqu</Authors>
     <Product>jamesnet</Product>
     <Copyright>jamesnet</Copyright>
     <PackageProjectUrl>https://github.com/jamesnet214</PackageProjectUrl>
     <RepositoryUrl>https://github.com/jamesnet214</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>jamesnet,design</PackageTags>
+    <PackageIcon>logo.png</PackageIcon>
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="Properties\Resources\images.yaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Resources\logo.png" Pack="true" PackagePath="" />
   </ItemGroup>
 
   <ItemGroup>

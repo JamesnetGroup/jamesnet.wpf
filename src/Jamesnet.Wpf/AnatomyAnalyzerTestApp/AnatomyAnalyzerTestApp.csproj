@@ -11,11 +11,13 @@
   <ItemGroup>
     <None Remove="Properties\Resources\language.yaml" />
     <None Remove="Properties\theme.yml" />
+    <None Remove="Resources\logo.png" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources\language.yaml" />
     <EmbeddedResource Include="Properties\Resources\theme.yaml" />
+    <Resource Include="Resources\logo.png" />
   </ItemGroup>
 
   <ItemGroup>

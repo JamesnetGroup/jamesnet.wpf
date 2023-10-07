@@ -23,8 +23,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DarkWindowTest2.Forms", "Da
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DarkWindowTest3", "DarkWindowTest3\DarkWindowTest3.csproj", "{89A28DCD-5AA7-4478-A12C-137CA9CADEB2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnatomyAnalyzerTestApp", "AnatomyAnalyzerTestApp\AnatomyAnalyzerTestApp.csproj", "{A5D92268-89E2-413A-AD2D-F8DF3D2A8A0F}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,10 +57,6 @@ Global
 		{89A28DCD-5AA7-4478-A12C-137CA9CADEB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{89A28DCD-5AA7-4478-A12C-137CA9CADEB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{89A28DCD-5AA7-4478-A12C-137CA9CADEB2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A5D92268-89E2-413A-AD2D-F8DF3D2A8A0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A5D92268-89E2-413A-AD2D-F8DF3D2A8A0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A5D92268-89E2-413A-AD2D-F8DF3D2A8A0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A5D92268-89E2-413A-AD2D-F8DF3D2A8A0F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -75,7 +69,6 @@ Global
 		{110A24BA-FFAF-40F6-8162-92D32C5819A3} = {9477ECB7-B9AE-42B3-A6C3-AF258F67215B}
 		{8B493AF1-919D-4F84-8BC3-3FDE1B0B26B1} = {110A24BA-FFAF-40F6-8162-92D32C5819A3}
 		{89A28DCD-5AA7-4478-A12C-137CA9CADEB2} = {110A24BA-FFAF-40F6-8162-92D32C5819A3}
-		{A5D92268-89E2-413A-AD2D-F8DF3D2A8A0F} = {6CBA80F7-FDE2-4CA9-9429-3C60A6258736}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {75B2C820-CED4-4AF0-AC77-978ED865A717}
