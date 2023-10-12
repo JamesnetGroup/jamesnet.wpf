@@ -18,8 +18,7 @@ namespace Jamesnet.Wpf.Controls
         private static void MaximizePropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var btn = (MaximizeButton)d;
-            if (btn.IsMaximize)
-                btn.img.Icon = btn.IsMaximize ? IconType.Restore : IconType.Maximize;
+            btn.img.Icon = btn.IsMaximize ? IconType.Restore : IconType.Maximize;
         }
 
         static MaximizeButton()
