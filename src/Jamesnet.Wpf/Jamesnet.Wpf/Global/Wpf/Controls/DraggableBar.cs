@@ -1,8 +1,6 @@
 ﻿using System.Windows.Controls;
 
-namespace Jamesnet.Wpf.Controls
+namespace Jamesnet.Wpf.Controls;
+public class DraggableBar : Border
 {
-    public class DraggableBar : Border
-    {
-    }
 }

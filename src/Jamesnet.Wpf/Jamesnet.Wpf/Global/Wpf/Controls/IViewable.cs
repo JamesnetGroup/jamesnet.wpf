@@ -1,11 +1,9 @@
 ﻿using System.ComponentModel;
 using System.Windows;
 
-namespace Jamesnet.Wpf.Controls
+namespace Jamesnet.Wpf.Controls;
+public interface IViewable
 {
-    public interface IViewable
-    {
-        FrameworkElement View { get; }
-        INotifyPropertyChanged ViewModel { get; }
-    }
+    FrameworkElement View { get; }
+    INotifyPropertyChanged ViewModel { get; }
 }

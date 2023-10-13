@@ -1,11 +1,9 @@
 ﻿using WpfAutoGrid;
 
-namespace Jamesnet.Wpf.Controls
+namespace Jamesnet.Wpf.Controls;
+public class JamesGrid : AutoGrid
 {
-    public class JamesGrid : AutoGrid
+    public JamesGrid()
     {
-        public JamesGrid()
-        {
-        }
     }
 }

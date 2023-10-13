@@ -1,7 +1,5 @@
-﻿namespace Jamesnet.Wpf.Controls
+﻿namespace Jamesnet.Wpf.Controls;
+public interface IViewLoadable
 {
-    public interface IViewLoadable
-    {
-        void OnLoaded(IViewable view);
-    }
+    void OnLoaded(IViewable view);
 }
