@@ -4,7 +4,7 @@
     <TargetFramework>net7.0-windows</TargetFramework>
     <Nullable>disable</Nullable>
     <UseWPF>true</UseWPF>
-    <Version>1.0.0.67</Version>
+    <Version>1.0.0.68</Version>
     <Authors>jamesnet, lukewire, vickyqu</Authors>
     <Product>jamesnet</Product>
     <Copyright>jamesnet</Copyright>
@@ -22,7 +22,7 @@
   
   <ItemGroup>
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.1" />
-    <PackageReference Include="Jamesnet.Design" Version="1.0.0.32" />
+    <PackageReference Include="Jamesnet.Design" Version="1.0.0.33" />
     <PackageReference Include="Prism.Unity" Version="8.1.97" />
     <PackageReference Include="WpfAutoGrid.Core" Version="1.5.1" />
   </ItemGroup>
