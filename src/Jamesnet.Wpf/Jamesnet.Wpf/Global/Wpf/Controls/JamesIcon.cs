@@ -8,7 +8,7 @@ using System.Windows.Media.Imaging;
 namespace Jamesnet.Wpf.Controls
 {
     public enum ImageType
-    { 
+    {
         None,
         AppStore,
         Arsenal,
@@ -27,7 +27,7 @@ namespace Jamesnet.Wpf.Controls
         NewCastle,
         Porsche,
         Prime,
-        QQ,        
+        QQ,
         SouthHampton,
         Spotify,
         Sunderland,
@@ -161,7 +161,17 @@ namespace Jamesnet.Wpf.Controls
         ArrowLeftThin,
         ArrowRightThin,
         KeyboardBackspace,
-        ButtonCursor
+        ButtonCursor,
+        Import,
+        Export,
+        Trash,
+        TrashOutline,
+        DeleteEmpty,
+        Magnify,
+        ViewColumn,
+        ViewGrid,
+        SkipPrevious,
+        SkipNext
     }
 
     public enum IconMode

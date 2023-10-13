@@ -122,5 +122,15 @@
         public static string ArrowRightThin => GeometryConverter.GetData();
         public static string KeyboardBackspace => GeometryConverter.GetData();
         public static string ButtonCursor => GeometryConverter.GetData();
+        public static string Import => GeometryConverter.GetData();
+        public static string Export => GeometryConverter.GetData();
+        public static string Trash => GeometryConverter.GetData();
+        public static string TrashOutline => GeometryConverter.GetData();
+        public static string DeleteEmpty => GeometryConverter.GetData();
+        public static string Magnify => GeometryConverter.GetData();
+        public static string ViewColumn => GeometryConverter.GetData();
+        public static string ViewGrid => GeometryConverter.GetData();
+        public static string SkipPrevious => GeometryConverter.GetData();
+        public static string SkipNext => GeometryConverter.GetData();
     }
 }
