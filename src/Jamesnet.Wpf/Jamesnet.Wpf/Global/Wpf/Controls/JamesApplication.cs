@@ -1,5 +1,5 @@
 ﻿using Jamesnet.Wpf.Global.Location;
-using Jamesnet.Wpf.Global.Evemt;
+using Jamesnet.Wpf.Global.Event;
 using Prism.Ioc;
 using Prism.Modularity;
 using Prism.Unity;
@@ -48,6 +48,7 @@ namespace Jamesnet.Wpf.Controls
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterInstance(this);            
+            containerRegistry.RegisterSingleton<ContentManager>();
             containerRegistry.RegisterSingleton<IEventHub, EventAggregatorHub>();
 
             if (theme != null)

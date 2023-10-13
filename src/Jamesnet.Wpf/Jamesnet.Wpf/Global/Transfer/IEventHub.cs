@@ -3,7 +3,7 @@ using System.Diagnostics;
 
 using Prism.Events;
 
-namespace Jamesnet.Wpf.Global.Evemt
+namespace Jamesnet.Wpf.Global.Event
 {
     public interface IEventHub
     {
