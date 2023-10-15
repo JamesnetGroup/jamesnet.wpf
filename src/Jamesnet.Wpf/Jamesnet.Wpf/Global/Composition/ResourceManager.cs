@@ -14,7 +14,7 @@ using Jamesnet.Wpf.Global.Composition;
 namespace Jamesnet.Wpf.Composition
 {
 
-    public class ResourceManager : IThemeManager
+    public class ResourceManager : IResourceManager
     {
 
         private string _currentTheme;
