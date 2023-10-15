@@ -174,94 +174,93 @@ namespace Jamesnet.Wpf.Controls
         SkipNext
     }
 
-    public enum IconMode
+public enum IconMode
+{
+    None,
+    Icon,
+    Image,
+}
+
+public class JamesIcon : ContentControl
+{
+    private Viewbox _viewbox;
+    private Image _image;
+
+    public static DependencyProperty ModeProperty = DependencyProperty.Register("Mode", typeof(IconMode), typeof(JamesIcon), new PropertyMetadata(IconMode.None));
+    public static DependencyProperty IconProperty = DependencyProperty.Register("Icon", typeof(IconType), typeof(JamesIcon), new PropertyMetadata(IconType.None, IconPropertyChanged));
+    public static DependencyProperty ImageProperty = DependencyProperty.Register("Iamge", typeof(ImageType), typeof(JamesIcon), new PropertyMetadata(ImageType.None, ImagePropertyChanged));
+    public static DependencyProperty FillProperty = DependencyProperty.Register("Fill", typeof(SolidColorBrush), typeof(JamesIcon), new PropertyMetadata(Brushes.Silver));
+    public static DependencyProperty DataProperty = DependencyProperty.Register("Data", typeof(Geometry), typeof(JamesIcon), new PropertyMetadata(null));
+    public static DependencyProperty SourceProperty = DependencyProperty.Register("Source", typeof(ImageSource), typeof(JamesIcon), new PropertyMetadata(null));
+
+    public IconMode Mode
     {
-        None,
-        Icon,
-        Image,
+        get => (IconMode)GetValue(ModeProperty);
+        set => SetValue(ModeProperty, value);
     }
 
-    public class JamesIcon : ContentControl
+    public IconType Icon
     {
-        private Viewbox _viewbox;
-        private Image _image;
+        get => (IconType)GetValue(IconProperty);
+        set => SetValue(IconProperty, value);
+    }
 
-        public static DependencyProperty ModeProperty = DependencyProperty.Register("Mode", typeof(IconMode), typeof(JamesIcon), new PropertyMetadata(IconMode.None));
-        public static DependencyProperty IconProperty = DependencyProperty.Register("Icon", typeof(IconType), typeof(JamesIcon), new PropertyMetadata(IconType.None, IconPropertyChanged));
-        public static DependencyProperty ImageProperty = DependencyProperty.Register("Iamge", typeof(ImageType), typeof(JamesIcon), new PropertyMetadata(ImageType.None, ImagePropertyChanged));
-        public static DependencyProperty FillProperty = DependencyProperty.Register("Fill", typeof(SolidColorBrush), typeof(JamesIcon), new PropertyMetadata(Brushes.Silver));
-        public static DependencyProperty DataProperty = DependencyProperty.Register("Data", typeof(Geometry), typeof(JamesIcon), new PropertyMetadata(null));
-        public static DependencyProperty SourceProperty = DependencyProperty.Register("Source", typeof(ImageSource), typeof(JamesIcon), new PropertyMetadata(null));
+    public ImageType Image
+    {
+        get => (ImageType)GetValue(ImageProperty);
+        set => SetValue(ImageProperty, value);
+    }
 
-        public IconMode Mode
-        {
-            get => (IconMode)GetValue(ModeProperty);
-            set => SetValue(ModeProperty, value);
-        }
+    public SolidColorBrush Fill
+    {
+        get => (SolidColorBrush)GetValue(FillProperty);
+        set => SetValue(FillProperty, value);
+    }
 
-        public IconType Icon
-        {
-            get => (IconType)GetValue(IconProperty);
-            set => SetValue(IconProperty, value);
-        }
+    public Geometry Data
+    {
+        get => (Geometry)GetValue(DataProperty);
+        set => SetValue(DataProperty, value);
+    }
 
-        public ImageType Image
-        {
-            get => (ImageType)GetValue(ImageProperty);
-            set => SetValue(ImageProperty, value);
-        }
+    public ImageSource Source
+    {
+        get => (ImageSource)GetValue(SourceProperty);
+        set => SetValue(SourceProperty, value);
+    }
 
-        public SolidColorBrush Fill
-        {
-            get => (SolidColorBrush)GetValue(FillProperty);
-            set => SetValue(FillProperty, value);
-        }
+    private static void IconPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+    {
+        JamesIcon jamesIcon = (JamesIcon)d;
+        string geometryData = Design.Geometries.GeometryConverter.GetData(jamesIcon.Icon.ToString());
 
-        public Geometry Data
-        {
-            get => (Geometry)GetValue(DataProperty);
-            set => SetValue(DataProperty, value);
-        }
+        jamesIcon.Data = Geometry.Parse(geometryData);
+        jamesIcon.Mode = IconMode.Icon;
+    }
 
-        public ImageSource Source
-        {
-            get => (ImageSource)GetValue(SourceProperty);
-            set => SetValue(SourceProperty, value);
-        }
+    private static void ImagePropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+    {
+        JamesIcon jamesIcon = (JamesIcon)d;
+        string base64 = Design.Images.ImageConverter.GetData(jamesIcon.Image.ToString());
+        
+        byte[] binaryData = Convert.FromBase64String(base64);
 
-        private static void IconPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            JamesIcon jamesIcon = (JamesIcon)d;
-            string geometryData = Design.Geometries.GeometryConverter.GetData(jamesIcon.Icon.ToString());
+        BitmapImage bi = new BitmapImage();
+        bi.BeginInit();
+        bi.StreamSource = new MemoryStream(binaryData);
+        bi.EndInit();
 
-            jamesIcon.Data = Geometry.Parse(geometryData);
-            jamesIcon.Mode = IconMode.Icon;
-        }
+        jamesIcon.Source = bi;
+        jamesIcon.Mode = IconMode.Image;
+    }
 
-        private static void ImagePropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            JamesIcon jamesIcon = (JamesIcon)d;
-            string base64 = Design.Images.ImageConverter.GetData(jamesIcon.Image.ToString());
-            
-            byte[] binaryData = Convert.FromBase64String(base64);
+    public override void OnApplyTemplate()
+    {
+        base.OnApplyTemplate();
+    }
 
-            BitmapImage bi = new BitmapImage();
-            bi.BeginInit();
-            bi.StreamSource = new MemoryStream(binaryData);
-            bi.EndInit();
-
-            jamesIcon.Source = bi;
-            jamesIcon.Mode = IconMode.Image;
-        }
-
-        public override void OnApplyTemplate()
-        {
-            base.OnApplyTemplate();
-        }
-
-        static JamesIcon()
-        {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(JamesIcon), new FrameworkPropertyMetadata(typeof(JamesIcon)));
-        }
+    static JamesIcon()
+    {
+        DefaultStyleKeyProperty.OverrideMetadata(typeof(JamesIcon), new FrameworkPropertyMetadata(typeof(JamesIcon)));
     }
 }

@@ -1,10 +1,8 @@
-﻿namespace Jamesnet.Wpf.Controls
+﻿namespace Jamesnet.Wpf.Controls;
+public enum JustifyEnum
 {
-    public enum JustifyEnum
-    {
-        None,
-        SpaceAround,
-        SpaceBetween,
-        SpaceEvenly
-    }
+    None,
+    SpaceAround,
+    SpaceBetween,
+    SpaceEvenly
 }

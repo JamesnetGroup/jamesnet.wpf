@@ -1,19 +1,17 @@
-﻿namespace Jamesnet.Wpf.Global.Location
+﻿namespace Jamesnet.Wpf.Global.Location;
+public abstract class ViewModelLocationScenario
 {
-    public abstract class ViewModelLocationScenario
+    internal ViewModelLocatorCollection Publish()
     {
-        internal ViewModelLocatorCollection Publish()
-        {
-            ViewModelLocatorCollection Items = new();
-            Match(Items);
-            return Items;
-        }
-
-        public ViewModelLocationScenario()
-        {
-
-        }
-
-        protected abstract void Match(ViewModelLocatorCollection items);
+        ViewModelLocatorCollection Items = new();
+        Match(Items);
+        return Items;
     }
+
+    public ViewModelLocationScenario()
+    {
+
+    }
+
+    protected abstract void Match(ViewModelLocatorCollection items);
 }
