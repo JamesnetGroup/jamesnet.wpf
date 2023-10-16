@@ -171,7 +171,11 @@ namespace Jamesnet.Wpf.Controls
         ViewColumn,
         ViewGrid,
         SkipPrevious,
-        SkipNext
+        SkipNext,
+        CardSuitClub,
+        CardSuitHeart,
+        CardSuitSpade,
+        CardSuitDiamond
     }
 
     public enum IconMode
