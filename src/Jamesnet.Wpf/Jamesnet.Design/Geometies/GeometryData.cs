@@ -132,5 +132,9 @@
         public static string ViewGrid => GeometryConverter.GetData();
         public static string SkipPrevious => GeometryConverter.GetData();
         public static string SkipNext => GeometryConverter.GetData();
+        public static string CardsuitClub => GeometryConverter.GetData();
+        public static string CardSuitHeart => GeometryConverter.GetData();
+        public static string CardSuitSpade => GeometryConverter.GetData();
+        public static string CardSuitDiamond => GeometryConverter.GetData();
     }
 }
