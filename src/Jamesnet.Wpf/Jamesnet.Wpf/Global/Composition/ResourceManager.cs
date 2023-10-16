@@ -9,9 +9,9 @@ using System.Windows.Media;
 using YamlDotNet.Serialization;
 
 namespace Jamesnet.Wpf.Composition;
-public class ResourceManager : IThemeManager
-{
 
+    public class ResourceManager : IResourceManager
+    { 
     private string _currentTheme;
     private string _currentLanguage;
     private readonly JamesApplication _app;
