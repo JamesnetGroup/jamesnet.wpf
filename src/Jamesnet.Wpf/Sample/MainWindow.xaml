@@ -10,15 +10,14 @@
     Width="800"
     Height="450"
     mc:Ignorable="d">
-    <james:JamesPanel
-        Background="Beige"
-        Justify="SpaceAround"
-        Orientation="Horizontal">
-        <james:JamesPanel.Resources>
-            <Style TargetType="{x:Type james:JamesIcon}">
-                <Setter Property="Background" Value="Blue" />
-            </Style>
-        </james:JamesPanel.Resources>
+    <Window.Resources>
+        <LinearGradientBrush x:Key="GradientBrush" StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Offset="0.0" Color="#BDE5AB" />
+            <GradientStop Offset="1.0" Color="#77D9C8" />
+        </LinearGradientBrush>
+        <SolidColorBrush x:Key="Red">Red</SolidColorBrush>
+    </Window.Resources>
+    <james:JamesStack Background="Beige" Orientation="Horizontal">
         <james:JamesIcon Icon="AccountGroup" />
         <james:JamesIcon Icon="PokerChip" />
         <james:JamesIcon Icon="Creditcardchip" />
@@ -29,6 +28,7 @@
         <james:JamesIcon Icon="HomeCircleOutline" />
         <james:JamesIcon Icon="Cash" />
         <james:JamesIcon Icon="Cash100" />
-        <james:JamesIcon Icon="CashMulti" />
-    </james:JamesPanel>
+        <james:JamesIcon Fill="{StaticResource Red}" Icon="CashMulti" />
+        <james:JamesIcon Fill="{StaticResource GradientBrush}" Icon="CashMulti" />
+    </james:JamesStack>
 </Window>
