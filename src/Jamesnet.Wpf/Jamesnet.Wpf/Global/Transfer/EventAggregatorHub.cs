@@ -30,4 +30,9 @@ internal class EventAggregatorHub : IEventHub
     {
         _ea.GetEvent<T1>().Subscribe(action);
     }
+
+    public void UnSubscribe<T1, T2>(Action<T2> action) where T1 : PubSubEvent<T2>, new()
+    {
+        _ea.GetEvent<T1> ().Unsubscribe (action);
+    }
 }

@@ -74,4 +74,13 @@ public abstract class JamesApplication : PrismApplication
         }
         return default;
     }
+
+    public static ResourceDictionary Resource()
+    {
+        if (JamesApplication.Current is JamesApplication app)
+        {
+            return app.Resources;
+        }
+        return default;
+    }
 }

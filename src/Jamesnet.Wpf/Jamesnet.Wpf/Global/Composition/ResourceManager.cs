@@ -1,5 +1,7 @@
 ﻿using Jamesnet.Wpf.Controls;
+using Jamesnet.Wpf.Event;
 using Jamesnet.Wpf.Global.Composition;
+using Jamesnet.Wpf.Global.Event;
 using Jamesnet.Wpf.Models;
 using System.Collections.Generic;
 using System.IO;
@@ -16,22 +18,26 @@ namespace Jamesnet.Wpf.Composition;
     private string _currentLanguage;
     private readonly JamesApplication _app;
     private readonly ResourceInitializer _themeInitializer;
+    private readonly IEventHub _eventHub;
 
     internal Dictionary<string, ResourceDictionary> ThemeResources { get; private set; }
     internal Dictionary<string, ResourceDictionary> LanguageResources { get; private set; }
     internal List<ThemeModel> Themes { get; private set; }
     internal List<ThemeModel> Languages { get; private set; }
 
-    public ResourceManager(JamesApplication app, ResourceInitializer themeInitializer)
+    public ResourceManager(JamesApplication app, 
+                           ResourceInitializer themeInitializer,
+                           IEventHub eventHub)
     {
-        _app = app;
-        _themeInitializer = themeInitializer;
-        _currentTheme = _themeInitializer.DefaultTheme;
-        _currentLanguage = _themeInitializer.DefaultLanguage;
-        ThemeResources = GetThemes(_themeInitializer.ThemeResource);
-        LanguageResources = GetThemes(_themeInitializer.LanguageResource);
-        Themes = GetList();
-        Languages = GetList();
+        this._app = app;
+        this._themeInitializer = themeInitializer;
+        this._eventHub = eventHub;
+        this._currentTheme = _themeInitializer.DefaultTheme;
+        this._currentLanguage = _themeInitializer.DefaultLanguage;
+        this.ThemeResources = GetThemes(_themeInitializer.ThemeResource);
+        this.LanguageResources = GetThemes(_themeInitializer.LanguageResource);
+        this.Themes = GetList();
+        this.Languages = GetList();
         SwitchTheme(_themeInitializer.DefaultTheme);
         SwitchLanguage(_themeInitializer.DefaultLanguage);
     }
@@ -141,6 +147,8 @@ namespace Jamesnet.Wpf.Composition;
         _app.Resources.MergedDictionaries.Remove(ThemeResources[_currentTheme]);
         _app.Resources.MergedDictionaries.Add(ThemeResources[value]);
         _currentTheme = value;
+
+        this._eventHub.Publish<SwitchThemePubsub, string> (value);
     }
 
     public void SwitchLanguage(string value)
@@ -148,5 +156,7 @@ namespace Jamesnet.Wpf.Composition;
         _app.Resources.MergedDictionaries.Remove(LanguageResources[_currentLanguage]);
         _app.Resources.MergedDictionaries.Add(LanguageResources[value]);
         _currentLanguage = value;
+
+        this._eventHub.Publish<SwitchLanguagePubsub, string> (value);
     }
 }
