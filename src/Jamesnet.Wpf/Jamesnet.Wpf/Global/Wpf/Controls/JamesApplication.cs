@@ -13,7 +13,7 @@ namespace Jamesnet.Wpf.Controls;
 
 public abstract class JamesApplication : PrismApplication
 {
-    private List<IModule> _modules = new();
+    private List<IModule> _modules = new ();
     private object theme;
 
     public JamesApplication()
@@ -23,24 +23,24 @@ public abstract class JamesApplication : PrismApplication
 
     protected override void OnStartup(StartupEventArgs e)
     {
-        ViewModelLocatorCollection items = new();
-        RegisterWireDataContexts(items);
+        ViewModelLocatorCollection items = new ();
+        RegisterWireDataContexts (items);
 
-        base.OnStartup(e);
+        base.OnStartup (e);
     }
 
     public JamesApplication AddInversionModule<T>() where T : IModule, new()
     {
-        IModule module = new T();
-        _modules.Add(module);
+        IModule module = new T ();
+        _modules.Add (module);
 
         return this;
     }
 
     public JamesApplication AddWireDataContext<T>() where T : ViewModelLocationScenario, new()
     {
-        ViewModelLocationScenario scenario = new T();
-        _ = scenario.Publish();
+        ViewModelLocationScenario scenario = new T ();
+        _ = scenario.Publish ();
 
         return this;
     }
@@ -51,43 +51,44 @@ public abstract class JamesApplication : PrismApplication
 
     protected override void RegisterTypes(IContainerRegistry containerRegistry)
     {
-        containerRegistry.RegisterInstance(this);
-        containerRegistry.RegisterSingleton<ContentManager>();
-        containerRegistry.RegisterSingleton<IEventHub, EventAggregatorHub>();
+        containerRegistry.RegisterInstance (this);
+        containerRegistry.RegisterSingleton<ContentManager> ();
+        containerRegistry.RegisterSingleton<IEventHub, EventAggregatorHub> ();
 
         if (theme != null)
         {
-            containerRegistry.RegisterInstance(theme as ResourceInitializer);
-            containerRegistry.RegisterSingleton<ResourceManager>();
-            ResourceManager themeManager = GetService<ResourceManager>();
+            containerRegistry.RegisterInstance (theme as ResourceInitializer);
+            containerRegistry.RegisterSingleton<ResourceManager> ();
+            ResourceManager themeManager = GetService<ResourceManager> ();
         }
 
         foreach (IModule module in _modules)
         {
-            module.RegisterTypes(containerRegistry);
+            module.RegisterTypes (containerRegistry);
         }
     }
 
     public JamesApplication InitializeTheme<T>() where T : ResourceInitializer, new()
     {
-        theme = new T();
+        theme = new T ();
         return this;
     }
 
-public static T GetService<T>()
-{
-    if (JamesApplication.Current is JamesApplication app)
+    public static T GetService<T>()
     {
-        return app.Container.Resolve<T>();
+        if (JamesApplication.Current is JamesApplication app)
+        {
+            return app.Container.Resolve<T> ();
+        }
+        return default;
     }
-    return default;
-}
 
-public static ResourceDictionary Resource()
-{
-    if (JamesApplication.Current is JamesApplication app)
+    public static ResourceDictionary Resource()
     {
-        return app.Resources;
+        if (JamesApplication.Current is JamesApplication app)
+        {
+            return app.Resources;
+        }
+        return default;
     }
-    return default;
 }
