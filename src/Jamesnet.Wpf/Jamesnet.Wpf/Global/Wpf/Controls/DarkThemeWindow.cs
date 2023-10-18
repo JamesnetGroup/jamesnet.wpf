@@ -1,16 +1,19 @@
-﻿using System;
+﻿using Jamesnet.Wpf.Event;
+using Jamesnet.Wpf.Global.Event;
+using System;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media;
 
 namespace Jamesnet.Wpf.Controls;
 
 public class DarkThemeWindow : JamesWindow
 {
-    public static readonly DependencyProperty CloseCommandProperty =
-        DependencyProperty.Register(nameof(CloseCommand), typeof(ICommand), typeof(DarkThemeWindow), new PropertyMetadata(null));
-
-    public static readonly new DependencyProperty TitleProperty =
-        DependencyProperty.Register(nameof(Title), typeof(object), typeof(DarkThemeWindow), new UIPropertyMetadata(null));
+    public static readonly DependencyProperty PopupOpenProperty;
+    public static readonly DependencyProperty TitleBarColorProperty;
+    public static readonly DependencyProperty CloseCommandProperty ;
+    public static readonly new DependencyProperty TitleProperty;
 
     public new object Title
     {
@@ -23,18 +26,38 @@ public class DarkThemeWindow : JamesWindow
         get => (ICommand)GetValue(CloseCommandProperty);
         set => SetValue(CloseCommandProperty, value);
     }
-
+    public Brush TitleBarColor
+    {
+        get => (Brush)GetValue (TitleBarColorProperty);
+        set => SetValue (TitleBarColorProperty, value);
+    }
     private MaximizeButton maximBtn;
     static DarkThemeWindow()
     {
         DefaultStyleKeyProperty.OverrideMetadata(typeof(DarkThemeWindow), new FrameworkPropertyMetadata(typeof(DarkThemeWindow)));
+        CloseCommandProperty = DependencyProperty.Register (nameof (CloseCommand), typeof (ICommand), typeof (DarkThemeWindow), new PropertyMetadata (null));
+        TitleProperty = DependencyProperty.Register (nameof (Title), typeof (object), typeof (DarkThemeWindow), new UIPropertyMetadata (null));
+        TitleBarColorProperty = DependencyProperty.Register (nameof (TitleBarColor), typeof (Brush), typeof (DarkThemeWindow), new PropertyMetadata (new SolidColorBrush ((Color)ColorConverter.ConvertFromString ("#252525"))));        
     }
 
     public DarkThemeWindow()
     {
+        if (JamesApplication.Current == null)
+            return;
 
+        JamesApplication.GetService<IEventHub>().Subscribe<PopupPubsub, bool>(e=>
+        {
+            if(e == true)
+            {
+
+                this.grd.Visibility = Visibility.Visible;
+                return;
+            }
+            this.grd.Visibility = Visibility.Collapsed;
+        });
     }
 
+    Grid grd;
     public override void OnApplyTemplate()
     {
         if (GetTemplateChild("PART_CloseButton") is CloseButton btn)
@@ -68,6 +91,10 @@ public class DarkThemeWindow : JamesWindow
             bar.MouseDown += WindowDragMove;
         }
 
+        if(GetTemplateChild ("PART_GRD") is Grid grd)
+        {
+            this.grd = grd;
+        }
         maximBtn.IsMaximize = this.WindowState == WindowState.Maximized;
     }
 
