@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Jamesnet.Wpf.Mvvm;
+using System;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
@@ -40,7 +41,10 @@ public class DarkThemeWindow : JamesWindow
 
     public DarkThemeWindow()
     {
-        this.SetBinding (DimmingProperty, nameof (Dimming));
+        if(DataContext.GetType().BaseType.Name == "ObservableWindow")
+        {
+            this.SetBinding (DimmingProperty, nameof (Dimming));
+        }
     }
 
     public override void OnApplyTemplate()
