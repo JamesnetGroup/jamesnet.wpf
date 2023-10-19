@@ -41,12 +41,19 @@ public class DarkThemeWindow : JamesWindow
 
     public DarkThemeWindow()
     {
-        if(DataContext.GetType().BaseType.Name == "ObservableWindow")
-        {
-            this.SetBinding (DimmingProperty, nameof (Dimming));
-        }
     }
 
+    protected override void OnPropertyChanged(DependencyPropertyChangedEventArgs e)
+    {
+        base.OnPropertyChanged (e);
+        if(e.Property.Name == "DataContext")
+        {
+            if (DataContext?.GetType ().BaseType.Name == "ObservableWindow")
+            {
+                this.SetBinding (DimmingProperty, nameof (Dimming));
+            }
+        }
+    }
     public override void OnApplyTemplate()
     {
         if (GetTemplateChild("PART_CloseButton") is CloseButton btn)

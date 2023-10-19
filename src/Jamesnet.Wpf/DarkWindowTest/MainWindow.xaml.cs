@@ -10,6 +10,12 @@ namespace DarkWindowTest
         public MainWindow()
         {
             InitializeComponent ();
+            this.Loaded += MainWindow_Loaded;
+        }
+
+        private void MainWindow_Loaded(object sender, System.Windows.RoutedEventArgs e)
+        {
+            this.DataContext = new MainContentViewModel ();
         }
     }
 }
