@@ -1,5 +1,6 @@
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
     <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/DarkWindowTest2.Forms;Component/Themes/Views/PopupContent.xaml" />
         <ResourceDictionary Source="/DarkWindowTest2.Forms;Component/Themes/Views/MainContnet.xaml" />
         <ResourceDictionary Source="/DarkWindowTest2.Forms;Component/Themes/Views/MainWindow.xaml" />
     </ResourceDictionary.MergedDictionaries>

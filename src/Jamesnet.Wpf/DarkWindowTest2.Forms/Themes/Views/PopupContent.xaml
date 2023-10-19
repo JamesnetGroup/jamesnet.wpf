@@ -3,6 +3,17 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:views="clr-namespace:DarkWindowTest2.Forms.UI.Views">
     <Style TargetType="{x:Type views:PopupContent}">
-        <Setter Property="Background" Value="Red" />
+        <Setter Property="Width" Value="300" />
+        <Setter Property="Height" Value="100" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type views:PopupContent}">
+                    <TextBlock
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Text="Hello, James Popup World!" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
     </Style>
 </ResourceDictionary>

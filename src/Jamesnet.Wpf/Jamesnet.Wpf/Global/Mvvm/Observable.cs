@@ -7,10 +7,20 @@ using System;
 
 namespace Jamesnet.Wpf.Mvvm;
 public class ObservableBase : ObservableObject
+{   
+    
+}
+
+public partial class ObservableWindow : ObservableBase
 {
-    public ObservableBase() 
+    [ObservableProperty] bool _dimming = false;
+
+    public ObservableWindow()
     {
-        
+        JamesApplication.GetService<IEventHub> ().Subscribe<JamesPopupEvent, bool> (e =>
+        {
+            this.Dimming = e;
+        });
     }
 }
 
@@ -27,11 +37,11 @@ public class ObservableDialog : ObservableObject, IDialogAware
 
     public virtual void OnDialogClosed()
     {
-        JamesApplication.GetService<IEventHub> ().Publish<PopupPubsub, bool> (false);
+        JamesApplication.GetService<IEventHub> ().Publish<JamesPopupEvent, bool> (false);
     }
 
     public virtual void OnDialogOpened(IDialogParameters parameters)
     {
-        JamesApplication.GetService<IEventHub> ().Publish<PopupPubsub, bool> (true);
+        JamesApplication.GetService<IEventHub> ().Publish<JamesPopupEvent, bool> (true);
     }
 }

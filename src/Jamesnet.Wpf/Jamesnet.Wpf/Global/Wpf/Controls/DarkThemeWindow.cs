@@ -1,8 +1,5 @@
-﻿using Jamesnet.Wpf.Event;
-using Jamesnet.Wpf.Global.Event;
-using System;
+﻿using System;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 
@@ -14,50 +11,38 @@ public class DarkThemeWindow : JamesWindow
     public static readonly DependencyProperty TitleBarColorProperty;
     public static readonly DependencyProperty CloseCommandProperty ;
     public static readonly new DependencyProperty TitleProperty;
+    public new object Title { get => GetValue(TitleProperty); set => SetValue(TitleProperty, value);}
+    public ICommand CloseCommand{ get => (ICommand)GetValue(CloseCommandProperty); set => SetValue(CloseCommandProperty, value);}
+    public Brush TitleBarColor{ get => (Brush)GetValue (TitleBarColorProperty); set => SetValue (TitleBarColorProperty, value);}
 
-    public new object Title
-    {
-        get => GetValue(TitleProperty);
-        set => SetValue(TitleProperty, value);
-    }
+    #region Dimming
+    public static readonly DependencyProperty DimmingProperty;
+    public static readonly DependencyProperty DimmingColorProperty;
+    public static readonly DependencyProperty DimmingOpacityProperty;
+    public bool Dimming { get => (bool)GetValue (DimmingProperty); set => SetValue (DimmingProperty, value); }
+    public Brush DimmingColor { get => (Brush)GetValue (DimmingColorProperty); set => SetValue (DimmingColorProperty, value); }
+    public double DimmingOpacity { get => (double)GetValue (DimmingOpacityProperty); set => SetValue (DimmingOpacityProperty, value); }
+    #endregion
 
-    public ICommand CloseCommand
-    {
-        get => (ICommand)GetValue(CloseCommandProperty);
-        set => SetValue(CloseCommandProperty, value);
-    }
-    public Brush TitleBarColor
-    {
-        get => (Brush)GetValue (TitleBarColorProperty);
-        set => SetValue (TitleBarColorProperty, value);
-    }
+
+
     private MaximizeButton maximBtn;
     static DarkThemeWindow()
     {
         DefaultStyleKeyProperty.OverrideMetadata(typeof(DarkThemeWindow), new FrameworkPropertyMetadata(typeof(DarkThemeWindow)));
         CloseCommandProperty = DependencyProperty.Register (nameof (CloseCommand), typeof (ICommand), typeof (DarkThemeWindow), new PropertyMetadata (null));
         TitleProperty = DependencyProperty.Register (nameof (Title), typeof (object), typeof (DarkThemeWindow), new UIPropertyMetadata (null));
-        TitleBarColorProperty = DependencyProperty.Register (nameof (TitleBarColor), typeof (Brush), typeof (DarkThemeWindow), new PropertyMetadata (new SolidColorBrush ((Color)ColorConverter.ConvertFromString ("#252525"))));        
+        TitleBarColorProperty = DependencyProperty.Register (nameof (TitleBarColor), typeof (Brush), typeof (DarkThemeWindow), new PropertyMetadata (new SolidColorBrush ((Color)ColorConverter.ConvertFromString ("#252525"))));
+        DimmingProperty = DependencyProperty.Register (nameof (Dimming), typeof (bool), typeof (DarkThemeWindow), new PropertyMetadata (false));
+        DimmingColorProperty = DependencyProperty.Register (nameof (DimmingColor), typeof (Brush), typeof (DarkThemeWindow), new PropertyMetadata (new SolidColorBrush ((Color)ColorConverter.ConvertFromString ("#141414"))));
+        DimmingOpacityProperty = DependencyProperty.Register (nameof (DimmingOpacity), typeof (double), typeof (DarkThemeWindow), new PropertyMetadata (0.8));
     }
 
     public DarkThemeWindow()
     {
-        if (JamesApplication.Current == null)
-            return;
-
-        JamesApplication.GetService<IEventHub>().Subscribe<PopupPubsub, bool>(e=>
-        {
-            if(e == true)
-            {
-
-                this.grd.Visibility = Visibility.Visible;
-                return;
-            }
-            this.grd.Visibility = Visibility.Collapsed;
-        });
+        this.SetBinding (DimmingProperty, nameof (Dimming));
     }
 
-    Grid grd;
     public override void OnApplyTemplate()
     {
         if (GetTemplateChild("PART_CloseButton") is CloseButton btn)
@@ -89,11 +74,6 @@ public class DarkThemeWindow : JamesWindow
         if (GetTemplateChild("PART_DragBar") is DraggableBar bar)
         {
             bar.MouseDown += WindowDragMove;
-        }
-
-        if(GetTemplateChild ("PART_GRD") is Grid grd)
-        {
-            this.grd = grd;
         }
         maximBtn.IsMaximize = this.WindowState == WindowState.Maximized;
     }

@@ -63,13 +63,18 @@
                                 ContentSource="Content"
                                 ContentTemplate="{TemplateBinding ContentTemplate}" />
                             <Grid
-                                x:Name="PART_GRD"
+                                x:Name="PART_Grd"
                                 Grid.Row="1"
-                                Background="#141414"
-                                Opacity="0.8"
+                                Background="{TemplateBinding DimmingColor}"
+                                Opacity="{TemplateBinding DimmingOpacity}"
                                 Visibility="Collapsed" />
                         </ctrls:JamesGrid>
                     </Border>
+                    <ControlTemplate.Triggers>
+                        <DataTrigger Binding="{Binding Dimming}" Value="true">
+                            <Setter TargetName="PART_Grd" Property="Visibility" Value="Visible" />
+                        </DataTrigger>
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
