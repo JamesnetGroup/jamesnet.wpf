@@ -4,7 +4,7 @@
     <TargetFramework>net7.0-windows</TargetFramework>
     <Nullable>disable</Nullable>
     <UseWPF>true</UseWPF>
-    <Version>1.0.0.71</Version>
+    <Version>1.0.0.72</Version>
     <Authors>jamesnet, lukewire, vickyqu</Authors>
     <Product>jamesnet</Product>
     <Copyright>jamesnet</Copyright>
