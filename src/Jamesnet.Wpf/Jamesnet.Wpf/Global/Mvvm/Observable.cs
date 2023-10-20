@@ -18,7 +18,7 @@ namespace Jamesnet.Wpf.Mvvm
 
         public bool Dimming
         {
-            get => _dimming = false;
+            get => _dimming;
             set => SetProperty (ref _dimming, value);
         }
 
