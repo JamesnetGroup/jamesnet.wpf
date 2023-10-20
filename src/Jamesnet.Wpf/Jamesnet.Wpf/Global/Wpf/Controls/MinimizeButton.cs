@@ -1,11 +1,14 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 
-namespace Jamesnet.Wpf.Controls;
-public class MinimizeButton : Button
+namespace Jamesnet.Wpf.Controls
 {
-    static MinimizeButton()
+    public class MinimizeButton : Button
     {
-        DefaultStyleKeyProperty.OverrideMetadata(typeof(MinimizeButton), new FrameworkPropertyMetadata(typeof(MinimizeButton)));
+        static MinimizeButton()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata (typeof (MinimizeButton), new FrameworkPropertyMetadata (typeof (MinimizeButton)));
+        }
     }
+
 }

@@ -1,18 +1,21 @@
 ﻿using System.Windows;
 
-namespace Jamesnet.Wpf.Global.Extensions;
-
-public static class DependencyExtensions
+namespace Jamesnet.Wpf.Global.Extensions
 {
-    public static bool SetIfDefault<T>(this DependencyObject o, DependencyProperty property, T value)
+    public static class DependencyExtensions
     {
-        if (DependencyPropertyHelper.GetValueSource(o, property).BaseValueSource == BaseValueSource.Default)
+        public static bool SetIfDefault<T>(this DependencyObject o, DependencyProperty property, T value)
         {
-            o.SetValue(property, value);
+            if (DependencyPropertyHelper.GetValueSource (o, property).BaseValueSource == BaseValueSource.Default)
+            {
+                o.SetValue (property, value);
 
-            return true;
+                return true;
+            }
+
+            return false;
         }
-
-        return false;
     }
+
 }
+

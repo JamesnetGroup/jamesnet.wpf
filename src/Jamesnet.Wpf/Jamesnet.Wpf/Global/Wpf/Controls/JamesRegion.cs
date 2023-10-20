@@ -2,32 +2,35 @@
 using System.Windows;
 using System.Windows.Controls;
 
-namespace Jamesnet.Wpf.Controls;
-public class JamesRegion : ContentControl
+namespace Jamesnet.Wpf.Controls
 {
-    public static readonly DependencyProperty RegionNameProperty = DependencyProperty.Register(nameof(RegionName), typeof(string), typeof(JamesRegion), new PropertyMetadata(ContentNamePropertyChanged));
 
-    public string RegionName
+    public class JamesRegion : ContentControl
     {
-        get => (string)GetValue(RegionNameProperty);
-        set => SetValue(RegionNameProperty, value);
-    }
+        public static readonly DependencyProperty RegionNameProperty = DependencyProperty.Register (nameof (RegionName), typeof (string), typeof (JamesRegion), new PropertyMetadata (ContentNamePropertyChanged));
 
-    private static void ContentNamePropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-    {
-        if (e.NewValue is string str && str != "")
+        public string RegionName
         {
-            IRegionManager rm = RegionManager.GetRegionManager(Application.Current.MainWindow);
-            RegionManager.SetRegionName((JamesRegion)d, str);
-            RegionManager.SetRegionManager(d, rm);
+            get => (string)GetValue (RegionNameProperty);
+            set => SetValue (RegionNameProperty, value);
         }
-    }
-    static JamesRegion()
-    {
-        DefaultStyleKeyProperty.OverrideMetadata(typeof(JamesRegion), new FrameworkPropertyMetadata(typeof(JamesRegion)));
-    }
 
-    public JamesRegion()
-    {
+        private static void ContentNamePropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            if (e.NewValue is string str && str != "")
+            {
+                IRegionManager rm = RegionManager.GetRegionManager (Application.Current.MainWindow);
+                RegionManager.SetRegionName ((JamesRegion)d, str);
+                RegionManager.SetRegionManager (d, rm);
+            }
+        }
+        static JamesRegion()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata (typeof (JamesRegion), new FrameworkPropertyMetadata (typeof (JamesRegion)));
+        }
+
+        public JamesRegion()
+        {
+        }
     }
 }

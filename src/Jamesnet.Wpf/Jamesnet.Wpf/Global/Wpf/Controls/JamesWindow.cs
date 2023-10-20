@@ -3,41 +3,44 @@ using System.Windows;
 using System.Windows.Media;
 using Jamesnet.Wpf.Global.Composition;
 
-namespace Jamesnet.Wpf.Controls;
-public abstract class JamesWindow : Window, IViewable
+namespace Jamesnet.Wpf.Controls
 {
-    private readonly AutoWireManager _autoWireManager;
-
-    public FrameworkElement View => _autoWireManager.GetView();
-    public INotifyPropertyChanged ViewModel => _autoWireManager.GetDataContext();
-
-    public JamesWindow()
+    public abstract class JamesWindow : Window, IViewable
     {
-        _autoWireManager = new AutoWireManager();
-        _autoWireManager.InitializeAutoWire(this);
-    }
+        private readonly AutoWireManager _autoWireManager;
 
-    public JamesWindow AddChild(FrameworkElement fe)
-    {
-        Content = fe;
-        return this;
-    }
+        public FrameworkElement View => _autoWireManager.GetView ();
+        public INotifyPropertyChanged ViewModel => _autoWireManager.GetDataContext ();
 
-    public JamesWindow CenterAlignContent()
-    {
-        if (Content is FrameworkElement content)
+        public JamesWindow()
         {
-            content.HorizontalAlignment = HorizontalAlignment.Center;
-            content.VerticalAlignment = VerticalAlignment.Center;
+            _autoWireManager = new AutoWireManager ();
+            _autoWireManager.InitializeAutoWire (this);
         }
-        return this;
+
+        public JamesWindow AddChild(FrameworkElement fe)
+        {
+            Content = fe;
+            return this;
+        }
+
+        public JamesWindow CenterAlignContent()
+        {
+            if (Content is FrameworkElement content)
+            {
+                content.HorizontalAlignment = HorizontalAlignment.Center;
+                content.VerticalAlignment = VerticalAlignment.Center;
+            }
+            return this;
+        }
+
+        public JamesWindow ApplyThemeColors(string background, string borderBrush, string foreground)
+        {
+            Background = new SolidColorBrush ((Color)ColorConverter.ConvertFromString (background));
+            BorderBrush = new SolidColorBrush ((Color)ColorConverter.ConvertFromString (borderBrush));
+            Foreground = new SolidColorBrush ((Color)ColorConverter.ConvertFromString (foreground));
+            return this;
+        }
     }
 
-    public JamesWindow ApplyThemeColors(string background, string borderBrush, string foreground)
-    {
-        Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString(background));
-        BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString(borderBrush));
-        Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString(foreground));
-        return this;
-    }
 }

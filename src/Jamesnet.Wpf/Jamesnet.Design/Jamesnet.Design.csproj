@@ -1,9 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFrameworks>net461;net47;net48;net6.0;net7.0</TargetFrameworks>
     <Nullable>disable</Nullable>
-    <Version>1.0.0.34</Version>
+    <Version>1.0.0.36</Version>
     <Authors>jamesnet, lukewire, vickyqu</Authors>
     <Product>jamesnet</Product>
     <Copyright>jamesnet</Copyright>

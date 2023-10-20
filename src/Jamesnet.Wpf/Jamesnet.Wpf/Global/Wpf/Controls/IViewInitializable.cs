@@ -1,5 +1,7 @@
-﻿namespace Jamesnet.Wpf.Controls;
-public interface IViewInitializable
+﻿namespace Jamesnet.Wpf.Controls
 {
-    void OnViewWired(IViewable view);
+    public interface IViewInitializable
+    {
+        void OnViewWired(IViewable view);
+    }
 }

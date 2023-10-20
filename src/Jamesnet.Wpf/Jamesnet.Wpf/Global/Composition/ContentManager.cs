@@ -2,49 +2,51 @@
 using Prism.Ioc;
 using Prism.Regions;
 
-namespace Jamesnet.Wpf.Global.Composition;
-
-public class ContentManager
+namespace Jamesnet.Wpf.Global.Composition
 {
-    private readonly IContainerProvider _containerProvider;
-    private readonly IRegionManager _regionManager;
 
-    public ContentManager(IContainerProvider containerProvider, IRegionManager regionManager)
+    public class ContentManager
     {
-        _containerProvider = containerProvider;
-        _regionManager = regionManager;
-    }
+        private readonly IContainerProvider _containerProvider;
+        private readonly IRegionManager _regionManager;
 
-    public void ActiveContent(string regionName, string contentName)
-    {
-        ActiveContent<IViewable>(regionName, contentName);
-    }
-
-    public void ActiveContent<T>(string regionName, string contentName)
-    {
-        IRegion region = _regionManager.Regions[regionName];
-        T content = _containerProvider.Resolve<T>(contentName);
-
-        if (!region.Views.Contains(content))
+        public ContentManager(IContainerProvider containerProvider, IRegionManager regionManager)
         {
-            region.Add(content);
+            _containerProvider = containerProvider;
+            _regionManager = regionManager;
         }
-        region.Activate(content);
-    }
 
-    public void DeactiveContent(string regionName, string contentName)
-    {
-        DeactiveContent<IViewable>(regionName, contentName);
-    }
-
-    public void DeactiveContent<T>(string regionName, string contentName)
-    {
-        IRegion region = _regionManager.Regions[regionName];
-        T content = _containerProvider.Resolve<T>(contentName);
-
-        if (region.Views.Contains(content))
+        public void ActiveContent(string regionName, string contentName)
         {
-            region.Deactivate(content);
+            ActiveContent<IViewable> (regionName, contentName);
+        }
+
+        public void ActiveContent<T>(string regionName, string contentName)
+        {
+            IRegion region = _regionManager.Regions[regionName];
+            T content = _containerProvider.Resolve<T> (contentName);
+
+            if (!region.Views.Contains (content))
+            {
+                region.Add (content);
+            }
+            region.Activate (content);
+        }
+
+        public void DeactiveContent(string regionName, string contentName)
+        {
+            DeactiveContent<IViewable> (regionName, contentName);
+        }
+
+        public void DeactiveContent<T>(string regionName, string contentName)
+        {
+            IRegion region = _regionManager.Regions[regionName];
+            T content = _containerProvider.Resolve<T> (contentName);
+
+            if (region.Views.Contains (content))
+            {
+                region.Deactivate (content);
+            }
         }
     }
 }

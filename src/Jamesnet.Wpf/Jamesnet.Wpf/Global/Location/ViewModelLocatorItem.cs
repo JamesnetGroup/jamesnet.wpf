@@ -1,14 +1,18 @@
 ﻿using System;
 
-namespace Jamesnet.Wpf.Global.Location;
-public class ViewModelLocatorItem
+namespace Jamesnet.Wpf.Global.Location
+
 {
-    public ViewModelLocatorItem(Type viewType, Type dataContextType)
+    public class ViewModelLocatorItem
     {
-        ViewType = viewType;
-        DataContextType = dataContextType;
+        public ViewModelLocatorItem(Type viewType, Type dataContextType)
+        {
+            ViewType = viewType;
+            DataContextType = dataContextType;
+        }
+
+        public Type ViewType { get; set; }
+        public Type DataContextType { get; set; }
     }
 
-    public Type ViewType { get; set; }
-    public Type DataContextType { get; set; }
 }

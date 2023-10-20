@@ -21,22 +21,24 @@ namespace Jamesnet.Design.Images
             Assembly assembly = Assembly.GetExecutingAssembly();
             var resourceName = "Jamesnet.Design.Properties.Resources.images.yaml";
 
-            using Stream stream = assembly.GetManifestResourceStream(resourceName);
-            using StreamReader reader = new(stream);
-            StringReader r = new(reader.ReadToEnd());
-            Deserializer deserializer = new();
-            object yamlObject = deserializer.Deserialize<object>(r);
-
-            JsonSerializer js = new();
-            StringWriter w = new();
-            js.Serialize(w, yamlObject);
-            string jsonText = w.ToString();
-            _data = JsonConvert.DeserializeObject<ImageRoot>(jsonText);
-            _items = new();
-
-            foreach (var item in _data.Items)
+            using (Stream stream = assembly.GetManifestResourceStream (resourceName))
+            using (StreamReader reader = new StreamReader (stream))
             {
-                _items.Add(item.Name, item);
+                StringReader r = new StringReader (reader.ReadToEnd ());
+                Deserializer deserializer = new Deserializer ();
+                object yamlObject = deserializer.Deserialize<object> (r);
+
+                JsonSerializer js = new JsonSerializer ();
+                StringWriter w = new StringWriter ();
+                js.Serialize (w, yamlObject);
+                string jsonText = w.ToString ();
+                _data = JsonConvert.DeserializeObject<ImageRoot> (jsonText);
+                _items = new Dictionary<string, ImageItem> ();
+
+                foreach (var item in _data.Items)
+                {
+                    _items.Add (item.Name, item);
+                }
             }
         }
     }

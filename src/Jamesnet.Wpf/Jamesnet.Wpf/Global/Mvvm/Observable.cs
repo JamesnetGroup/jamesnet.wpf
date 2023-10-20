@@ -5,43 +5,51 @@ using Jamesnet.Wpf.Global.Event;
 using Prism.Services.Dialogs;
 using System;
 
-namespace Jamesnet.Wpf.Mvvm;
-public class ObservableBase : ObservableObject
-{   
-    
-}
-
-public partial class ObservableWindow : ObservableBase
+namespace Jamesnet.Wpf.Mvvm
 {
-    [ObservableProperty] bool _dimming = false;
-
-    public ObservableWindow()
+    public class ObservableBase : ObservableObject
     {
-        JamesApplication.GetService<IEventHub> ().Subscribe<JamesPopupEvent, bool> (e =>
+
+    }
+
+    public partial class ObservableWindow : ObservableBase
+    {
+        private bool _dimming = false;
+
+        public bool Dimming
         {
-            this.Dimming = e;
-        });
-    }
-}
+            get => _dimming = false;
+            set => SetProperty (ref _dimming, value);
+        }
 
-public class ObservableDialog : ObservableObject, IDialogAware
-{
-    public string Title { get; set; }
-
-    public event Action<IDialogResult> RequestClose;
-
-    public virtual bool CanCloseDialog()
-    {
-        return true;
+        public ObservableWindow()
+        {
+            JamesApplication.GetService<IEventHub> ().Subscribe<JamesPopupEvent, bool> (e =>
+            {
+                this.Dimming = e;
+            });
+        }
     }
 
-    public virtual void OnDialogClosed()
+    public class ObservableDialog : ObservableObject, IDialogAware
     {
-        JamesApplication.GetService<IEventHub> ().Publish<JamesPopupEvent, bool> (false);
-    }
+        public string Title { get; set; }
 
-    public virtual void OnDialogOpened(IDialogParameters parameters)
-    {
-        JamesApplication.GetService<IEventHub> ().Publish<JamesPopupEvent, bool> (true);
+        public event Action<IDialogResult> RequestClose;
+
+        public virtual bool CanCloseDialog()
+        {
+            return true;
+        }
+
+        public virtual void OnDialogClosed()
+        {
+            JamesApplication.GetService<IEventHub> ().Publish<JamesPopupEvent, bool> (false);
+        }
+
+        public virtual void OnDialogOpened(IDialogParameters parameters)
+        {
+            JamesApplication.GetService<IEventHub> ().Publish<JamesPopupEvent, bool> (true);
+        }
     }
 }

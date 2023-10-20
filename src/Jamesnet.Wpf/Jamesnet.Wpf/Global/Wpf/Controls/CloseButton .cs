@@ -1,11 +1,14 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 
-namespace Jamesnet.Wpf.Controls;
-public class CloseButton : Button
+namespace Jamesnet.Wpf.Controls
 {
-    static CloseButton()
+    public class CloseButton : Button
     {
-        DefaultStyleKeyProperty.OverrideMetadata(typeof(CloseButton), new FrameworkPropertyMetadata(typeof(CloseButton)));
+        static CloseButton()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata (typeof (CloseButton), new FrameworkPropertyMetadata (typeof (CloseButton)));
+        }
     }
+
 }

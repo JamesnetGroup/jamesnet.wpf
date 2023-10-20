@@ -3,17 +3,19 @@ using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace Jamesnet.Wpf.Controls;
-public abstract class JamesContent : ContentControl, IViewable
+namespace Jamesnet.Wpf.Controls
 {
-    private readonly AutoWireManager _autoWireManager;
-
-    public FrameworkElement View => _autoWireManager.GetView();
-    public INotifyPropertyChanged ViewModel => _autoWireManager.GetDataContext();
-
-    public JamesContent()
+    public abstract class JamesContent : ContentControl, IViewable
     {
-        _autoWireManager = new AutoWireManager();
-        _autoWireManager.InitializeAutoWire(this);
+        private readonly AutoWireManager _autoWireManager;
+
+        public FrameworkElement View => _autoWireManager.GetView ();
+        public INotifyPropertyChanged ViewModel => _autoWireManager.GetDataContext ();
+
+        public JamesContent()
+        {
+            _autoWireManager = new AutoWireManager ();
+            _autoWireManager.InitializeAutoWire (this);
+        }
     }
 }
