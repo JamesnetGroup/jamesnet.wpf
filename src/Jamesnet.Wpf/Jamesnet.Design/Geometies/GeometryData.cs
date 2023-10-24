@@ -136,5 +136,7 @@
         public static string CardSuitHeart => GeometryConverter.GetData();
         public static string CardSuitSpade => GeometryConverter.GetData();
         public static string CardSuitDiamond => GeometryConverter.GetData();
+        public static string ViewAgenda => GeometryConverter.GetData();
+        public static string ViewCompact => GeometryConverter.GetData();
     }
 }

@@ -175,7 +175,9 @@ namespace Jamesnet.Wpf.Controls
         CardSuitClub,
         CardSuitHeart,
         CardSuitSpade,
-        CardSuitDiamond
+        CardSuitDiamond,
+        ViewAgenda,
+        ViewCompact
     }
 
     public enum IconMode
