@@ -11,7 +11,6 @@ using Unity;
 
 namespace Jamesnet.Wpf.Controls
 {
-
     public abstract class JamesApplication : PrismApplication
     {
         private List<IModule> _modules = new List<IModule> ();

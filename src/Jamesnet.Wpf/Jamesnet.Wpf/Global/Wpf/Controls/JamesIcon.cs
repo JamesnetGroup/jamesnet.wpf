@@ -36,6 +36,12 @@ namespace Jamesnet.Wpf.Controls
         Tinder,
         Tottenham,
         WestBromwitchAlbion,
+        USA,
+        KOR,
+        CHN,
+        JPN,
+        VNM,
+        ESP
     }
 
     public enum IconType
@@ -194,7 +200,7 @@ namespace Jamesnet.Wpf.Controls
 
         public static DependencyProperty ModeProperty = DependencyProperty.Register("Mode", typeof(IconMode), typeof(JamesIcon), new PropertyMetadata(IconMode.None));
         public static DependencyProperty IconProperty = DependencyProperty.Register("Icon", typeof(IconType), typeof(JamesIcon), new PropertyMetadata(IconType.None, IconPropertyChanged));
-        public static DependencyProperty ImageProperty = DependencyProperty.Register("Iamge", typeof(ImageType), typeof(JamesIcon), new PropertyMetadata(ImageType.None, ImagePropertyChanged));
+        public static DependencyProperty ImageProperty = DependencyProperty.Register("Image", typeof(ImageType), typeof(JamesIcon), new PropertyMetadata(ImageType.None, ImagePropertyChanged));
         public static DependencyProperty FillProperty = DependencyProperty.Register("Fill", typeof(Brush), typeof(JamesIcon), new PropertyMetadata(Brushes.Silver));
         public static DependencyProperty DataProperty = DependencyProperty.Register("Data", typeof(Geometry), typeof(JamesIcon), new PropertyMetadata(null));
         public static DependencyProperty SourceProperty = DependencyProperty.Register("Source", typeof(ImageSource), typeof(JamesIcon), new PropertyMetadata(null));

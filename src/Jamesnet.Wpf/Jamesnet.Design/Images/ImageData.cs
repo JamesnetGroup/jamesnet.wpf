@@ -28,5 +28,11 @@
         public static string Tinder => ImageConverter.GetData();
         public static string Tottenham => ImageConverter.GetData();
         public static string WestBromwitchAlbion => ImageConverter.GetData();
+        public static string USA => ImageConverter.GetData();
+        public static string KOR => ImageConverter.GetData();
+        public static string CHN => ImageConverter.GetData();
+        public static string JPN => ImageConverter.GetData();
+        public static string VNM => ImageConverter.GetData();
+        public static string ESP => ImageConverter.GetData();
     }
 }
