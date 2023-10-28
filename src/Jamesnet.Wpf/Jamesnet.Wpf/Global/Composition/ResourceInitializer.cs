@@ -1,24 +1,24 @@
 ﻿namespace Jamesnet.Wpf.Global.Composition
 {
-    public abstract class ResourceInitializer
+    public abstract class BaseResourceInitializer
     {
-        public string ThemeResource { get; }
-        public string DefaultLanguage { get; }
-        public string DefaultTheme { get; }
-        public string LanguageResource { get; }
+        public string ThemePath { get; }
+        public string DefaultLocale { get; }
+        public string DefaultThemeName { get; }
+        public string LocalePath { get; }
 
-        protected abstract string GetThemeResource();
-        protected abstract string GetDefaultTheme();
+        protected abstract string FetchThemePath();
+        protected abstract string DetermineDefaultThemeName();
 
-        protected abstract string GetLanguageResource();
-        protected abstract string GetDefaultLanguage();
+        protected abstract string FetchLocalePath();
+        protected abstract string DetermineDefaultLocale();
 
-        public ResourceInitializer()
+        public BaseResourceInitializer()
         {
-            ThemeResource = GetThemeResource ();
-            DefaultTheme = GetDefaultTheme ();
-            LanguageResource = GetLanguageResource ();
-            DefaultLanguage = GetDefaultLanguage ();
+            ThemePath = FetchThemePath();
+            DefaultThemeName = DetermineDefaultThemeName();
+            LocalePath = FetchLocalePath();
+            DefaultLocale = DetermineDefaultLocale();
         }
     }
 }

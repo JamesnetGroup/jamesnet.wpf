@@ -5,6 +5,7 @@ using Jamesnet.Wpf.Global.Location;
 using Prism.Ioc;
 using Prism.Modularity;
 using Prism.Unity;
+using System;
 using System.Collections.Generic;
 using System.Windows;
 using Unity;
@@ -15,11 +16,6 @@ namespace Jamesnet.Wpf.Controls
     {
         private List<IModule> _modules = new List<IModule> ();
         private object theme;
-
-        public JamesApplication()
-        {
-
-        }
 
         protected override void OnStartup(StartupEventArgs e)
         {
@@ -57,9 +53,9 @@ namespace Jamesnet.Wpf.Controls
 
             if (theme != null)
             {
-                containerRegistry.RegisterInstance (theme as ResourceInitializer);
-                containerRegistry.RegisterSingleton<ResourceManager> ();
-                ResourceManager themeManager = GetService<ResourceManager> ();
+                containerRegistry.RegisterInstance(theme as BaseResourceInitializer);
+                containerRegistry.RegisterSingleton<ResourceManager>();
+                ResourceManager themeManager = GetService<ResourceManager>();
             }
 
             foreach (IModule module in _modules)
@@ -68,7 +64,7 @@ namespace Jamesnet.Wpf.Controls
             }
         }
 
-        public JamesApplication InitializeTheme<T>() where T : ResourceInitializer, new()
+        public JamesApplication InitializeResource<T>() where T : BaseResourceInitializer, new()
         {
             theme = new T ();
             return this;

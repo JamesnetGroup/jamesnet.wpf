@@ -18,7 +18,7 @@ namespace Jamesnet.Wpf.Composition
         private string _currentTheme;
         private string _currentLanguage;
         private readonly JamesApplication _app;
-        private readonly ResourceInitializer _themeInitializer;
+        private readonly BaseResourceInitializer _themeInitializer;
         private readonly IEventHub _eventHub;
 
         internal Dictionary<string, ResourceDictionary> ThemeResources { get; private set; }
@@ -27,20 +27,20 @@ namespace Jamesnet.Wpf.Composition
         internal List<ThemeModel> Languages { get; private set; }
 
         public ResourceManager(JamesApplication app,
-                               ResourceInitializer themeInitializer,
+                               BaseResourceInitializer themeInitializer,
                                IEventHub eventHub)
         {
             this._app = app;
             this._themeInitializer = themeInitializer;
             this._eventHub = eventHub;
-            this._currentTheme = _themeInitializer.DefaultTheme;
-            this._currentLanguage = _themeInitializer.DefaultLanguage;
-            this.ThemeResources = GetThemes (_themeInitializer.ThemeResource);
-            this.LanguageResources = GetThemes (_themeInitializer.LanguageResource);
+            this._currentTheme = _themeInitializer.DefaultThemeName;
+            this._currentLanguage = _themeInitializer.DefaultLocale;
+            this.ThemeResources = GetThemes (_themeInitializer.ThemePath);
+            this.LanguageResources = GetThemes (_themeInitializer.LocalePath);
             this.Themes = GetList ();
             this.Languages = GetList ();
-            SwitchTheme (_themeInitializer.DefaultTheme);
-            SwitchLanguage (_themeInitializer.DefaultLanguage);
+            SwitchTheme (_themeInitializer.DefaultThemeName);
+            SwitchLanguage (_themeInitializer.DefaultLocale);
         }
 
         private Dictionary<string, ResourceDictionary> GetThemes(string resourcePath)
@@ -136,16 +136,6 @@ namespace Jamesnet.Wpf.Composition
             return source;
         }
 
-        //public List<ThemeModel> ToList()
-        //{
-        //    return Themes;
-        //}
-
-        //public ThemeModel ToCode()
-        //{
-        //    return Themes.FirstOrDefault(x => x.Code == _currentTheme);
-        //}
-
         public void SwitchTheme(string value)
         {
             _app.Resources.MergedDictionaries.Remove (ThemeResources[_currentTheme]);
@@ -164,5 +154,4 @@ namespace Jamesnet.Wpf.Composition
             this._eventHub.Publish<SwitchLanguagePubsub, string> (value);
         }
     }
-
 }
