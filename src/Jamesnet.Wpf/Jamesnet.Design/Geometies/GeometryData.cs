@@ -138,5 +138,7 @@
         public static string CardSuitDiamond => GeometryConverter.GetData();
         public static string ViewAgenda => GeometryConverter.GetData();
         public static string ViewCompact => GeometryConverter.GetData();
+        public static string WeatherNight => GeometryConverter.GetData();
+        public static string WhiteBalanceSunny => GeometryConverter.GetData();
     }
 }
