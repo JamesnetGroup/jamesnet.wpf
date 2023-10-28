@@ -43,6 +43,10 @@ namespace Jamesnet.Wpf.Controls
 
         public DarkThemeWindow()
         {
+            this.StateChanged += (s, e) =>
+            {
+                maximBtn.IsMaximize = !maximBtn.IsMaximize;
+            };
         }
 
         protected override void OnPropertyChanged(DependencyPropertyChangedEventArgs e)
@@ -81,7 +85,7 @@ namespace Jamesnet.Wpf.Controls
                     {
                         this.WindowState = WindowState.Maximized;
                     }
-                    maxbtn.IsMaximize = !maxbtn.IsMaximize;
+                  
                 };
             }
             if (GetTemplateChild ("PART_DragBar") is DraggableBar bar)
@@ -90,7 +94,6 @@ namespace Jamesnet.Wpf.Controls
             }
             maximBtn.IsMaximize = this.WindowState == WindowState.Maximized;
         }
-
         private void WindowClose()
         {
             if (CloseCommand == null)
