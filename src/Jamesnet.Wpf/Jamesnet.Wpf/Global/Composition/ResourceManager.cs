@@ -65,17 +65,17 @@ namespace Jamesnet.Wpf.Composition
                     {
                         foreach (var theme in themeObject.Themes)
                         {
-                            foreach (var prop in theme.Colors.GetType ().GetProperties ())
+                            foreach (var prop in theme.Colors.GetType().GetProperties())
                             {
-                                Color color = (Color)ColorConverter.ConvertFromString (theme.Colors.Get (prop.Name));
-                                SolidColorBrush solidColor = new SolidColorBrush (color);
+                                Color color = (Color)ColorConverter.ConvertFromString(theme.Colors.Get(prop.Name));
+                                //SolidColorBrush solidColor = new SolidColorBrush(color);
 
-                                if (!res.ContainsKey (prop.Name))
+                                if (!res.ContainsKey(prop.Name))
                                 {
-                                    res.Add (prop.Name, new ResourceDictionary ());
+                                    res.Add(prop.Name, new ResourceDictionary());
                                 }
 
-                                res[prop.Name].Add (theme.Key, solidColor);
+                                res[prop.Name].Add(theme.Key, color);
                             }
                         }
                     }
