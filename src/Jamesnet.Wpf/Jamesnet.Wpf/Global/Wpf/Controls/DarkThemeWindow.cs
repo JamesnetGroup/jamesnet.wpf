@@ -11,12 +11,12 @@ namespace Jamesnet.Wpf.Controls
     public class DarkThemeWindow : JamesWindow
     {
         public static readonly DependencyProperty PopupOpenProperty;
-        public static readonly DependencyProperty TitleBarColorProperty;
+        public static readonly DependencyProperty TitleHeaderBackgroundProperty;
         public static readonly DependencyProperty CloseCommandProperty;
         public static readonly new DependencyProperty TitleProperty;
         public new object Title { get => GetValue (TitleProperty); set => SetValue (TitleProperty, value); }
         public ICommand CloseCommand { get => (ICommand)GetValue (CloseCommandProperty); set => SetValue (CloseCommandProperty, value); }
-        public Brush TitleBarColor { get => (Brush)GetValue (TitleBarColorProperty); set => SetValue (TitleBarColorProperty, value); }
+        public Brush TitleHeaderBackground { get => (Brush)GetValue (TitleHeaderBackgroundProperty); set => SetValue (TitleHeaderBackgroundProperty, value); }
 
         #region Dimming
         public static readonly DependencyProperty DimmingProperty;
@@ -35,7 +35,7 @@ namespace Jamesnet.Wpf.Controls
             DefaultStyleKeyProperty.OverrideMetadata (typeof (DarkThemeWindow), new FrameworkPropertyMetadata (typeof (DarkThemeWindow)));
             CloseCommandProperty = DependencyProperty.Register (nameof (CloseCommand), typeof (ICommand), typeof (DarkThemeWindow), new PropertyMetadata (null));
             TitleProperty = DependencyProperty.Register (nameof (Title), typeof (object), typeof (DarkThemeWindow), new UIPropertyMetadata (null));
-            TitleBarColorProperty = DependencyProperty.Register (nameof (TitleBarColor), typeof (Brush), typeof (DarkThemeWindow), new PropertyMetadata (new SolidColorBrush ((Color)ColorConverter.ConvertFromString ("#252525"))));
+            TitleHeaderBackgroundProperty = DependencyProperty.Register (nameof (TitleHeaderBackground), typeof (Brush), typeof (DarkThemeWindow), new PropertyMetadata (new SolidColorBrush ((Color)ColorConverter.ConvertFromString ("#252525"))));
             DimmingProperty = DependencyProperty.Register (nameof (Dimming), typeof (bool), typeof (DarkThemeWindow), new PropertyMetadata (false));
             DimmingColorProperty = DependencyProperty.Register (nameof (DimmingColor), typeof (Brush), typeof (DarkThemeWindow), new PropertyMetadata (new SolidColorBrush ((Color)ColorConverter.ConvertFromString ("#141414"))));
             DimmingOpacityProperty = DependencyProperty.Register (nameof (DimmingOpacity), typeof (double), typeof (DarkThemeWindow), new PropertyMetadata (0.8));

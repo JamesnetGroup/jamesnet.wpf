@@ -40,7 +40,7 @@
                         <ctrls:JamesGrid Columns="*" Rows="Auto, *">
                             <ctrls:JamesGrid
                                 Grid.Row="0"
-                                Background="{TemplateBinding TitleBarColor}"
+                                Background="{TemplateBinding TitleHeaderBackground}"
                                 Columns="*, Auto, Auto, Auto"
                                 Rows="Auto">
                                 <ctrls:DraggableBar
