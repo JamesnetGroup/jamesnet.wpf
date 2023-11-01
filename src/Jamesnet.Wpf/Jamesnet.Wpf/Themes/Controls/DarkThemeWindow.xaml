@@ -71,6 +71,9 @@
                         </ctrls:JamesGrid>
                     </Border>
                     <ControlTemplate.Triggers>
+                        <Trigger Property="IsDimming" Value="true">
+                            <Setter TargetName="PART_Grd" Property="Visibility" Value="Visible" />
+                        </Trigger>
                         <DataTrigger Binding="{Binding Dimming}" Value="true">
                             <Setter TargetName="PART_Grd" Property="Visibility" Value="Visible" />
                         </DataTrigger>
