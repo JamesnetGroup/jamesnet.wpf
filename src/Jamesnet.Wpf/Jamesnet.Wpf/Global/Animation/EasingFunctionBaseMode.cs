@@ -1,0 +1,39 @@
+﻿namespace Jamesnet.Wpf.Animation
+{
+    public enum EasingFunctionBaseMode
+    {
+        BackEaseIn,
+        BackEaseOut,
+        BackEaseInOut,
+        BounceEaseIn,
+        BounceEaseOut,
+        BounceEaseInOut,
+        CircleEaseIn,
+        CircleEaseOut,
+        CircleEaseInOut,
+        CubicEaseIn,
+        CubicEaseOut,
+        CubicEaseInOut,
+        ElasticEaseIn,
+        ElasticEaseOut,
+        ElasticEaseInOut,
+        ExponentialEaseIn,
+        ExponentialEase,
+        ExponentialEaseInOut,
+        PowerEaseIn,
+        PowerEaseOut,
+        PowerEaseInOut,
+        QuadraticEaseIn,
+        QuadraticEaseOut,
+        QuadraticEaseInOut,
+        QuarticEaseIn,
+        QuarticEaseOut,
+        QuarticEaseInOut,
+        QuinticEaseIn,
+        QuinticEaseOut,
+        QuinticEaseInOut,
+        SineEaseIn,
+        SineEaseOut,
+        SineEaseInOut
+    }
+}

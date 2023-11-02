@@ -18,4 +18,3 @@ namespace Jamesnet.Wpf.Global.Composition
         }
     }
 }
-
