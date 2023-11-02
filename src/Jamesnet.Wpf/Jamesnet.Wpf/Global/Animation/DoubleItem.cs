@@ -59,7 +59,7 @@ namespace Jamesnet.Wpf.Controls
         public static readonly DependencyProperty ModeProperty = DependencyProperty.Register (
             "Mode",
             typeof (EasingFunctionBaseMode),
-            typeof (ColorItem),
+            typeof (ValueItem),
             new PropertyMetadata (EasingFunctionBaseMode.CubicEaseIn, OnEasingModeChanged)
         );
 
