@@ -33,7 +33,11 @@ namespace Jamesnet.Wpf.Controls
             CloseCommandProperty = DependencyProperty.Register (nameof (CloseCommand), typeof (ICommand), typeof (DarkThemeWindow), new PropertyMetadata (null));
             TitleProperty = DependencyProperty.Register (nameof (Title), typeof (object), typeof (DarkThemeWindow), new UIPropertyMetadata (null));
             TitleHeaderBackgroundProperty = DependencyProperty.Register (nameof (TitleHeaderBackground), typeof (Brush), typeof (DarkThemeWindow), new PropertyMetadata (new SolidColorBrush ((Color)ColorConverter.ConvertFromString ("#252525"))));            
-            DimmingProperty = DependencyProperty.Register (nameof (Dimming), typeof (bool), typeof (DarkThemeWindow), new PropertyMetadata (false));
+            DimmingProperty = DependencyProperty.Register (nameof (Dimming), typeof (bool), typeof (DarkThemeWindow), new PropertyMetadata (false, (e,a)=>
+            {
+                Console.WriteLine ("");
+            }));
+
             DimmingColorProperty = DependencyProperty.Register (nameof (DimmingColor), typeof (Brush), typeof (DarkThemeWindow), new PropertyMetadata (new SolidColorBrush ((Color)ColorConverter.ConvertFromString ("#141414"))));
             DimmingOpacityProperty = DependencyProperty.Register (nameof (DimmingOpacity), typeof (double), typeof (DarkThemeWindow), new PropertyMetadata (0.8));
         }

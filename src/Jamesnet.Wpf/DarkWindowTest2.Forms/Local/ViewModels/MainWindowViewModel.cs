@@ -4,7 +4,7 @@ using Jamesnet.Wpf.Mvvm;
 
 namespace DarkWindowTest2.Forms.Local.ViewModels;
 
-public partial class MainWindowViewModel : ObservableWindow, IViewLoadable
+public partial class MainWindowViewModel : ObservableBase, IViewLoadable
 {
     private readonly ContentManager _contentManager;
 
