@@ -3,7 +3,7 @@ using Jamesnet.Wpf.Mvvm;
 
 namespace DarkWindowTest2.Forms.Local.ViewModels
 {
-    [UseDimming(true)]
+    [UseDimming]
     public partial class PopupContentViewModel : ObservableDialog
     {
 

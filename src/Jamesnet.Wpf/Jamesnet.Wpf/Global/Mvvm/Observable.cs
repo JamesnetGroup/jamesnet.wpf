@@ -75,6 +75,11 @@ namespace Jamesnet.Wpf.Mvvm
     {
         public bool UseDimming { get; private set; }
 
+        public UseDimmingAttribute()
+        {
+            UseDimming = true;
+        }
+
         public UseDimmingAttribute(bool useDimming)
         {
             UseDimming = useDimming;
