@@ -1,4 +1,5 @@
 ﻿using Jamesnet.Wpf.Mvvm;
+using Prism.Services.Dialogs;
 using System;
 using System.Windows;
 using System.Windows.Input;

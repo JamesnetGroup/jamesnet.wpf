@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using Jamesnet.Wpf.Controls;
 using Jamesnet.Wpf.Event;
+using Jamesnet.Wpf.Global.Composition;
 using Jamesnet.Wpf.Global.Event;
 using Prism.Services.Dialogs;
 using System;
@@ -33,9 +34,16 @@ namespace Jamesnet.Wpf.Mvvm
 
     public class ObservableDialog : ObservableObject, IDialogAware
     {
+        private readonly DimmingManager _dimmingManager;
+
         public string Title { get; set; }
 
         public event Action<IDialogResult> RequestClose;
+
+        public ObservableDialog()
+        {
+            _dimmingManager = new DimmingManager();
+        }
 
         public virtual bool CanCloseDialog()
         {
@@ -44,12 +52,14 @@ namespace Jamesnet.Wpf.Mvvm
 
         public virtual void OnDialogClosed()
         {
-            JamesApplication.GetService<IEventHub> ().Publish<JamesPopupEvent, bool> (false);
+            _dimmingManager.Dimming(false);
+            //JamesApplication.GetService<IEventHub> ().Publish<JamesPopupEvent, bool> (false);
         }
 
         public virtual void OnDialogOpened(IDialogParameters parameters)
         {
-            JamesApplication.GetService<IEventHub> ().Publish<JamesPopupEvent, bool> (true);
+            _dimmingManager.Dimming(true);
+            //JamesApplication.GetService<IEventHub> ().Publish<JamesPopupEvent, bool> (true);
         }
     }
 }
