@@ -5,6 +5,7 @@ using Jamesnet.Wpf.Global.Composition;
 using Jamesnet.Wpf.Global.Event;
 using Prism.Services.Dialogs;
 using System;
+using System.Reflection;
 
 namespace Jamesnet.Wpf.Mvvm
 {
@@ -52,14 +53,31 @@ namespace Jamesnet.Wpf.Mvvm
 
         public virtual void OnDialogClosed()
         {
-            _dimmingManager.Dimming(false);
-            //JamesApplication.GetService<IEventHub> ().Publish<JamesPopupEvent, bool> (false);
+            var useDimmingAttribute = GetType().GetCustomAttribute<UseDimmingAttribute>();
+            if (useDimmingAttribute != null && useDimmingAttribute.UseDimming)
+            {
+                _dimmingManager.Dimming(false);
+            }
         }
 
         public virtual void OnDialogOpened(IDialogParameters parameters)
         {
-            _dimmingManager.Dimming(true);
-            //JamesApplication.GetService<IEventHub> ().Publish<JamesPopupEvent, bool> (true);
+            var useDimmingAttribute = GetType().GetCustomAttribute<UseDimmingAttribute>();
+            if (useDimmingAttribute != null && useDimmingAttribute.UseDimming)
+            {
+                _dimmingManager.Dimming(true);
+            }
+        }
+    }
+
+    [AttributeUsage(AttributeTargets.Class, Inherited = false)]
+    public class UseDimmingAttribute : Attribute
+    {
+        public bool UseDimming { get; private set; }
+
+        public UseDimmingAttribute(bool useDimming)
+        {
+            UseDimming = useDimming;
         }
     }
 }
