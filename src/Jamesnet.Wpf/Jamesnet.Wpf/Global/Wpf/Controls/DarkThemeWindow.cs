@@ -1,14 +1,10 @@
-﻿using Jamesnet.Wpf.Mvvm;
-using Prism.Services.Dialogs;
-using System;
+﻿using System;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
 
 namespace Jamesnet.Wpf.Controls
 {
-
-
     public class DarkThemeWindow : JamesWindow
     {
         public static readonly DependencyProperty PopupOpenProperty;
@@ -20,11 +16,9 @@ namespace Jamesnet.Wpf.Controls
         public Brush TitleHeaderBackground { get => (Brush)GetValue (TitleHeaderBackgroundProperty); set => SetValue (TitleHeaderBackgroundProperty, value); }
 
         #region Dimming
-        public static readonly DependencyProperty IsDimmingProperty;
         public static readonly DependencyProperty DimmingProperty;
         public static readonly DependencyProperty DimmingColorProperty;
         public static readonly DependencyProperty DimmingOpacityProperty;
-        public bool IsDimming { get => (bool)GetValue(IsDimmingProperty); set => SetValue(IsDimmingProperty, value); }
         public bool Dimming { get => (bool)GetValue (DimmingProperty); set => SetValue (DimmingProperty, value); }
         public Brush DimmingColor { get => (Brush)GetValue (DimmingColorProperty); set => SetValue (DimmingColorProperty, value); }
         public double DimmingOpacity { get => (double)GetValue (DimmingOpacityProperty); set => SetValue (DimmingOpacityProperty, value); }
@@ -38,8 +32,7 @@ namespace Jamesnet.Wpf.Controls
             DefaultStyleKeyProperty.OverrideMetadata (typeof (DarkThemeWindow), new FrameworkPropertyMetadata (typeof (DarkThemeWindow)));
             CloseCommandProperty = DependencyProperty.Register (nameof (CloseCommand), typeof (ICommand), typeof (DarkThemeWindow), new PropertyMetadata (null));
             TitleProperty = DependencyProperty.Register (nameof (Title), typeof (object), typeof (DarkThemeWindow), new UIPropertyMetadata (null));
-            TitleHeaderBackgroundProperty = DependencyProperty.Register (nameof (TitleHeaderBackground), typeof (Brush), typeof (DarkThemeWindow), new PropertyMetadata (new SolidColorBrush ((Color)ColorConverter.ConvertFromString ("#252525"))));
-            IsDimmingProperty = DependencyProperty.Register(nameof(IsDimming), typeof(bool), typeof(DarkThemeWindow), new PropertyMetadata(false));
+            TitleHeaderBackgroundProperty = DependencyProperty.Register (nameof (TitleHeaderBackground), typeof (Brush), typeof (DarkThemeWindow), new PropertyMetadata (new SolidColorBrush ((Color)ColorConverter.ConvertFromString ("#252525"))));            
             DimmingProperty = DependencyProperty.Register (nameof (Dimming), typeof (bool), typeof (DarkThemeWindow), new PropertyMetadata (false));
             DimmingColorProperty = DependencyProperty.Register (nameof (DimmingColor), typeof (Brush), typeof (DarkThemeWindow), new PropertyMetadata (new SolidColorBrush ((Color)ColorConverter.ConvertFromString ("#141414"))));
             DimmingOpacityProperty = DependencyProperty.Register (nameof (DimmingOpacity), typeof (double), typeof (DarkThemeWindow), new PropertyMetadata (0.8));
@@ -56,13 +49,6 @@ namespace Jamesnet.Wpf.Controls
         protected override void OnPropertyChanged(DependencyPropertyChangedEventArgs e)
         {
             base.OnPropertyChanged (e);
-            if (e.Property.Name == "DataContext")
-            {
-                if (DataContext?.GetType ().BaseType.Name == "ObservableWindow")
-                {
-                    this.SetBinding (DimmingProperty, nameof (Dimming));
-                }
-            }
         }
         public override void OnApplyTemplate()
         {
@@ -81,15 +67,7 @@ namespace Jamesnet.Wpf.Controls
                 maximBtn = maxbtn;
                 maxbtn.Click += (s, e) =>
                 {
-                    if (maxbtn.IsMaximize)
-                    {
-                        this.WindowState = WindowState.Normal;
-                    }
-                    else
-                    {
-                        this.WindowState = WindowState.Maximized;
-                    }
-                  
+                    this.WindowState = maxbtn.IsMaximize ? WindowState.Normal : WindowState.Maximized;
                 };
             }
             if (GetTemplateChild ("PART_DragBar") is DraggableBar bar)

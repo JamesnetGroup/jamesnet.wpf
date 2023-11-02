@@ -37,6 +37,4 @@ namespace Jamesnet.Wpf.Global.Event
             _ea.GetEvent<T1> ().Unsubscribe (action);
         }
     }
-
-
 }

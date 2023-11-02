@@ -7,8 +7,6 @@ namespace Jamesnet.Wpf.Global.Composition
     {
         public DimmingManager()
         {
-            // TODO: ObservableWindow 폐기 및 DimmingManager 활용 검토바랍니다.
-            // 함께: DataTrigger 폐기 및 Trigger로 대체
         }
 
         public void Dimming(bool isDimming)
