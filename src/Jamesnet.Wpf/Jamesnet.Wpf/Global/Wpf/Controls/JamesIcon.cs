@@ -185,7 +185,8 @@ namespace Jamesnet.Wpf.Controls
         ViewAgenda,
         ViewCompact,
         WeatherNight,
-        WhiteBalanceSunny
+        WhiteBalanceSunny,
+        SwapHorizontal
     }
 
     public enum IconMode
@@ -197,7 +198,6 @@ namespace Jamesnet.Wpf.Controls
 
     public class JamesIcon : ContentControl
     {
-        private Viewbox _viewbox;
         private Image _image;
 
         public static DependencyProperty ModeProperty = DependencyProperty.Register("Mode", typeof(IconMode), typeof(JamesIcon), new PropertyMetadata(IconMode.None));

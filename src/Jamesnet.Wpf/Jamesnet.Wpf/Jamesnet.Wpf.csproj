@@ -23,7 +23,7 @@
   
   <ItemGroup>
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.1" />
-    <PackageReference Include="Jamesnet.Design" Version="1.0.0.43" />
+    <PackageReference Include="Jamesnet.Design" Version="1.0.0.44" />
     <PackageReference Include="Prism.Unity" Version="8.1.97" />
 
   </ItemGroup>      

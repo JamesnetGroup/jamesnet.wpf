@@ -6,11 +6,6 @@ using System.Reflection;
 
 namespace Jamesnet.Wpf.Mvvm
 {
-    public class ObservableBase : ObservableObject
-    {
-
-    }
-
     public class ObservableDialog : ObservableObject, IDialogAware
     {
         private readonly DimmingManager _dimmingManager;
@@ -45,22 +40,6 @@ namespace Jamesnet.Wpf.Mvvm
             {
                 _dimmingManager.Dimming(true);
             }
-        }
-    }
-
-    [AttributeUsage(AttributeTargets.Class, Inherited = false)]
-    public class UseDimmingAttribute : Attribute
-    {
-        public bool UseDimming { get; private set; }
-
-        public UseDimmingAttribute()
-        {
-            UseDimming = true;
-        }
-
-        public UseDimmingAttribute(bool useDimming)
-        {
-            UseDimming = useDimming;
         }
     }
 }
