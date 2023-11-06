@@ -18,7 +18,7 @@
         ElasticEaseOut,
         ElasticEaseInOut,
         ExponentialEaseIn,
-        ExponentialEase,
+        ExponentialEaseOut,
         ExponentialEaseInOut,
         PowerEaseIn,
         PowerEaseOut,
