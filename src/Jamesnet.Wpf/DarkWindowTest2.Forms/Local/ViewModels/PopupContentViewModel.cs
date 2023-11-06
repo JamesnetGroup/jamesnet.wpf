@@ -8,7 +8,7 @@ namespace DarkWindowTest2.Forms.Local.ViewModels
     {
         public virtual void OnDialogClosed()
         {
-            base.OnDialogClosed ();
+            base.OnDialogClosed();
         }
 
         public virtual void OnDialogOpened(IDialogParameters parameters)

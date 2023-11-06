@@ -16,6 +16,7 @@
         <Setter Property="UseLayoutRounding" Value="True" />
         <Setter Property="MinWidth" Value="200" />
         <Setter Property="MinHeight" Value="200" />
+        <Setter Property="DimmingOpacity" Value="10" />
         <Setter Property="WindowChrome.WindowChrome">
             <Setter.Value>
                 <WindowChrome
@@ -59,20 +60,29 @@
                                 <ctrls:CloseButton x:Name="PART_CloseButton" Grid.Column="3" />
                             </ctrls:JamesGrid>
                             <ContentPresenter
+                                x:Name="content"
                                 Grid.Row="1"
                                 ContentSource="Content"
-                                ContentTemplate="{TemplateBinding ContentTemplate}" />
+                                ClipToBounds="False"
+                                ContentTemplate="{TemplateBinding ContentTemplate}">
+                            </ContentPresenter>
                             <Grid
                                 x:Name="PART_Dimming"
                                 Grid.Row="1"
                                 Background="{TemplateBinding DimmingColor}"
                                 Opacity="{TemplateBinding DimmingOpacity}"
-                                Visibility="Collapsed" />
+                                Visibility="Collapsed">
+                            </Grid>
                         </ctrls:JamesGrid>
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="Dimming" Value="true">
                             <Setter TargetName="PART_Dimming" Property="Visibility" Value="Visible" />
+                            <Setter Property="Effect">
+                                <Setter.Value>
+                                    <BlurEffect KernelType="Gaussian" Radius="{Binding RelativeSource={RelativeSource AncestorType=ctrls:DarkThemeWindow}, Path=DimmingOpacity}"/>
+                                </Setter.Value>
+                            </Setter>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

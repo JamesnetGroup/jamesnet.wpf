@@ -38,8 +38,8 @@ namespace Jamesnet.Wpf.Controls
                 Console.WriteLine ("");
             }));
 
-            DimmingColorProperty = DependencyProperty.Register (nameof (DimmingColor), typeof (Brush), typeof (DarkThemeWindow), new PropertyMetadata (new SolidColorBrush ((Color)ColorConverter.ConvertFromString ("#141414"))));
-            DimmingOpacityProperty = DependencyProperty.Register (nameof (DimmingOpacity), typeof (double), typeof (DarkThemeWindow), new PropertyMetadata (0.8));
+            DimmingColorProperty = DependencyProperty.Register (nameof (DimmingColor), typeof (Brush), typeof (DarkThemeWindow), new PropertyMetadata (new SolidColorBrush ((Color)ColorConverter.ConvertFromString ("#AA000000"))));
+            DimmingOpacityProperty = DependencyProperty.Register (nameof (DimmingOpacity), typeof (double), typeof (DarkThemeWindow), new PropertyMetadata (1.0));
         }
 
         public DarkThemeWindow()
