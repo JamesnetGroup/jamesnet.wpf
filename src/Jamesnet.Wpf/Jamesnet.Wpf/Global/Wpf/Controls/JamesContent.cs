@@ -9,12 +9,12 @@ namespace Jamesnet.Wpf.Controls
     {
         private readonly AutoWireManager _autoWireManager;
 
-        public FrameworkElement View => _autoWireManager.GetView ();
+        public FrameworkElement View => _autoWireManager.GetView();
         public INotifyPropertyChanged ViewModel => _autoWireManager.GetDataContext ();
 
         public JamesContent()
         {
-            _autoWireManager = new AutoWireManager ();
+            _autoWireManager = new AutoWireManager();
             _autoWireManager.InitializeAutoWire (this);
         }
     }
