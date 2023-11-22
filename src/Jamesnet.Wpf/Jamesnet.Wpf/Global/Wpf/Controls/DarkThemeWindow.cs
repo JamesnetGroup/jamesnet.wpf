@@ -11,9 +11,17 @@ namespace Jamesnet.Wpf.Controls
         public static readonly DependencyProperty TitleHeaderBackgroundProperty;
         public static readonly DependencyProperty CloseCommandProperty;
         public static readonly new DependencyProperty TitleProperty;
+        public static readonly DependencyProperty IsShowTaskBarProperty;
         public new object Title { get => GetValue (TitleProperty); set => SetValue (TitleProperty, value); }
         public ICommand CloseCommand { get => (ICommand)GetValue (CloseCommandProperty); set => SetValue (CloseCommandProperty, value); }
         public Brush TitleHeaderBackground { get => (Brush)GetValue (TitleHeaderBackgroundProperty); set => SetValue (TitleHeaderBackgroundProperty, value); }
+
+        public bool IsShowTaskBar
+        {
+            get { return (bool)GetValue (IsShowTaskBarProperty); }
+            set { SetValue (IsShowTaskBarProperty, value); }
+        }
+
 
         #region Dimming
         public static readonly DependencyProperty DimmingProperty;
@@ -24,8 +32,6 @@ namespace Jamesnet.Wpf.Controls
         public double DimmingOpacity { get => (double)GetValue (DimmingOpacityProperty); set => SetValue (DimmingOpacityProperty, value); }
         #endregion
 
-
-
         private MaximizeButton maximBtn;
         static DarkThemeWindow()
         {
@@ -35,25 +41,30 @@ namespace Jamesnet.Wpf.Controls
             TitleHeaderBackgroundProperty = DependencyProperty.Register (nameof (TitleHeaderBackground), typeof (Brush), typeof (DarkThemeWindow), new PropertyMetadata (new SolidColorBrush ((Color)ColorConverter.ConvertFromString ("#252525"))));            
             DimmingProperty = DependencyProperty.Register (nameof (Dimming), typeof (bool), typeof (DarkThemeWindow), new PropertyMetadata (false, (e,a)=>
             {
-                Console.WriteLine ("");
+                //Console.WriteLine ("");
             }));
 
             DimmingColorProperty = DependencyProperty.Register (nameof (DimmingColor), typeof (Brush), typeof (DarkThemeWindow), new PropertyMetadata (new SolidColorBrush ((Color)ColorConverter.ConvertFromString ("#141414"))));
             DimmingOpacityProperty = DependencyProperty.Register (nameof (DimmingOpacity), typeof (double), typeof (DarkThemeWindow), new PropertyMetadata (0.8));
+
+            IsShowTaskBarProperty =DependencyProperty.Register ("IsShowTaskBar", typeof (bool), typeof (DarkThemeWindow), new PropertyMetadata (true, (d,e)=>
+            {
+                var win = (DarkThemeWindow)d;
+                win.MaxHeightSet ();
+            }));
         }
 
         public DarkThemeWindow()
         {
+            MaxHeightSet ();
+            this.AllowsTransparency = true;
+            this.WindowStyle = WindowStyle.None;
             this.StateChanged += (s, e) =>
             {
                 maximBtn.IsMaximize = !maximBtn.IsMaximize;
             };
         }
 
-        protected override void OnPropertyChanged(DependencyPropertyChangedEventArgs e)
-        {
-            base.OnPropertyChanged (e);
-        }
         public override void OnApplyTemplate()
         {
             if (GetTemplateChild ("PART_CloseButton") is CloseButton btn)
@@ -103,6 +114,11 @@ namespace Jamesnet.Wpf.Controls
             {
                 GetWindow (this).DragMove ();
             }
+        }
+
+        private void MaxHeightSet()
+        {
+            this.MaxHeight = IsShowTaskBar ? SystemParameters.MaximizedPrimaryScreenHeight : Double.PositiveInfinity;
         }
     }
 }

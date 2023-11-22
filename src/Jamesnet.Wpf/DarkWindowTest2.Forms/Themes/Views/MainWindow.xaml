@@ -6,6 +6,9 @@
 
     <!--  절대 <Setter Property="Template"> 사용하면 안됨!  -->
     <Style BasedOn="{StaticResource {x:Type james:DarkThemeWindow}}" TargetType="{x:Type views:MainWindow}">
+        <Setter Property="Width" Value="100" />
+        <Setter Property="Height" Value="100" />
+        <Setter Property="IsShowTaskBar" Value="True" />
         <Setter Property="Title">
             <Setter.Value>
                 <StackPanel Orientation="Horizontal">

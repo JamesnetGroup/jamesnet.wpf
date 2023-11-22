@@ -16,17 +16,6 @@
         <Setter Property="UseLayoutRounding" Value="True" />
         <Setter Property="MinWidth" Value="200" />
         <Setter Property="MinHeight" Value="200" />
-        <Setter Property="WindowChrome.WindowChrome">
-            <Setter.Value>
-                <WindowChrome
-                    CaptionHeight="0"
-                    CornerRadius="0"
-                    GlassFrameThickness="0"
-                    NonClientFrameEdges="None"
-                    ResizeBorderThickness="5"
-                    UseAeroCaptionButtons="False" />
-            </Setter.Value>
-        </Setter>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ctrls:DarkThemeWindow}">
