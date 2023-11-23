@@ -7,11 +7,10 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Width="800"
     Height="450"
-    Background="Red"
     TitleHeaderBackground="Yellow"
     mc:Ignorable="d">
     <james:DarkThemeWindow.Title>
-        <StackPanel Orientation="Horizontal">
+        <StackPanel Background="Red" Orientation="Horizontal">
             <james:JamesIcon
                 Width="30"
                 Height="30"

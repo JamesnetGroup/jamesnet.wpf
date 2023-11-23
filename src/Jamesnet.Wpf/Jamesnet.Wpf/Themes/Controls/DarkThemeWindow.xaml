@@ -41,6 +41,7 @@
                                     Grid.Column="0"
                                     Margin="10,0,0,0"
                                     VerticalAlignment="Center"
+                                    HorizontalContentAlignment="Stretch"
                                     Content="{TemplateBinding Title}"
                                     Foreground="{TemplateBinding Foreground}"
                                     IsHitTestVisible="False" />
@@ -51,17 +52,15 @@
                             <ContentPresenter
                                 x:Name="content"
                                 Grid.Row="1"
-                                ContentSource="Content"
                                 ClipToBounds="False"
-                                ContentTemplate="{TemplateBinding ContentTemplate}">
-                            </ContentPresenter>
+                                ContentSource="Content"
+                                ContentTemplate="{TemplateBinding ContentTemplate}" />
                             <Grid
                                 x:Name="PART_Dimming"
                                 Grid.Row="1"
                                 Background="{TemplateBinding DimmingColor}"
                                 Opacity="{TemplateBinding DimmingOpacity}"
-                                Visibility="Collapsed">
-                            </Grid>
+                                Visibility="Collapsed" />
                         </ctrls:JamesGrid>
                     </Border>
                     <ControlTemplate.Triggers>
@@ -69,7 +68,7 @@
                             <Setter TargetName="PART_Dimming" Property="Visibility" Value="Visible" />
                             <Setter Property="Effect">
                                 <Setter.Value>
-                                    <BlurEffect KernelType="Gaussian" Radius="{Binding RelativeSource={RelativeSource AncestorType=ctrls:DarkThemeWindow}, Path=DimmingOpacity}"/>
+                                    <BlurEffect KernelType="Gaussian" Radius="{Binding RelativeSource={RelativeSource AncestorType=ctrls:DarkThemeWindow}, Path=DimmingOpacity}" />
                                 </Setter.Value>
                             </Setter>
                         </Trigger>
