@@ -29,9 +29,6 @@
         QuarticEaseIn,
         QuarticEaseOut,
         QuarticEaseInOut,
-        QuinticEaseIn,
-        QuinticEaseOut,
-        QuinticEaseInOut,
         SineEaseIn,
         SineEaseOut,
         SineEaseInOut
