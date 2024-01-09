@@ -188,7 +188,9 @@ namespace Jamesnet.Wpf.Controls
         WhiteBalanceSunny,
         SwapHorizontal,
         MenuUp,
-        MenuDown
+        MenuDown,
+        cardsplayingspademultipleoutline,
+        broadcast,
     }
 
     public enum IconMode
