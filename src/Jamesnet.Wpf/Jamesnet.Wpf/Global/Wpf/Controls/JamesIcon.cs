@@ -186,7 +186,9 @@ namespace Jamesnet.Wpf.Controls
         ViewCompact,
         WeatherNight,
         WhiteBalanceSunny,
-        SwapHorizontal
+        SwapHorizontal,
+        MenuUp,
+        MenuDown
     }
 
     public enum IconMode

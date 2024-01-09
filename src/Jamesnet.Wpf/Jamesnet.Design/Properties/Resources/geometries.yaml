@@ -282,6 +282,7 @@ geometries:
 
 - name: SwapHorizontal
   data: M21,9L17,5V8H10V10H17V13M7,11L3,15L7,19V16H14V14H7V11Z
-
-  
-  
+- name: MenuUp
+  data: M7,15L12,10L17,15H7Z
+- name: MenuDown
+  data: M7,10L12,15L17,10H7Z

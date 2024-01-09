@@ -141,5 +141,7 @@
         public static string WeatherNight => GeometryConverter.GetData();
         public static string WhiteBalanceSunny => GeometryConverter.GetData();
         public static string SwapHorizontal => GeometryConverter.GetData();
+        public static string MenuDown => GeometryConverter.GetData();
+        public static string MenuUp => GeometryConverter.GetData();
     }
 }
