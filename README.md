@@ -4,6 +4,7 @@
 - [WPF: League of legends](https://github.com/jamesnet214/leagueoflegends)
 - [Reflector](https://github.com/jamesnet214/reflector)
 - [Objective](https://github.com/jamesnet214/objective)
+- [WindowDock](https://github.com/lukewire129/WindowDock)
 
 ## Content
 - JamesPanel
