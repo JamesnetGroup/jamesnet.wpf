@@ -127,7 +127,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Contact
 - Website: https://jamesnet.dev
-- Email: james@jamesnet.dev, vickyqu115@hotmail.com, lukewire129@ghamil.com
+- Email: james@jamesnet.dev, lukewire129@ghamil.com, vickyqu115@hotmail.com
 
 Enhance your .NET Core WPF development experience with Jamesnet.Wpf!
 
