@@ -1,4 +1,4 @@
-# Jamesnet.Wpf [![English](https://img.shields.io/badge/Language-English-blue.svg)](README.md) [![한국어](https://img.shields.io/badge/Language-한국어-red.svg)](README.ko.md)
+# Jamesnet.Wpf [![英文](https://img.shields.io/badge/Language-English-blue.svg)](README.md) [![中文](https://img.shields.io/badge/Language-中文-red.svg)](README.zh-CN.md) [![韩文](https://img.shields.io/badge/Language-한국어-green.svg)](README.ko.md)
 
 Prism과 CommunityToolkit.Mvvm을 확장한 .NET Core 기반 애플리케이션을 위한 종합적인 WPF 프레임워크 라이브러리
 
