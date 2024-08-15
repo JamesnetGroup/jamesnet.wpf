@@ -1,4 +1,4 @@
-# Jamesnet.Wpf [![英文](https://img.shields.io/badge/Language-English-blue.svg)](README.md) [![中文](https://img.shields.io/badge/Language-中文-red.svg)](README.zh-CN.md) [![韩文](https://img.shields.io/badge/Language-한국어-green.svg)](README.ko.md)
+# Jamesnet.Wpf [![英文](https://img.shields.io/badge/docs-English-blue.svg)](README.md) [![中文](https://img.shields.io/badge/docs-中文-red.svg)](README.zh-CN.md) [![韩文](https://img.shields.io/badge/docs-한국어-green.svg)](README.ko.md)
 
 A comprehensive WPF framework library for .NET Core-based applications, extending Prism and CommunityToolkit.Mvvm
 
@@ -100,11 +100,11 @@ Jamesnet.Wpf is used in numerous GitHub projects, including:
 - [DevFlow](https://github.com/jamesnet214/devflow)
 - [WPF Explorer](https://github.com/jamesnet214/wpf-explorer)
 - [Theme Switch](https://github.com/jamesnet214/themeswitch)
-- [Riot Play Button](https://github.com/vickyqu115/riotplaybutton)
-- [Magic Navigation](https://github.com/vickyqu115/navigationbar)
-- [Riot Slider](https://github.com/vickyqu115/riotslider)
-- [Smart Date](https://github.com/vickyqu115/smartdate)
-- [Cupertino TreeView](https://github.com/vickyqu115/cupertino-treeview)
+- [Riot Play Button](https://github.com/jamesnetgroup/riotplaybutton)
+- [Magic Navigation](https://github.com/jamesnetgroup/navigationbar)
+- [Riot Slider](https://github.com/jamesnetgroup/riotslider)
+- [Smart Date](https://github.com/jamesnetgroup/smartdate)
+- [Cupertino TreeView](https://github.com/jamesnetgroup/cupertino-treeview)
 
 ## Key Components
 - JamesPanel
