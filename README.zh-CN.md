@@ -102,11 +102,11 @@ Jamesnet.Wpf 在多个 GitHub 项目中使用，包括：
 - [DevFlow](https://github.com/jamesnet214/devflow)
 - [WPF Explorer](https://github.com/jamesnet214/wpf-explorer)
 - [Theme Switch](https://github.com/jamesnet214/themeswitch)
-- [Riot Play Button](https://github.com/vickyqu115/riotplaybutton)
-- [Magic Navigation](https://github.com/vickyqu115/navigationbar)
-- [Riot Slider](https://github.com/vickyqu115/riotslider)
-- [Smart Date](https://github.com/vickyqu115/smartdate)
-- [Cupertino TreeView](https://github.com/vickyqu115/cupertino-treeview)
+- [Riot Play Button](https://github.com/jamesnetgroup/riotplaybutton)
+- [Magic Navigation](https://github.com/jamesnetgroup/navigationbar)
+- [Riot Slider](https://github.com/jamesnetgroup/riotslider)
+- [Smart Date](https://github.com/jamesnetgroup/smartdate)
+- [Cupertino TreeView](https://github.com/jamesnetgroup/cupertino-treeview)
 
 ## 主要组件
 - JamesPanel
